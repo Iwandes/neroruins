@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0-alpha.1] - 2026-10-30
+
+Builds for Minecraft 1.21.x. Requires Neroland Core 1.17.0.
+
+### Added
+
+- **Minecraft 1.21.x builds** on NeoForge, Fabric and Forge, next to the 26.1.2, 26.2 and 26.3 builds: one
+  build each for 1.21.1, 1.21.4, 1.21.5, 1.21.8 (also runs on 1.21.7), 1.21.10 (also runs on 1.21.9) and
+  1.21.11. The 1.21.x builds need Java 21. Everything works the same on every version.
+
+### Changed
+
+- Now requires Neroland Core 1.17.0 or later.
+
 ## [0.3.0-alpha.1] - 2026-10-11
 
 Progression seams and a quest pack, ahead of the structures. Requires **Neroland Core 1.15.0**. No

@@ -11,6 +11,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraft.world.level.saveddata.SavedDataType;
 
+import za.co.neroland.nerolandcore.data.SavedDataCompat;
 import za.co.neroland.nerolandcore.data.SavedDataRecovery;
 
 import za.co.neroland.neroruins.NeroRuinsCommon;
@@ -33,7 +34,7 @@ public final class VaultLedger extends SavedData {
     private static final String NAME = ID.toString();
 
     public static final SavedDataType<VaultLedger> TYPE =
-            new SavedDataType<>(ID, VaultLedger::new, codec(), null);
+            SavedDataCompat.type(ID, VaultLedger::new, codec());
 
     /** structure type id (as a string) -> claimed count. */
     private final Map<String, Long> claimed = new LinkedHashMap<>();

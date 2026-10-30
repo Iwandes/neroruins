@@ -13,9 +13,11 @@
   pack under `data/neroruins/neroquests/` is inert data — **never add a dependency on NeroQuests**.
 - Mod id: **`neroruins`** (matches the registry namespace + every loader manifest). Package root:
   `za.co.neroland.neroruins`. Author: **Neroland**.
-- Version: **0.3.0-alpha.1**.
-- Targets **MC 26.1.2, 26.2 AND 26.3** on **NeoForge, MinecraftForge/Forge, and Fabric** → the **"9 cells"**.
-  **Java 25.** Mappings = official Mojang names (26.x ships de-obfuscated; no Parchment).
+- Version: **0.4.0-alpha.1**.
+- Targets **MC 1.21.1, 1.21.4, 1.21.5, 1.21.8, 1.21.10, 1.21.11, 26.1.2, 26.2 AND 26.3** on **NeoForge,
+  MinecraftForge/Forge, and Fabric** → the **"27 cells"**. **Java 21** for 1.21.x, **Java 25** for 26.x.
+  Mappings = official Mojang names (26.x ships de-obfuscated; 1.21.x Fabric is remapped). Source is written
+  for 26.x; older lines use `//?` blocks and the `legacyRenames` list in `stonecutter.gradle`.
 
 ## Working rules
 
@@ -36,7 +38,7 @@
 - **Version/loader axis = Stonecutter.** Each loader×MC is a real node `:<loader>:<mc>`
   (`:fabric:26.1.2 :fabric:26.2 :fabric:26.3 :neoforge:26.1.2 :neoforge:26.2 :neoforge:26.3 :forge:26.1.2 :forge:26.2 :forge:26.3`). `common` is
   NOT a node — its source is spliced via `rootProject.ext.commonJava` / `commonResources`. Dependency pins
-  live in `gradle.properties` as `*_version_<mc>` keys; `mc_versions=26.1.2,26.2,26.3`.
+  live in `gradle.properties` as `*_version_<mc>` keys; `mc_versions` lists all nine Minecraft versions.
 - **Version-specific code in `common/`.** Non-active nodes run `common/` through Stonecutter (`stonecutterProcessCommon`), so shared code uses the same `//? if >=26.3 {` blocks as the loader `src/` trees. Keep the files in the vcsVersion state, and never put a `*/` inside a disabled block. Datapack files whose format differs by version go in `common/src/main/resources-<mc>/`, which is merged over `common/src/main/resources` for every node at or above `<mc>` (`mergeCommonResources`).
 
 ## Build & verify
