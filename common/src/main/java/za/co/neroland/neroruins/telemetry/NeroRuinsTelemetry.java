@@ -55,9 +55,7 @@ public final class NeroRuinsTelemetry {
      * anywhere</b> and no network connection is opened, regardless of the {@code telemetryEnabled}
      * config value.
      *
-     * <p>No NeroRuins Sentry project exists yet, so {@link #DSN} is still this placeholder and
-     * telemetry is wired but inert. To go live, create the project and paste its public DSN into
-     * {@link #DSN}. Even then, <b>do not remove the guard</b>: it is what keeps a fork, a stripped
+     * <p>Keep this guard when configuring {@link #DSN}: it keeps a fork, a stripped
      * build or a half-configured branch silent instead of crashing on SDK init or reporting into
      * somebody else's project.
      * ===================================================================================
@@ -65,13 +63,13 @@ public final class NeroRuinsTelemetry {
     private static final String PLACEHOLDER_DSN = "https://REPLACE-ME@sentry.invalid/0";
 
     /**
-     * Sentry DSN — the placeholder until a real project key is pasted in (no secret is involved:
+     * Sentry DSN for the NeroRuins project (no secret is involved:
      * a DSN is a public client key, write-only ingest, safe to ship in the jar). It grants
      * permission to SEND events and nothing else: it cannot read issues, and it identifies the
      * NeroRuins project, never a player. Opt-out via {@code telemetryEnabled=false} in
      * {@code config/neroruins.properties}; see PRIVACY.md for the full disclosure.
      */
-    private static final String DSN = PLACEHOLDER_DSN;
+    private static final String DSN = "https://176f4bba80f0181c41c29fa0af1020b2@o4511183823241216.ingest.de.sentry.io/4512349915906128";
 
     /** Stack traces must contain this package for an event to be sent. */
     private static final String PACKAGE_MARKER = "za.co.neroland.neroruins";
@@ -95,7 +93,7 @@ public final class NeroRuinsTelemetry {
     }
 
     /**
-     * True while the shipped DSN is the placeholder (the case until a Sentry project exists), in which
+     * True when the shipped DSN is the placeholder, in which
      * case telemetry stays wired but inert.
      */
     private static boolean dsnIsPlaceholder() {

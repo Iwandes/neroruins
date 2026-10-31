@@ -16,6 +16,12 @@ Neroland ecosystem. Built on **Neroland Core**.
 Add one page per block, item, machine, or system as it is built, and link it here. Keep this page as
 the index.
 
+## Error reporting
+
+NeroRuins sends anonymous, mod-specific error reports to its Sentry project in the EU by
+default. Set `telemetryEnabled=false` in `config/neroruins.properties` and restart to opt out.
+See the [privacy disclosure](../PRIVACY.md) for details.
+
 ## See also
 
 - [Build & contributor context](../AGENTS.md)
