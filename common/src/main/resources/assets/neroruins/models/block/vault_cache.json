@@ -1,1 +1,9 @@
-{"parent":"minecraft:block/cube_all","textures":{"all":"minecraft:block/chiseled_deepslate"}}
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "neroruins:block/vault_cache_top",
+    "bottom": "neroruins:block/vault_cache_bottom",
+    "side": "neroruins:block/vault_cache_side",
+    "particle": "neroruins:block/vault_cache_side"
+  }
+}

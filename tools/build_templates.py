@@ -115,7 +115,7 @@ def build_template(spec):
         occupied_containers.add(pos)
         loot_table = resource(vault["loot_table"])
         structure = resource(vault["structure"])
-        blocks[pos] = (state("neroruins:vault_cache"), compound(
+        blocks[pos] = (state({"id": "neroruins:vault_cache", "properties": {"sealed": "true"}}), compound(
             tag(8, "id", nbt_string("neroruins:vault_cache")), tag(8, "loot_table", nbt_string(loot_table)),
             tag(1, "puzzle", b"\x01"), tag(8, "structure", nbt_string(structure))))
     occupied_connectors = set()
@@ -128,7 +128,10 @@ def build_template(spec):
                 r"neroruins:(earth|luna|ark|mars|cindara|glacira|greenxertz|nyxara|lattice)\.[1-6]", log_id):
             raise ValueError("Invalid terminal log")
         occupied_containers.add(pos)
-        blocks[pos] = (state("neroruins:log_terminal"), compound(
+        facing = terminal.get("facing", "north")
+        if facing not in ("north", "south", "east", "west"):
+            raise ValueError("Invalid terminal facing")
+        blocks[pos] = (state({"id": "neroruins:log_terminal", "properties": {"facing": facing}}), compound(
             tag(8, "id", nbt_string("neroruins:log_terminal")), tag(8, "log_id", nbt_string(log_id))))
     for connector in spec.get("connectors", []):
         pos = point(connector["pos"], size)

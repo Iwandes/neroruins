@@ -1,15 +1,10 @@
 {
-  "parent": "minecraft:block/block",
-  "textures": {"hull": "neroruins:block/survey_hull", "display": "neroruins:block/log_display", "particle": "neroruins:block/survey_hull"},
-  "elements": [
-    {"from":[0,0,0],"to":[16,16,16],"faces":{
-      "down":{"texture":"#hull","cullface":"down"},"up":{"texture":"#hull","cullface":"up"},
-      "north":{"texture":"#hull","cullface":"north"},"south":{"texture":"#hull","cullface":"south"},
-      "west":{"texture":"#hull","cullface":"west"},"east":{"texture":"#hull","cullface":"east"}
-    }},
-    {"from":[2,2,-0.01],"to":[14,14,-0.01],"faces":{"north":{"texture":"#display"}}},
-    {"from":[2,2,16.01],"to":[14,14,16.01],"faces":{"south":{"texture":"#display"}}},
-    {"from":[-0.01,2,2],"to":[-0.01,14,14],"faces":{"west":{"texture":"#display"}}},
-    {"from":[16.01,2,2],"to":[16.01,14,14],"faces":{"east":{"texture":"#display"}}}
-  ]
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "front": "neroruins:block/log_terminal_side",
+    "side": "neroruins:block/survey_hull",
+    "top": "neroruins:block/log_terminal_top",
+    "bottom": "neroruins:block/log_terminal_bottom",
+    "particle": "neroruins:block/survey_hull"
+  }
 }

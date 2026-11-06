@@ -1733,7 +1733,8 @@
             1,
             4
           ],
-          "log_id": "neroruins:earth.2"
+          "log_id": "neroruins:earth.2",
+          "facing": "west"
         }
       ],
       "size": [

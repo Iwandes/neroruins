@@ -362,9 +362,15 @@ class TemplateBuilderTest(unittest.TestCase):
         assets = ROOT / "common/src/main/resources/assets/neroruins"
         model = json.loads((assets / "models/item/data_shard.json").read_text(encoding="utf-8"))
         self.assertEqual("neroruins:item/data_shard", model["textures"]["layer0"])
-        data = (assets / "textures/item/data_shard.png").read_bytes()
+        path = assets / "textures/item/data_shard.png"
+        data = path.read_bytes()
         self.assertEqual(b"\x89PNG\r\n\x1a\n", data[:8])
-        self.assertEqual((16, 16), struct.unpack(">II", data[16:24]))
+        width, height = struct.unpack(">II", data[16:24])
+        self.assertEqual(16, width)
+        self.assertEqual(0, height % 16, "an animated texture is a vertical strip of 16x16 frames")
+        if height > 16:
+            meta = json.loads((path.parent / (path.name + ".mcmeta")).read_text())
+            self.assertGreater(meta["animation"]["frametime"], 0)
 
     def test_terminal_assets_and_both_loot_formats_exist(self):
         resources = ROOT / "common/src/main/resources"
@@ -372,8 +378,16 @@ class TemplateBuilderTest(unittest.TestCase):
         language = json.loads((assets / "lang/en_us.json").read_text(encoding="utf-8"))
         self.assertEqual(language["block.neroruins.log_terminal"], language["item.neroruins.log_terminal"])
         model = json.loads((assets / "models/block/log_terminal.json").read_text())
-        self.assertEqual("neroruins:block/log_display", model["textures"]["display"])
-        self.assertTrue((assets / "textures/block/log_display.png").is_file())
+        self.assertEqual("minecraft:block/orientable_with_bottom", model["parent"])
+        expected = {"front": "log_terminal_side", "top": "log_terminal_top", "bottom": "log_terminal_bottom",
+                    "side": "survey_hull"}
+        for face, name in expected.items():
+            self.assertEqual("neroruins:block/" + name, model["textures"][face])
+            self.assertTrue((assets / "textures/block" / (name + ".png")).is_file())
+        states = json.loads((assets / "blockstates/log_terminal.json").read_text())["variants"]
+        self.assertEqual({"facing=north", "facing=east", "facing=south", "facing=west"}, set(states))
+        meta = json.loads((assets / "textures/block/log_terminal_side.png.mcmeta").read_text())
+        self.assertGreater(meta["animation"]["frametime"], 0)
         old_loot = json.loads((resources / "data/neroruins/loot_table/blocks/log_terminal.json").read_text())
         modern_loot = json.loads((ROOT / "common/src/main/resources-26.3/data/neroruins/loot_table/blocks/log_terminal.json").read_text())
         self.assertEqual("minecraft:survives_explosion", old_loot["pools"][0]["conditions"][0]["condition"])
@@ -474,6 +488,39 @@ class TemplateBuilderTest(unittest.TestCase):
         for room in specs:
             if not room["name"].startswith("bunker_hub_"):
                 self.assertFalse(room.get("vaults"), room["name"] + " must not hold an ungated vault")
+
+
+    def test_terminal_screens_face_open_floor(self):
+        offsets = {"north": (0, 0, -1), "south": (0, 0, 1), "east": (1, 0, 0), "west": (-1, 0, 0)}
+
+        def screen_clear(spec):
+            blocks = {}
+            for fill in spec["fills"]:
+                start, end = fill["from"], fill["to"]
+                for x in range(start[0], end[0] + 1):
+                    for y in range(start[1], end[1] + 1):
+                        for z in range(start[2], end[2] + 1):
+                            blocks[(x, y, z)] = fill["block"]
+            for terminal in spec.get("terminals", []):
+                dx, dy, dz = offsets[terminal.get("facing", "north")]
+                x, y, z = terminal["pos"]
+                if blocks.get((x + dx, y + dy, z + dz)) != "minecraft:air":
+                    return False
+            return True
+
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        with_terminals = [spec for spec in specs if spec.get("terminals")]
+        self.assertTrue(with_terminals)
+        for spec in with_terminals:
+            with self.subTest(name=spec["name"]):
+                self.assertTrue(screen_clear(spec))
+        turned = copy.deepcopy(with_terminals[0])
+        turned["terminals"][0]["facing"] = "east"
+        self.assertFalse(screen_clear(turned), "a screen facing the wall must be caught")
+        bad = copy.deepcopy(self.spec)
+        bad["terminals"] = [{"pos": [1, 0, 1], "log_id": "neroruins:earth.1", "facing": "up"}]
+        with self.assertRaises(ValueError):
+            build_template(bad)
 
 
 if __name__ == "__main__":
