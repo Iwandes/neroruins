@@ -128,7 +128,7 @@ public final class ClaimLedger extends SavedData {
         if (retentionDays == 0) return;
         ClaimLedger ledger = get(server);
         applyRetention(ledger, server.getWorldPath(LevelResource.ROOT), now, retentionDays,
-                () -> SavedDataRecovery.backupNow(server.overworld(), TYPE, ledger, RECOVERY_NAME));
+                () -> VerifiedBackup.refresh(server.overworld(), TYPE, ledger, RECOVERY_NAME));
     }
 
     static void applyRetention(ClaimLedger ledger, Path worldRoot, long now, int retentionDays, Runnable backup) {
@@ -173,7 +173,7 @@ public final class ClaimLedger extends SavedData {
         return new RuinPlayerData.Store() {
             public void erase(MinecraftServer server, UUID player) { ClaimLedger.get(server).erase(player); }
             public void backupNow(MinecraftServer server, UUID player) {
-                SavedDataRecovery.backupNow(server.overworld(), TYPE, ClaimLedger.get(server), RECOVERY_NAME);
+                VerifiedBackup.refresh(server.overworld(), TYPE, ClaimLedger.get(server), RECOVERY_NAME);
             }
         };
     }

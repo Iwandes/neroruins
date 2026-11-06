@@ -36,6 +36,19 @@ class SatelliteLayoutTest {
     }
 
     @Test
+    void familiesWithCollidingJavaHashesDoNotShareTheSameLayout() {
+        assertEquals("an".hashCode(), "c0".hashCode());
+        var first = new java.util.ArrayList<SatelliteLayout.Offset>();
+        var second = new java.util.ArrayList<SatelliteLayout.Offset>();
+        for (int index = 0; index < 12; index++) {
+            first.add(SatelliteLayout.offset(1234L, -317, 99, "an", index, 3, 12));
+            second.add(SatelliteLayout.offset(1234L, -317, 99, "c0", index, 3, 12));
+        }
+        assertNotEquals(first, second);
+        assertEquals(first.get(0), SatelliteLayout.offset(1234L, -317, 99, "an", 0, 3, 12));
+    }
+
+    @Test
     void invalidOrOverfullRingsFail() {
         assertThrows(IllegalArgumentException.class,
                 () -> SatelliteLayout.offset(1, 0, 0, "", 0, 1, 1));

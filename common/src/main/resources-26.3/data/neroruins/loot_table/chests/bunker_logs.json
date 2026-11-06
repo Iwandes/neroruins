@@ -65,6 +65,20 @@
           }
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "items": "#neroruins:loot/salvage_metal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:survey_hull"
+        }
+      ]
     }
   ]
 }

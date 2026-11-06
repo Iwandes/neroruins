@@ -65,7 +65,7 @@ public final class PlayerArchive extends SavedData {
             public void backupNow(MinecraftServer server, UUID player) {
                 PlayerArchive archive = PlayerArchive.get(server);
                 try {
-                    SavedDataRecovery.backupNow(server.overworld(), TYPE, archive, RECOVERY_NAME);
+                    VerifiedBackup.refresh(server.overworld(), TYPE, archive, RECOVERY_NAME);
                 } catch (RuntimeException | Error failure) {
                     try {
                         deleteExport(server, player);

@@ -142,6 +142,18 @@ class TemplateBuilderTest(unittest.TestCase):
         blocked["fills"].append({"from": [1, 1, 1], "to": [1, 2, 3], "block": "minecraft:stone"})
         self.assertFalse(connected_passages(blocked))
 
+    def test_bunker_turns_offer_both_directions(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        turns = [spec for spec in specs if spec["name"] in
+                 ("bunker_corridor_turn", "bunker_corridor_turn_right")]
+
+        def directions(pieces):
+            return {connector["orientation"] for piece in pieces for connector in piece["connectors"]
+                    if connector["pool"] == "neroruins:bunker_rooms"}
+
+        self.assertEqual({"north_up", "south_up"}, directions(turns))
+        self.assertNotEqual({"north_up", "south_up"}, directions(turns[:1]))
+
     def test_junction_has_clearance_for_two_adjacent_rooms(self):
         specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
         junction = next(spec for spec in specs if spec["name"] == "bunker_corridor_junction")
@@ -150,6 +162,33 @@ class TemplateBuilderTest(unittest.TestCase):
         max_width = max(max(room["size"][0], room["size"][2]) for room in rooms)
         self.assertGreaterEqual(junction["size"][0], max_width + 2)
         self.assertGreaterEqual(junction["size"][2], max_width + 2)
+
+    def test_bunker_hubs_have_supported_reachable_ladders(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        hubs = [spec for spec in specs if spec["name"].startswith("bunker_hub_")]
+
+        def has_accessible_shaft(hub):
+            blocks = {}
+            for fill in hub["fills"]:
+                start, end = fill["from"], fill["to"]
+                for x in range(start[0], end[0] + 1):
+                    for y in range(start[1], end[1] + 1):
+                        for z in range(start[2], end[2] + 1):
+                            blocks[x, y, z] = fill["block"]
+            ladder = {"id": "minecraft:ladder", "properties": {"facing": "north"}}
+            support_blocks = {"neroruins:survey_hull", "neroruins:rusted_survey_hull", "minecraft:mossy_stone_bricks"}
+            if any(blocks.get((4, y, 4)) != ladder or blocks.get((4, y, 5)) not in support_blocks
+                   for y in range(1, hub["size"][1])):
+                return False
+            return any(pos in reachable_passages(hub) for pos in ((3, 1, 4), (5, 1, 4), (4, 1, 3)))
+
+        self.assertTrue(hubs)
+        for hub in hubs:
+            with self.subTest(hub=hub["name"]):
+                self.assertTrue(has_accessible_shaft(hub))
+        broken = copy.deepcopy(hubs[0])
+        broken["fills"].append({"from": [4, 5, 5], "to": [4, 5, 5], "block": "minecraft:air"})
+        self.assertFalse(has_accessible_shaft(broken))
 
     def test_archive_terminal_is_reachable_from_the_entrance(self):
         specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
@@ -195,6 +234,28 @@ class TemplateBuilderTest(unittest.TestCase):
         self.assertFalse(any(pos in reachable for pos in ((x - 1, y, z), (x + 1, y, z),
                                                            (x, y, z - 1), (x, y, z + 1))))
 
+    def test_room_chest_lids_have_clearance(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        rooms = [spec for spec in specs if spec["name"].startswith("bunker_room_")
+                 and not spec["name"].endswith("_cap")]
+
+        def lid_is_clear(room):
+            x, y, z = room["containers"][0]["pos"]
+            above = (x, y + 1, z)
+            block = None
+            for fill in room["fills"]:
+                if all(fill["from"][i] <= above[i] <= fill["to"][i] for i in range(3)):
+                    block = fill["block"]
+            return block == "minecraft:air"
+
+        for room in rooms:
+            with self.subTest(room=room["name"]):
+                self.assertTrue(lid_is_clear(room))
+        blocked = copy.deepcopy(rooms[0])
+        x, y, z = blocked["containers"][0]["pos"]
+        blocked["fills"].append({"from": [x, y + 1, z], "to": [x, y + 1, z], "block": "minecraft:stone"})
+        self.assertFalse(lid_is_clear(blocked))
+
     def test_unattached_bunker_exits_have_matching_solid_caps(self):
         specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
         pools = ROOT / "common/src/main/resources/data/neroruins/worldgen/template_pool"
@@ -207,6 +268,77 @@ class TemplateBuilderTest(unittest.TestCase):
                 self.assertEqual([1, 2, 1], cap["size"])
                 fallback = json.loads((pools / ("bunker_" + role + "s.json")).read_text())["fallback"]
                 self.assertEqual("neroruins:bunker_" + role + "_caps", fallback)
+
+    def test_bunker_pools_offer_compatible_pieces_and_fallbacks(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        templates = {"neroruins:" + spec["name"]: spec for spec in specs}
+        directory = ROOT / "common/src/main/resources/data/neroruins/worldgen/template_pool"
+
+        def compatible(connector, pool):
+            if not pool["elements"]:
+                return False
+            for weighted in pool["elements"]:
+                candidate = templates.get(weighted["element"]["location"])
+                if (weighted["weight"] <= 0 or candidate is None
+                        or not any(entry["name"] == connector["target"]
+                                   and entry["orientation"].endswith("_up")
+                                   for entry in candidate["connectors"])):
+                    return False
+            return True
+
+        for spec in specs:
+            for connector in spec["connectors"]:
+                if connector["pool"] == "minecraft:empty":
+                    continue
+                with self.subTest(template=spec["name"], position=connector["pos"]):
+                    pool_name = connector["pool"].split(":", 1)[1]
+                    pool = json.loads((directory / (pool_name + ".json")).read_text())
+                    fallback = json.loads((directory / (pool["fallback"].split(":", 1)[1] + ".json")).read_text())
+                    self.assertTrue(compatible(connector, pool))
+                    self.assertTrue(compatible(connector, fallback))
+                    broken = copy.deepcopy(pool)
+                    broken["elements"][0]["element"]["location"] = "neroruins:missing_piece"
+                    self.assertFalse(compatible(connector, broken))
+
+    def test_all_bunker_variants_are_reachable_from_a_hub(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        templates = {"neroruins:" + spec["name"]: spec for spec in specs}
+        directory = ROOT / "common/src/main/resources/data/neroruins/worldgen/template_pool"
+        pools = {}
+        for path in directory.glob("bunker_*.json"):
+            pools["neroruins:" + path.stem] = json.loads(path.read_text())
+
+        def reachable(pool_map):
+            visited = {name for name in templates if name.startswith("neroruins:bunker_hub_")}
+            pending = list(visited)
+            while pending:
+                for connector in templates[pending.pop()]["connectors"]:
+                    pool_name = connector["pool"]
+                    seen_pools = set()
+                    while pool_name != "minecraft:empty":
+                        if pool_name in seen_pools:
+                            raise ValueError("Cyclic bunker pool fallback")
+                        seen_pools.add(pool_name)
+                        pool = pool_map[pool_name]
+                        for entry in pool["elements"]:
+                            name = entry["element"]["location"]
+                            if name not in visited:
+                                visited.add(name)
+                                pending.append(name)
+                        pool_name = pool["fallback"]
+            return visited
+
+        self.assertEqual(set(templates), reachable(pools))
+        broken = copy.deepcopy(pools)
+        broken["neroruins:bunker_rooms"]["elements"] = [
+            entry for entry in broken["neroruins:bunker_rooms"]["elements"]
+            if entry["element"]["location"] != "neroruins:bunker_room_archive"
+        ]
+        self.assertNotIn("neroruins:bunker_room_archive", reachable(broken))
+        broken = copy.deepcopy(pools)
+        broken["neroruins:bunker_rooms"]["fallback"] = "neroruins:bunker_rooms"
+        with self.assertRaises(ValueError):
+            reachable(broken)
 
     def test_bunker_hull_variants_have_models_loot_and_tool_tag(self):
         resources = ROOT / "common/src/main/resources"
@@ -270,6 +402,28 @@ class TemplateBuilderTest(unittest.TestCase):
         for name in ("survey_hull", "rusted_survey_hull"):
             modern_block = json.loads((newer / "blocks" / (name + ".json")).read_text())
             self.assertEqual("minecraft:survives_explosion", modern_block["pools"][0]["condition"]["type"])
+
+    def test_bunker_salvage_has_core_only_fallback_and_optional_sibling_entries(self):
+        resources = ROOT / "common/src/main/resources"
+        tag = json.loads((resources / "data/neroruins/tags/item/loot/salvage_metal.json").read_text())
+
+        def valid_tag(values):
+            return ("minecraft:iron_nugget" in values
+                    and all(isinstance(value, str) and value.startswith("minecraft:")
+                            or isinstance(value, dict) and value.get("required") is False
+                            for value in values))
+
+        self.assertTrue(valid_tag(tag["values"]))
+        self.assertFalse(valid_tag(["minecraft:iron_nugget", {"id": "missing:metal", "required": True}]))
+        self.assertIn({"id": "nerospace:alien_tech_scrap", "required": False}, tag["values"])
+        for base, tag_field in ((resources, "name"), (ROOT / "common/src/main/resources-26.3", "items")):
+            table = json.loads((base / "data/neroruins/loot_table/chests/bunker_logs.json").read_text())
+            salvage = table["pools"][1]["entries"]
+            tag_name = "neroruins:loot/salvage_metal"
+            if tag_field == "items":
+                tag_name = "#" + tag_name
+            self.assertIn({"type": "minecraft:tag", tag_field: tag_name, "expand": True}, salvage)
+            self.assertIn({"type": "minecraft:item", "name": "neroruins:survey_hull"}, salvage)
 
 
 if __name__ == "__main__":

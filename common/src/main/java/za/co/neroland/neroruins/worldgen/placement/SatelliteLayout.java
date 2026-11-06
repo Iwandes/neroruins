@@ -47,7 +47,7 @@ public final class SatelliteLayout {
         int inner = 2 * minRadius - 1;
         int count = side * side - inner * inner;
         long seed = worldSeed ^ (hubX * 0x9E3779B97F4A7C15L)
-                ^ (hubZ * 0xC2B2AE3D27D4EB4FL) ^ family.hashCode();
+                ^ (hubZ * 0xC2B2AE3D27D4EB4FL) ^ familySeed(family);
         Random random = new Random(mixSeed(seed));
         int[] selected = new int[index + 1];
         for (int current = 0; current <= index; current++) {
@@ -93,6 +93,14 @@ public final class SatelliteLayout {
             if (selected[i] == value) return true;
         }
         return false;
+    }
+
+    private static long familySeed(String family) {
+        long value = 0xcbf29ce484222325L;
+        for (int i = 0; i < family.length(); i++) {
+            value = (value ^ family.charAt(i)) * 0x100000001b3L;
+        }
+        return value;
     }
 
     private static long mixSeed(long value) {
