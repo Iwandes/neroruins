@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:bunker_earth",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 64,
+    "separation": 24,
+    "salt": 1302985471
+  }
+}

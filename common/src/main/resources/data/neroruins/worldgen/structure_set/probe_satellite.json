@@ -1,4 +1,0 @@
-{
-  "structures": [{ "structure": "neroruins:probe_satellite", "weight": 1 }],
-  "placement": { "type": "neroruins:satellite", "hub_set": "neroruins:probe", "family": "probe", "index": 0, "min_radius": 2, "max_radius": 4 }
-}

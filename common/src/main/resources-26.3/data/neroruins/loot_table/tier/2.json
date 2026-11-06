@@ -1,0 +1,154 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 4,
+          "items": "#neroruins:loot/components_machine"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 3,
+          "items": "#neroruins:loot/components_storage"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 3,
+          "items": "#neroruins:loot/components_power"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nerolandcore:nero_alloy_plate",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 3,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 2,
+              "max": 5
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 2,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 0,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 2,
+          "items": "#neroruins:loot/creature_parts"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 1,
+          "items": "#neroruins:loot/music_disks"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "weight": 3,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string",
+          "weight": 2,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 3,
+          "items": "#neroruins:loot/components_machine"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nerolandcore:nero_alloy_plate",
+          "weight": 1
+        }
+      ],
+      "condition": {
+        "type": "neroruins:mod_loaded",
+        "mod": "nerotech"
+      }
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 0,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 3,
+          "items": "#neroruins:loot/arcade_cartridges"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone",
+          "weight": 1
+        }
+      ],
+      "condition": {
+        "type": "neroruins:mod_loaded",
+        "mod": "neroarcade"
+      }
+    }
+  ]
+}

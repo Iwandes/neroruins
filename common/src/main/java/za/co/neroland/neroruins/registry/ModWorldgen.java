@@ -39,5 +39,7 @@ public final class ModWorldgen {
 
     private ModWorldgen() { }
 
-    public static void init() { }
+    public static void init() {
+        ModProcessors.init();
+    }
 }

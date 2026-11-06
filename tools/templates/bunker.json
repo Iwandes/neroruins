@@ -155,6 +155,45 @@
             6
           ],
           "block": "minecraft:sea_lantern"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            1,
+            1,
+            1
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            1,
+            1,
+            4
+          ],
+          "to": [
+            1,
+            1,
+            4
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            3,
+            1,
+            7
+          ],
+          "to": [
+            3,
+            1,
+            7
+          ],
+          "block": "neroruins:ballast_plate"
         }
       ],
       "connectors": [
@@ -181,6 +220,17 @@
           "target": "neroruins:bunker_corridor",
           "pool": "neroruins:bunker_corridors",
           "final_state": "minecraft:air"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            1,
+            1,
+            7
+          ],
+          "loot_table": "neroruins:chests/bunker_vault",
+          "structure": "neroruins:bunker"
         }
       ]
     },
@@ -339,6 +389,45 @@
             6
           ],
           "block": "minecraft:sea_lantern"
+        },
+        {
+          "from": [
+            1,
+            1,
+            7
+          ],
+          "to": [
+            1,
+            1,
+            7
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            3,
+            1,
+            7
+          ],
+          "to": [
+            3,
+            1,
+            7
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            1,
+            1,
+            3
+          ],
+          "to": [
+            1,
+            1,
+            3
+          ],
+          "block": "neroruins:ballast_plate"
         }
       ],
       "connectors": [
@@ -365,6 +454,17 @@
           "target": "neroruins:bunker_corridor",
           "pool": "neroruins:bunker_corridors",
           "final_state": "minecraft:air"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            1,
+            1,
+            1
+          ],
+          "loot_table": "neroruins:chests/bunker_vault",
+          "structure": "neroruins:bunker"
         }
       ]
     },
@@ -523,6 +623,58 @@
             6
           ],
           "block": "minecraft:sea_lantern"
+        },
+        {
+          "from": [
+            5,
+            1,
+            7
+          ],
+          "to": [
+            5,
+            1,
+            7
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            7,
+            1,
+            5
+          ],
+          "to": [
+            7,
+            1,
+            5
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            3,
+            1,
+            7
+          ],
+          "to": [
+            3,
+            1,
+            7
+          ],
+          "block": "neroruins:ballast_plate"
+        },
+        {
+          "from": [
+            1,
+            1,
+            6
+          ],
+          "to": [
+            1,
+            1,
+            6
+          ],
+          "block": "neroruins:ballast_plate"
         }
       ],
       "connectors": [
@@ -549,6 +701,17 @@
           "target": "neroruins:bunker_corridor",
           "pool": "neroruins:bunker_corridors",
           "final_state": "minecraft:air"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            7,
+            1,
+            7
+          ],
+          "loot_table": "neroruins:chests/bunker_vault",
+          "structure": "neroruins:bunker"
         }
       ]
     },

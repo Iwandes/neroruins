@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:redstone_block",
+    {
+      "id": "nerotech:plasma_cell",
+      "required": false
+    },
+    {
+      "id": "neropower:battery_cell_basic",
+      "required": false
+    },
+    {
+      "id": "neropower:battery_cell_advanced",
+      "required": false
+    },
+    {
+      "id": "neropower:isotope_pellet",
+      "required": false
+    },
+    {
+      "id": "nerocreatures:plasma_cell",
+      "required": false
+    },
+    {
+      "id": "nerospace:solar_wing",
+      "required": false
+    }
+  ]
+}

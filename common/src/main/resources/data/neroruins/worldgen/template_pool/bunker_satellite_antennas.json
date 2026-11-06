@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_antenna_mast",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_antenna_fallen",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_antenna_dish",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

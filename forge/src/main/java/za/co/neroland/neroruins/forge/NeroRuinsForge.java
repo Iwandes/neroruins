@@ -43,6 +43,13 @@ public final class NeroRuinsForge {
         RegisterCommandsEvent.BUS.addListener(event -> CodexCommands.register(event.getDispatcher()));
         ServerStartedEvent.BUS.addListener(event -> ServerState.serverStarted(event.getServer()));
         ServerStoppedEvent.BUS.addListener(event -> ServerState.serverStopped());
+        //? if >=1.21.9 {
+        net.minecraftforge.event.TickEvent.ServerTickEvent.Post.BUS.addListener(event ->
+                za.co.neroland.neroruins.expedition.ExpeditionTracker.tick(event.server()));
+        //?} else {
+        /*net.minecraftforge.event.TickEvent.ServerTickEvent.Post.BUS.addListener(event ->
+                za.co.neroland.neroruins.expedition.ExpeditionTracker.tick(event.getServer()));
+        *///?}
         PlayerEvent.PlayerLoggedInEvent.BUS.addListener(event -> {
             if (event.getEntity() instanceof ServerPlayer player) {
                 QuestHooks.onJoin(player);
@@ -54,6 +61,8 @@ public final class NeroRuinsForge {
         game.addListener((RegisterCommandsEvent event) -> CodexCommands.register(event.getDispatcher()));
         game.addListener((ServerStartedEvent event) -> ServerState.serverStarted(event.getServer()));
         game.addListener((ServerStoppedEvent event) -> ServerState.serverStopped());
+        game.addListener((net.minecraftforge.event.TickEvent.ServerTickEvent.Post event) ->
+                za.co.neroland.neroruins.expedition.ExpeditionTracker.tick(event.getServer()));
         game.addListener((PlayerEvent.PlayerLoggedInEvent event) -> {
             if (event.getEntity() instanceof ServerPlayer player) {
                 QuestHooks.onJoin(player);

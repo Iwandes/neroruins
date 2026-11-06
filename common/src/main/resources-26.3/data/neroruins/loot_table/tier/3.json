@@ -1,0 +1,76 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 2,
+          "items": "#neroruins:loot/keycards_external"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 3,
+          "items": "#neroruins:loot/currency"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 2,
+          "items": "#neroruins:loot/faction_tokens"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 2,
+          "items": "#neroruins:loot/event_tokens"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "weight": 2,
+          "items": "#neroruins:loot/exotics"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 3,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 3
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nerolandcore:void_crystal_shard",
+          "weight": 3,
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "min": 1,
+              "max": 2
+            }
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "nerolandcore:starsteel_ingot",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

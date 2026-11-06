@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bread",
+    "minecraft:baked_potato",
+    "minecraft:dried_kelp",
+    "minecraft:cookie",
+    {
+      "id": "nerospace:moon_cheese",
+      "required": false
+    },
+    {
+      "id": "nerospace:cheese_wheel",
+      "required": false
+    },
+    {
+      "id": "nerospace:strutter_drumstick",
+      "required": false
+    },
+    {
+      "id": "nerospace:loper_haunch",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:engineered_food",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:alien_produce",
+      "required": false
+    }
+  ]
+}

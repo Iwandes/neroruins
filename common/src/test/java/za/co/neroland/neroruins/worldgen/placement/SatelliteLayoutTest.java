@@ -114,4 +114,29 @@ class SatelliteLayoutTest {
         }
         return offsets;
     }
+
+    @Test
+    void satellitePresenceIsSeededPerHubAndSlot() {
+        int present = 0;
+        var outcomes = new HashSet<Boolean>();
+        for (int hub = 0; hub < 1000; hub++) {
+            boolean first = SatelliteLayout.present(77L, hub, -hub, "bunker", 0, 50);
+            assertEquals(first, SatelliteLayout.present(77L, hub, -hub, "bunker", 0, 50));
+            if (first) present++;
+            outcomes.add(first);
+        }
+        assertEquals(2, outcomes.size());
+        assertTrue(present > 400 && present < 600, "about half the hubs keep a 50% slot: " + present);
+        int differentSlots = 0;
+        for (int hub = 0; hub < 200; hub++) {
+            if (SatelliteLayout.present(77L, hub, 0, "bunker", 0, 50) != SatelliteLayout.present(77L, hub, 0, "bunker", 1, 50)) {
+                differentSlots++;
+            }
+        }
+        assertTrue(differentSlots > 50, "slots are decided independently");
+        assertTrue(SatelliteLayout.present(1, 0, 0, "bunker", 0, 100));
+        assertThrows(IllegalArgumentException.class, () -> SatelliteLayout.present(1, 0, 0, "bunker", 0, 0));
+        assertThrows(IllegalArgumentException.class, () -> SatelliteLayout.present(1, 0, 0, "bunker", 32, 50));
+        assertThrows(IllegalArgumentException.class, () -> SatelliteLayout.present(1, 0, 0, "Bad", 0, 50));
+    }
 }

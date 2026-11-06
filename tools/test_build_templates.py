@@ -426,5 +426,55 @@ class TemplateBuilderTest(unittest.TestCase):
             self.assertIn({"type": "minecraft:item", "name": "neroruins:survey_hull"}, salvage)
 
 
+    def test_sealed_vault_is_encoded_and_rejects_bad_input(self):
+        self.spec["vaults"] = [{"pos": [1, 0, 1], "loot_table": "neroruins:chests/bunker_vault",
+                                "structure": "neroruins:bunker"}]
+        data = gzip.decompress(build_template(self.spec))
+        self.assertIn(b"neroruins:vault_cache", data)
+        self.assertIn(b"puzzle", data)
+        self.assertIn(b"neroruins:bunker", data)
+        for key, value in (("loot_table", "bad id"), ("structure", "Bad:Id")):
+            broken = copy.deepcopy(self.spec)
+            broken["vaults"][0][key] = value
+            with self.assertRaises(ValueError):
+                build_template(broken)
+        colliding = copy.deepcopy(self.spec)
+        colliding["containers"] = [{"pos": [1, 0, 1], "loot_table": "neroruins:chests/bunker_logs"}]
+        with self.assertRaises(ValueError):
+            build_template(colliding)
+
+    def test_every_bunker_hub_has_one_sealed_vault_with_nearby_plates(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+
+        def gated(spec):
+            vaults = spec.get("vaults", [])
+            if len(vaults) != 1:
+                return False
+            vx, vy, vz = vaults[0]["pos"]
+            plates = [fill["from"] for fill in spec["fills"] if fill["block"] == "neroruins:ballast_plate"]
+            if not 1 <= len(plates) <= 8:
+                return False
+            return all(abs(x - vx) <= 6 and abs(y - vy) <= 3 and abs(z - vz) <= 6 for x, y, z in plates)
+
+        hubs = [spec for spec in specs if spec["name"].startswith("bunker_hub_")]
+        self.assertEqual(3, len(hubs))
+        for hub in hubs:
+            with self.subTest(hub=hub["name"]):
+                self.assertTrue(gated(hub))
+                floor = {tuple(fill["from"]) for fill in hub["fills"] if fill["block"] == "neroruins:ballast_plate"}
+                self.assertEqual(len(floor), len([f for f in hub["fills"] if f["block"] == "neroruins:ballast_plate"]))
+        far = copy.deepcopy(hubs[0])
+        for fill in far["fills"]:
+            if fill["block"] == "neroruins:ballast_plate":
+                fill["from"] = fill["to"] = [8, 9, 8]
+        self.assertFalse(gated(far))
+        ungated = copy.deepcopy(hubs[0])
+        ungated["vaults"] = []
+        self.assertFalse(gated(ungated))
+        for room in specs:
+            if not room["name"].startswith("bunker_hub_"):
+                self.assertFalse(room.get("vaults"), room["name"] + " must not hold an ungated vault")
+
+
 if __name__ == "__main__":
     unittest.main()

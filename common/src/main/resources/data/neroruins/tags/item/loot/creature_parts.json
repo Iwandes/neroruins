@@ -1,0 +1,34 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:bone",
+    {
+      "id": "nerocreatures:stalker_hide",
+      "required": false
+    },
+    {
+      "id": "nerocreatures:worm_chitin",
+      "required": false
+    },
+    {
+      "id": "nerocreatures:stalker_sinew",
+      "required": false
+    },
+    {
+      "id": "nerocreatures:void_essence",
+      "required": false
+    },
+    {
+      "id": "nerospace:drift_fleece",
+      "required": false
+    },
+    {
+      "id": "nerospace:night_fibre",
+      "required": false
+    },
+    {
+      "id": "nerospace:xertz_fibre",
+      "required": false
+    }
+  ]
+}

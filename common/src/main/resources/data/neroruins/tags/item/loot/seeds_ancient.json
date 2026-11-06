@@ -1,0 +1,35 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:torchflower_seeds",
+    "minecraft:pitcher_pod",
+    {
+      "id": "neroagriculture:prospora_seed",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:charged_seed",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:alien_seed",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:food_seed",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:resource_seed",
+      "required": false
+    },
+    {
+      "id": "nerospace:glowcap_fungus",
+      "required": false
+    },
+    {
+      "id": "nerospace:spore_pod",
+      "required": false
+    }
+  ]
+}

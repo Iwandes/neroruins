@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:creeper_drop_music_discs",
+    {
+      "id": "neronotes:blank_disk",
+      "required": false
+    },
+    {
+      "id": "neronotes:resonant_block_glassy_pluck",
+      "required": false
+    },
+    {
+      "id": "neronotes:resonant_block_percussion",
+      "required": false
+    }
+  ]
+}

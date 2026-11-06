@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_cache_crate",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_cache_spill",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

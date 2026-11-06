@@ -23,6 +23,7 @@ public final class CodexCommands {
     private CodexCommands() { }
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+        GalleryCommands.register(dispatcher);
         dispatcher.register(LiteralArgumentBuilder.<CommandSourceStack>literal("neroruins").then(
                 LiteralArgumentBuilder.<CommandSourceStack>literal("codex")
                 .executes(context -> list(context.getSource().getPlayerOrException()))
@@ -44,7 +45,9 @@ public final class CodexCommands {
         try {
             var path = ArchiveExport.write(server.getWorldPath(LevelResource.ROOT), player.getUUID(),
                     PlayerArchive.get(server).export(player.getUUID()),
-                    za.co.neroland.neroruins.data.ClaimLedger.get(server).export(player.getUUID()));
+                    za.co.neroland.neroruins.data.ClaimLedger.get(server).export(player.getUUID()),
+                    za.co.neroland.neroruins.data.ClaimLedger.get(server).exportReservations(player.getUUID()),
+                    za.co.neroland.neroruins.data.ExpeditionRecord.get(server).export(player.getUUID()));
             message(player, Component.translatable("message.neroruins.export.saved", path.toString()));
             return 1;
         } catch (IOException failure) {

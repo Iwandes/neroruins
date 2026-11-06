@@ -8,6 +8,7 @@ import za.co.neroland.nerolandcore.registry.PropertiesCompat;
 import za.co.neroland.nerolandcore.registry.RegistrationProvider;
 import za.co.neroland.neroruins.NeroRuinsCommon;
 import za.co.neroland.neroruins.platform.Services;
+import za.co.neroland.neroruins.puzzle.BallastPlateBlock;
 import za.co.neroland.neroruins.terminal.LogTerminalBlock;
 import za.co.neroland.neroruins.vault.VaultCacheBlock;
 
@@ -23,6 +24,10 @@ public final class ModBlocks {
     public static final RegistrationProvider.RegistryEntry<VaultCacheBlock> VAULT_CACHE =
             BLOCKS.register("vault_cache", key -> new VaultCacheBlock(PropertiesCompat.block(key)
                     .mapColor(MapColor.METAL).strength(-1.0F, 3600000.0F).sound(SoundType.METAL)));
+
+    public static final RegistrationProvider.RegistryEntry<BallastPlateBlock> BALLAST_PLATE =
+            BLOCKS.register("ballast_plate", key -> new BallastPlateBlock(PropertiesCompat.block(key)
+                    .mapColor(MapColor.METAL).strength(-1.0F, 3600000.0F).sound(SoundType.METAL).noOcclusion()));
 
     private ModBlocks() { }
 

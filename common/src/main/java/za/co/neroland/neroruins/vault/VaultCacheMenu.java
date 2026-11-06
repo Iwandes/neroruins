@@ -25,8 +25,10 @@ public final class VaultCacheMenu extends AbstractContainerMenu {
             public int get(int index) {
                 if (index != 0) return 0;
                 if (!(inventory.player instanceof ServerPlayer player) || !(cache.getLevel() instanceof ServerLevel level)) return 4;
-                return switch (VaultRewardService.availability(player, level, cache.getBlockPos(), cache.lootTable())) {
-                    case AVAILABLE -> status == 3 || status == 4 ? status : 0;
+                return switch (VaultRewardService.availability(player, level, cache)) {
+                    case AVAILABLE -> status == 4 ? status : 0;
+                    case RESERVED -> status == 3 ? 3 : 5;
+                    case SEALED -> 6;
                     case ALREADY_CLAIMED -> status == 1 ? 1 : 2;
                     default -> 4;
                 };
@@ -45,9 +47,11 @@ public final class VaultCacheMenu extends AbstractContainerMenu {
     public boolean clickMenuButton(Player player, int button) {
         if (button != 0 || cache == null || !cache.stillValid(player)
                 || !(player instanceof ServerPlayer serverPlayer) || !(cache.getLevel() instanceof ServerLevel level)) return false;
-        var result = VaultRewardService.claim(serverPlayer, level, cache.getBlockPos(), cache.lootTable());
+        var result = VaultRewardService.claim(serverPlayer, level, cache);
         status = switch (result) {
             case AVAILABLE -> 0;
+            case RESERVED -> 5;
+            case SEALED -> 6;
             case CLAIMED -> 1;
             case ALREADY_CLAIMED -> 2;
             case FULL -> 3;

@@ -1,0 +1,34 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:barrel",
+    {
+      "id": "nerologistics:item_duct",
+      "required": false
+    },
+    {
+      "id": "nerologistics:network_module",
+      "required": false
+    },
+    {
+      "id": "nerologistics:item_cell_1k",
+      "required": false
+    },
+    {
+      "id": "nerologistics:item_cell_8k",
+      "required": false
+    },
+    {
+      "id": "nerologistics:fluid_cell_16b",
+      "required": false
+    },
+    {
+      "id": "nerologistics:fluid_duct",
+      "required": false
+    },
+    {
+      "id": "nerologistics:hyperspeed_card",
+      "required": false
+    }
+  ]
+}

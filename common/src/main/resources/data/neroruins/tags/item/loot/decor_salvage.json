@@ -1,0 +1,52 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:iron_bars",
+    "minecraft:lantern",
+    "neroruins:rusted_survey_hull",
+    {
+      "id": "nerodecor:hull_nero_alloy",
+      "required": false
+    },
+    {
+      "id": "nerodecor:panel_starsteel",
+      "required": false
+    },
+    {
+      "id": "nerodecor:neon_blue",
+      "required": false
+    },
+    {
+      "id": "nerodecor:lumen_panel",
+      "required": false
+    },
+    {
+      "id": "nerodecor:holo_grid_floor",
+      "required": false
+    },
+    {
+      "id": "nerodecor:circuit_plating",
+      "required": false
+    },
+    {
+      "id": "nerodecor:starsteel_pillar",
+      "required": false
+    },
+    {
+      "id": "nerospace:hull_plating",
+      "required": false
+    },
+    {
+      "id": "nerospace:truss",
+      "required": false
+    },
+    {
+      "id": "nerospace:station_floor",
+      "required": false
+    },
+    {
+      "id": "neroevents:scorched_panel",
+      "required": false
+    }
+  ]
+}

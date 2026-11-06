@@ -1,0 +1,22 @@
+{
+  "commodities": [
+    {
+      "item": "neroruins:rusted_survey_hull",
+      "reference_price": 2,
+      "npc_daily_demand": 64,
+      "class": "farmable",
+      "house": "general",
+      "sector": "mining",
+      "required": false
+    },
+    {
+      "item": "neroruins:survey_hull",
+      "reference_price": 3,
+      "npc_daily_demand": 64,
+      "class": "farmable",
+      "house": "general",
+      "sector": "mining",
+      "required": false
+    }
+  ]
+}

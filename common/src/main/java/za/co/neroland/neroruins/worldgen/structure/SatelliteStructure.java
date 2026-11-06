@@ -1,6 +1,8 @@
 package za.co.neroland.neroruins.worldgen.structure;
 
+import java.util.Map;
 import java.util.Optional;
+import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.mojang.serialization.MapCodec;
@@ -10,6 +12,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.ChunkGeneratorStructureState;
+import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.level.levelgen.structure.StructureType;
@@ -28,6 +31,12 @@ public final class SatelliteStructure extends Structure {
     private final JigsawStructure layout;
     private final SatellitePlacement placement;
     private static final AtomicBoolean INVALID_HUB_REPORTED = new AtomicBoolean();
+    /**
+     * One structure state per dimension's {@link RandomState}, the same scope vanilla keeps its own in.
+     * Building a state filters every structure set against the biome source, which is too costly to repeat
+     * for each satellite candidate. Weak keys release it with the dimension.
+     */
+    private static final Map<RandomState, ChunkGeneratorStructureState> STATES = new WeakHashMap<>();
 
     public SatelliteStructure(StructureSettings settings, JigsawStructure layout, SatellitePlacement placement) {
         super(settings);
@@ -38,7 +47,11 @@ public final class SatelliteStructure extends Structure {
     @Override
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
         var sets = context.registryAccess().lookupOrThrow(Registries.STRUCTURE_SET);
-        ChunkGeneratorStructureState state = context.chunkGenerator().createState(sets, context.randomState(), context.seed());
+        ChunkGeneratorStructureState state;
+        synchronized (STATES) {
+            state = STATES.computeIfAbsent(context.randomState(),
+                    randomState -> context.chunkGenerator().createState(sets, randomState, context.seed()));
+        }
         int x = context.chunkPos().getMinBlockX() >> 4;
         int z = context.chunkPos().getMinBlockZ() >> 4;
         Optional<ChunkPos> anchor = placement.findHub(state, x, z);

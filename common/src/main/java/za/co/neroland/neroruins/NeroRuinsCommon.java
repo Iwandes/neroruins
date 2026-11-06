@@ -13,6 +13,7 @@ import za.co.neroland.neroruins.registry.ModBlocks;
 import za.co.neroland.neroruins.registry.ModBlockEntities;
 import za.co.neroland.neroruins.registry.ModMenuTypes;
 import za.co.neroland.neroruins.registry.ModItems;
+import za.co.neroland.neroruins.registry.ModLootConditions;
 import za.co.neroland.neroruins.registry.ModWorldgen;
 import za.co.neroland.neroruins.telemetry.NeroRuinsTelemetry;
 
@@ -50,6 +51,7 @@ public final class NeroRuinsCommon {
         ModMenuTypes.init();
         ModItems.init();
         ModCreativeTab.init();
+        ModLootConditions.init();
         ModWorldgen.init();
         RuinsNetwork.init();
 

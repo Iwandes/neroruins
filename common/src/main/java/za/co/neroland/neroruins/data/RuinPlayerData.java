@@ -24,6 +24,7 @@ public final class RuinPlayerData {
         if (REGISTERED.compareAndSet(false, true)) {
             register(PlayerArchive.erasureStore());
             register(ClaimLedger.erasureStore());
+            register(ExpeditionRecord.erasureStore());
             PlayerDataErasure.register(RuinPlayerData::erase);
         }
     }

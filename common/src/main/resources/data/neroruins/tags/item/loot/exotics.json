@@ -1,0 +1,62 @@
+{
+  "replace": false,
+  "values": [
+    "nerolandcore:void_crystal_shard",
+    {
+      "id": "nerotech:antimatter_cell",
+      "required": false
+    },
+    {
+      "id": "nerotech:stellar_cell",
+      "required": false
+    },
+    {
+      "id": "nerotech:fusion_cell",
+      "required": false
+    },
+    {
+      "id": "nerospace:gravity_shard",
+      "required": false
+    },
+    {
+      "id": "nerospace:void_shard",
+      "required": false
+    },
+    {
+      "id": "nerospace:nyx_prism",
+      "required": false
+    },
+    {
+      "id": "nerospace:voidglass_lens",
+      "required": false
+    },
+    {
+      "id": "nerospace:meteor_core",
+      "required": false
+    },
+    {
+      "id": "nerospace:alien_core",
+      "required": false
+    },
+    {
+      "id": "neropower:battery_cell_elite",
+      "required": false
+    },
+    {
+      "id": "nerocreatures:android_core",
+      "required": false
+    },
+    {
+      "id": "nerocreatures:refined_crystal",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:voidite_fragment",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:orbite_fragment",
+      "required": false
+    }
+  ]
+}

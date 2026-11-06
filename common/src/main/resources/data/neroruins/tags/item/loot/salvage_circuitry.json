@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:redstone",
+    "minecraft:repeater",
+    {
+      "id": "nerocreatures:salvaged_circuitry",
+      "required": false
+    },
+    {
+      "id": "neroevents:salvage_conduit",
+      "required": false
+    },
+    {
+      "id": "nerotech:dirty_filter",
+      "required": false
+    }
+  ]
+}

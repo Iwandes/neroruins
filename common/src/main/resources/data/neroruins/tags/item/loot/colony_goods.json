@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#nerocolonies:colony_food/staple",
+      "required": false
+    },
+    {
+      "id": "nerocolonies:thank_you_note",
+      "required": false
+    },
+    {
+      "id": "nerocolonies:habitat_module",
+      "required": false
+    }
+  ]
+}

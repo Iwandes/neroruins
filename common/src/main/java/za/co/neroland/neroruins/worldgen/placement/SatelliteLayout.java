@@ -75,6 +75,27 @@ public final class SatelliteLayout {
         return new Offset(remaining % side - maxRadius, remaining / side + minRadius);
     }
 
+    /**
+     * Whether satellite {@code index} exists for this hub. Each satellite slot is present with probability
+     * {@code chancePercent}/100, decided from the world seed, hub chunk, family and index, so the number of
+     * satellites varies between hubs and seeds but never between visits to the same hub.
+     */
+    public static boolean present(long worldSeed, int hubX, int hubZ, String family, int index, int chancePercent) {
+        if (!validFamily(family) || index < 0 || index >= 32) throw new IllegalArgumentException("Invalid satellite");
+        if (chancePercent < 1 || chancePercent > 100) throw new IllegalArgumentException("Invalid satellite chance");
+        if (chancePercent == 100) return true;
+        long roll = Long.remainderUnsigned(instanceSeed(worldSeed, hubX, hubZ, family, 0x5341_5400L + index), 100);
+        return roll < chancePercent;
+    }
+
+    /** A well-mixed per-instance seed; {@code salt} separates independent decisions about the same hub. */
+    public static long instanceSeed(long worldSeed, int chunkX, int chunkZ, String family, long salt) {
+        if (!validFamily(family)) throw new IllegalArgumentException("Invalid family");
+        long seed = worldSeed ^ (chunkX * 0x9E3779B97F4A7C15L) ^ (chunkZ * 0xC2B2AE3D27D4EB4FL)
+                ^ familySeed(family) ^ mixSeed(salt);
+        return mixSeed(seed);
+    }
+
     private static void validate(String family, int index, int minRadius, int maxRadius) {
         if (!validFamily(family) || minRadius < 1 || maxRadius < minRadius
                 || maxRadius > 32 || index < 0 || index >= 32) {

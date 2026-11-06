@@ -24,6 +24,10 @@ public final class ModCreativeTab {
                         output.accept(ModItems.RUSTED_SURVEY_HULL.get());
                         output.accept(ModItems.LOG_TERMINAL.get());
                         output.accept(ModItems.VAULT_CACHE.get());
+                        output.accept(ModItems.BALLAST_PLATE.get());
+                        for (var relic : ModItems.RELICS) {
+                            output.accept(relic.get());
+                        }
                         for (String id : LogCatalog.ids()) {
                             ItemStack shard = new ItemStack(ModItems.DATA_SHARD.get());
                             shard.set(ModItems.LOG_ID.get(), id);

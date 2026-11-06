@@ -1,0 +1,29 @@
+{
+  "type": "neroruins:satellite",
+  "biomes": "#neroruins:has_structure/bunker_earth",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "placement": {
+    "hub_set": "neroruins:bunker_earth",
+    "family": "bunker",
+    "index": 1,
+    "min_radius": 2,
+    "max_radius": 5,
+    "chance_percent": 50
+  },
+  "layout": {
+    "biomes": "#neroruins:has_structure/bunker_earth",
+    "max_distance_from_center": 16,
+    "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "size": 1,
+    "spawn_overrides": {},
+    "start_height": {
+      "absolute": -1
+    },
+    "start_pool": "neroruins:bunker_satellite_caches",
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "use_expansion_hack": false
+  }
+}

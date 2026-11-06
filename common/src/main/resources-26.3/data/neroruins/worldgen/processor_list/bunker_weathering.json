@@ -15,6 +15,9 @@
           "output_state": "neroruins:rusted_survey_hull"
         }
       ]
+    },
+    {
+      "processor_type": "neroruins:puzzle_seed"
     }
   ]
 }

@@ -20,7 +20,8 @@ public final class ArchiveExport {
     private ArchiveExport() { }
 
     public static Path write(Path worldRoot, UUID player, Map<String, Long> archive,
-            Map<ClaimLedger.Location, Long> claims) throws IOException {
+            Map<ClaimLedger.Location, Long> claims, Map<ClaimLedger.Location, ClaimLedger.Reservation> reservations,
+            java.util.List<ExpeditionRecord.Discovery> expeditions) throws IOException {
         Path directory = directory(worldRoot, true);
         Path output = directory.resolve(player + ".json");
         JsonObject root = new JsonObject();
@@ -42,6 +43,40 @@ public final class ArchiveExport {
                     vaultClaims.add(claim);
                 });
         root.add("vault_claims", vaultClaims);
+        JsonArray held = new JsonArray();
+        reservations.entrySet().stream().sorted(java.util.Comparator
+                .comparing((Map.Entry<ClaimLedger.Location, ClaimLedger.Reservation> entry) -> entry.getKey().dimension())
+                .thenComparingInt(entry -> entry.getKey().x()).thenComparingInt(entry -> entry.getKey().y())
+                .thenComparingInt(entry -> entry.getKey().z())).forEach(entry -> {
+                    JsonObject reservation = new JsonObject();
+                    reservation.addProperty("dimension", entry.getKey().dimension());
+                    reservation.addProperty("x", entry.getKey().x());
+                    reservation.addProperty("y", entry.getKey().y());
+                    reservation.addProperty("z", entry.getKey().z());
+                    reservation.addProperty("loot_table", entry.getValue().lootTable());
+                    reservation.addProperty("reserved_at", entry.getValue().reservedAt());
+                    JsonArray items = new JsonArray();
+                    entry.getValue().items().forEach(item -> items.add(item.toString()));
+                    reservation.add("items", items);
+                    held.add(reservation);
+                });
+        root.add("held_vault_rewards", held);
+        JsonArray discoveries = new JsonArray();
+        expeditions.forEach(discovery -> {
+            JsonObject entry = new JsonObject();
+            entry.addProperty("structure", discovery.structure());
+            entry.addProperty("family", discovery.family());
+            entry.addProperty("size_class", discovery.sizeClass());
+            entry.addProperty("dimension", discovery.dimension());
+            discovery.hub().ifPresent(hub -> {
+                entry.addProperty("x", hub.x());
+                entry.addProperty("y", hub.y());
+                entry.addProperty("z", hub.z());
+            });
+            entry.addProperty("first_seen", discovery.firstSeen());
+            discoveries.add(entry);
+        });
+        root.add("expeditions", discoveries);
         String json = new GsonBuilder().setPrettyPrinting().create().toJson(root) + "\n";
         Files.writeString(output, json, StandardCharsets.UTF_8, StandardOpenOption.CREATE,
                 StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE, LinkOption.NOFOLLOW_LINKS);

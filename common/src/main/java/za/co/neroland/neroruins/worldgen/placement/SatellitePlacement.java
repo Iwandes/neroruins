@@ -35,7 +35,8 @@ public final class SatellitePlacement implements StructurePlacement {
             Codec.STRING.fieldOf("family").forGetter(SatellitePlacement::family),
             Codec.intRange(0, 31).fieldOf("index").forGetter(SatellitePlacement::index),
             Codec.intRange(1, 32).fieldOf("min_radius").forGetter(SatellitePlacement::minRadius),
-            Codec.intRange(1, 32).fieldOf("max_radius").forGetter(SatellitePlacement::maxRadius)
+            Codec.intRange(1, 32).fieldOf("max_radius").forGetter(SatellitePlacement::maxRadius),
+            Codec.intRange(1, 100).optionalFieldOf("chance_percent", 100).forGetter(SatellitePlacement::chancePercent)
     ).apply(instance, SatellitePlacement::new)).validate(placement -> {
         try {
             SatelliteLayout.offset(0, 0, 0, placement.family, placement.index,
@@ -52,8 +53,10 @@ public final class SatellitePlacement implements StructurePlacement {
     private final int index;
     private final int minRadius;
     private final int maxRadius;
+    private final int chancePercent;
 
-    public SatellitePlacement(Identifier hubSet, String family, int index, int minRadius, int maxRadius) {
+    public SatellitePlacement(Identifier hubSet, String family, int index, int minRadius, int maxRadius,
+            int chancePercent) {
         //? if <26.3 {
         /*super(Vec3i.ZERO, FrequencyReductionMethod.DEFAULT, 1.0F, 0, Optional.empty());
         *///?}
@@ -62,6 +65,7 @@ public final class SatellitePlacement implements StructurePlacement {
         this.index = index;
         this.minRadius = minRadius;
         this.maxRadius = maxRadius;
+        this.chancePercent = chancePercent;
     }
 
     public Identifier hubSet() { return hubSet; }
@@ -69,6 +73,7 @@ public final class SatellitePlacement implements StructurePlacement {
     public int index() { return index; }
     public int minRadius() { return minRadius; }
     public int maxRadius() { return maxRadius; }
+    public int chancePercent() { return chancePercent; }
 
     public Optional<ChunkPos> findHub(ChunkGeneratorStructureState state, int chunkX, int chunkZ) {
         ResourceKey<StructureSet> key = ResourceKey.create(Registries.STRUCTURE_SET, hubSet);
@@ -87,7 +92,8 @@ public final class SatellitePlacement implements StructurePlacement {
                 (x, z) -> {
                     ChunkPos hub = spread.getPotentialStructureChunk(seed, x, z);
                     return new SatelliteLayout.Chunk(hub.getMinBlockX() >> 4, hub.getMinBlockZ() >> 4);
-                }, (x, z) -> spread.isStructureChunk(state, x, z))
+                }, (x, z) -> SatelliteLayout.present(seed, x, z, family, index, chancePercent)
+                        && spread.isStructureChunk(state, x, z))
                 .map(hub -> new ChunkPos(hub.x(), hub.z()));
     }
 

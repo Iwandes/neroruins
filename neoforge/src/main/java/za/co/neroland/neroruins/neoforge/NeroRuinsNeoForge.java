@@ -36,6 +36,8 @@ public final class NeroRuinsNeoForge {
         NeoForge.EVENT_BUS.addListener((RegisterCommandsEvent event) -> CodexCommands.register(event.getDispatcher()));
         NeoForge.EVENT_BUS.addListener((ServerStartedEvent event) -> ServerState.serverStarted(event.getServer()));
         NeoForge.EVENT_BUS.addListener((ServerStoppedEvent event) -> ServerState.serverStopped());
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.tick.ServerTickEvent.Post event) ->
+                za.co.neroland.neroruins.expedition.ExpeditionTracker.tick(event.getServer()));
         NeoForge.EVENT_BUS.addListener((PlayerEvent.PlayerLoggedInEvent event) -> {
             if (event.getEntity() instanceof ServerPlayer player) {
                 QuestHooks.onJoin(player);

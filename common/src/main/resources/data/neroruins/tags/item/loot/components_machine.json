@@ -1,0 +1,64 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:piston",
+    "nerolandcore:nero_alloy_plate",
+    "nerolandcore:starsteel_plate",
+    {
+      "id": "nerotech:nero_coil",
+      "required": false
+    },
+    {
+      "id": "nerotech:circuit_board",
+      "required": false
+    },
+    {
+      "id": "nerotech:machine_frame",
+      "required": false
+    },
+    {
+      "id": "nerotech:speed_module",
+      "required": false
+    },
+    {
+      "id": "nerotech:efficiency_module",
+      "required": false
+    },
+    {
+      "id": "nerotech:capacity_module",
+      "required": false
+    },
+    {
+      "id": "nerotech:filter_cartridge",
+      "required": false
+    },
+    {
+      "id": "nerospace:frame_casing",
+      "required": false
+    },
+    {
+      "id": "nerospace:speed_upgrade",
+      "required": false
+    },
+    {
+      "id": "nerospace:capacity_upgrade",
+      "required": false
+    },
+    {
+      "id": "nerospace:titanium_ingot",
+      "required": false
+    },
+    {
+      "id": "nerospace:nerosteel_ingot",
+      "required": false
+    },
+    {
+      "id": "nerocolonies:speed_module",
+      "required": false
+    },
+    {
+      "id": "nerosecurity:strength_module",
+      "required": false
+    }
+  ]
+}

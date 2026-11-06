@@ -108,6 +108,16 @@ def build_template(spec):
         index = state("minecraft:chest")
         blocks[pos] = (index, compound(tag(8, "id", nbt_string("minecraft:chest")),
                                        tag(8, "LootTable", nbt_string(loot_table))))
+    for vault in spec.get("vaults", []):
+        pos = point(vault["pos"], size)
+        if pos in occupied_containers:
+            raise ValueError("Multiple block entities occupy the same position")
+        occupied_containers.add(pos)
+        loot_table = resource(vault["loot_table"])
+        structure = resource(vault["structure"])
+        blocks[pos] = (state("neroruins:vault_cache"), compound(
+            tag(8, "id", nbt_string("neroruins:vault_cache")), tag(8, "loot_table", nbt_string(loot_table)),
+            tag(1, "puzzle", b"\x01"), tag(8, "structure", nbt_string(structure))))
     occupied_connectors = set()
     for terminal in spec.get("terminals", []):
         pos = point(terminal["pos"], size)

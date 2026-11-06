@@ -17,6 +17,9 @@
           }
         }
       ]
+    },
+    {
+      "processor_type": "neroruins:puzzle_seed"
     }
   ]
 }

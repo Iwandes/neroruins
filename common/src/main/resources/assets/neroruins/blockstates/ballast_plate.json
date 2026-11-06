@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "target=1": {
+      "model": "neroruins:block/ballast_plate_1"
+    },
+    "target=2": {
+      "model": "neroruins:block/ballast_plate_2"
+    },
+    "target=3": {
+      "model": "neroruins:block/ballast_plate_3"
+    },
+    "target=4": {
+      "model": "neroruins:block/ballast_plate_4"
+    },
+    "target=5": {
+      "model": "neroruins:block/ballast_plate_5"
+    },
+    "target=6": {
+      "model": "neroruins:block/ballast_plate_6"
+    },
+    "target=7": {
+      "model": "neroruins:block/ballast_plate_7"
+    },
+    "target=8": {
+      "model": "neroruins:block/ballast_plate_8"
+    }
+  }
+}

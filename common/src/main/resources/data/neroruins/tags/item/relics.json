@@ -1,4 +1,14 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "neroruins:surveyors_compass",
+    "neroruins:pale_survey_lens",
+    "neroruins:directors_seal",
+    "neroruins:field_recorder",
+    "neroruins:meridian_keystone",
+    "neroruins:reach_thermal_core",
+    "neroruins:rootglass_vessel",
+    "neroruins:twilight_prism",
+    "neroruins:resonance_heart"
+  ]
 }

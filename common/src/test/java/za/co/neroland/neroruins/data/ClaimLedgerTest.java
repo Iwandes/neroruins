@@ -91,7 +91,7 @@ class ClaimLedgerTest {
         var location = new ClaimLedger.Location("minecraft:overworld", 1, 64, 2);
         var ledger = new ClaimLedger();
         assertTrue(ledger.record(location, player, VaultClaimPolicy.parse("per_player").orElseThrow(), 10));
-        var exported = world.resolve(ArchiveExport.write(world, player, Map.of(), ledger.export(player)));
+        var exported = world.resolve(ArchiveExport.write(world, player, Map.of(), ledger.export(player), ledger.exportReservations(player), java.util.List.of()));
         var backups = new AtomicInteger();
         ClaimLedger.applyRetention(ledger, world, 86_400_010L, 1, backups::incrementAndGet);
         assertFalse(Files.exists(exported));
@@ -113,7 +113,7 @@ class ClaimLedgerTest {
         var location = new ClaimLedger.Location("minecraft:overworld", 1, 64, 2);
         var ledger = new ClaimLedger();
         assertTrue(ledger.record(location, player, VaultClaimPolicy.parse("per_player").orElseThrow(), 10));
-        var exported = world.resolve(ArchiveExport.write(world, player, Map.of(), ledger.export(player)));
+        var exported = world.resolve(ArchiveExport.write(world, player, Map.of(), ledger.export(player), ledger.exportReservations(player), java.util.List.of()));
         assertThrows(IllegalStateException.class, () -> ClaimLedger.applyRetention(ledger, world,
                 86_400_010L, 1, () -> { throw new IllegalStateException("backup failed"); }));
         assertEquals(10L, ledger.export(player).get(location));

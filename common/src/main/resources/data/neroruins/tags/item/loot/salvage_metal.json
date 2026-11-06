@@ -6,6 +6,46 @@
     {
       "id": "nerospace:alien_tech_scrap",
       "required": false
+    },
+    {
+      "id": "nerospace:alien_fragment",
+      "required": false
+    },
+    {
+      "id": "nerospace:nerosium_dust",
+      "required": false
+    },
+    {
+      "id": "nerospace:raw_nerosium",
+      "required": false
+    },
+    {
+      "id": "nerospace:raw_hematite",
+      "required": false
+    },
+    {
+      "id": "nerospace:raw_ilmenite",
+      "required": false
+    },
+    {
+      "id": "neroevents:salvage_plating",
+      "required": false
+    },
+    {
+      "id": "neroevents:bent_strut",
+      "required": false
+    },
+    {
+      "id": "neroevents:meteor_slag",
+      "required": false
+    },
+    {
+      "id": "nerotech:iron_dust",
+      "required": false
+    },
+    {
+      "id": "nerotech:copper_dust",
+      "required": false
     }
   ]
 }

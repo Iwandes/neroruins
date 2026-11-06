@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "neroagriculture:oxygen_plant",
+      "required": false
+    },
+    {
+      "id": "neroagriculture:nutrient_canister",
+      "required": false
+    },
+    {
+      "id": "nerospace:oxygen_suit_helmet",
+      "required": false
+    },
+    {
+      "id": "nerospace:oxygen_suit_boots",
+      "required": false
+    },
+    {
+      "id": "nerospace:rad_lining",
+      "required": false
+    }
+  ]
+}

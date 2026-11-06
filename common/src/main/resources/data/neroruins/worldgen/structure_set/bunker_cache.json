@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:bunker_cache",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:bunker",
+    "family": "bunker",
+    "index": 1,
+    "min_radius": 2,
+    "max_radius": 5,
+    "chance_percent": 50,
+    "type": "neroruins:satellite"
+  }
+}
