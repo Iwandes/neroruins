@@ -4,16 +4,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import za.co.neroland.neroruins.config.NeroRuinsConfig;
+import za.co.neroland.neroruins.data.RuinPlayerData;
 import za.co.neroland.neroruins.platform.Services;
+import za.co.neroland.neroruins.network.RuinsNetwork;
 import za.co.neroland.neroruins.progression.QuestHooks;
+import za.co.neroland.neroruins.registry.ModCreativeTab;
+import za.co.neroland.neroruins.registry.ModBlocks;
+import za.co.neroland.neroruins.registry.ModBlockEntities;
+import za.co.neroland.neroruins.registry.ModMenuTypes;
+import za.co.neroland.neroruins.registry.ModItems;
+import za.co.neroland.neroruins.registry.ModWorldgen;
 import za.co.neroland.neroruins.telemetry.NeroRuinsTelemetry;
 
 /**
  * Loader-agnostic entry point for NeroRuins. Each loader entry point
  * (Fabric / Forge / NeoForge) calls {@link #init()} once during mod
- * construction. This is a barebones skeleton — no content is registered yet;
- * add shared blocks, items and systems here and reach loader-specific
- * behaviour through a platform seam.
+ * construction. Shared systems reach loader-specific behaviour through platform seams.
  */
 public final class NeroRuinsCommon {
 
@@ -36,11 +42,20 @@ public final class NeroRuinsCommon {
 
         // 2. Anonymous, NeroRuins-only crash reporting. Must follow the config registration and
         //    precede the rest of init so early failures are still reported. On by default (opt-out via
-        //    telemetryEnabled=false); stays inert while the build's DSN is the placeholder
-        //    (see NeroRuinsTelemetry's PLACEHOLDER_DSN guard).
+        //    telemetryEnabled=false).
         NeroRuinsTelemetry.init();
 
-        // 3. Quest-hook listener on Neroland Core's gate events (the `mod_hook` rewards of the
+        ModBlocks.init();
+        ModBlockEntities.init();
+        ModMenuTypes.init();
+        ModItems.init();
+        ModCreativeTab.init();
+        ModWorldgen.init();
+        RuinsNetwork.init();
+
+        RuinPlayerData.init();
+
+        // 7. Quest-hook listener on Neroland Core's gate events (the `mod_hook` rewards of the
         //    Expedition Notes quest pack). Pure Core contract: no quest mod is imported. Each loader's
         //    entry point also forwards server start/stop (lifecycle.ServerState) and player join
         //    (QuestHooks.onJoin) so a hook that opened while a player was offline is delivered.

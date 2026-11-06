@@ -2,8 +2,8 @@
 
 > Part of the Neroland sci-fi Minecraft mod ecosystem, built on **Neroland Core**.
 
-**Status:** multiloader skeleton — version `0.4.0-alpha.1`. No gameplay content yet; the progression
-seams and quest pack below are in place for the structures to come.
+**Status:** in development — version `0.4.1-alpha.1`. Data shards and a personal archive can be
+tested in creative; survival acquisition, finished ruin families and most gameplay are still in progress.
 
 ## Build targets
 
@@ -25,7 +25,7 @@ The build is the repo root, with a flattened cross-loader structure driven by St
 ## Building
 
 ```sh
-./gradlew :fabric:26.2:build          # one cell
+./gradlew :fabric:26.3:build          # current target
 ./gradlew :neoforge:26.1.2:build :neoforge:26.2:build :neoforge:26.3:build \
           :forge:26.1.2:build :forge:26.2:build :forge:26.3:build \
           :fabric:26.1.2:build :fabric:26.2:build :fabric:26.3:build   # the nine 26.x cells
@@ -38,8 +38,8 @@ The 1.21.x cells build the same way, e.g. `./gradlew :neoforge:1.21.1:build`.
 NeroRuins reports explorer progress through **Neroland Core**: four player-scope record gates
 (`neroruins:first_log`, `first_vault`, `puzzle_solver`, `temple_cleared`), the world threshold channel
 `neroruins:vault_claimed` (scope = structure type, rungs 1 / 10 / 50 — never a position) and the item
-tag `neroruins:relics`. Future structure code calls `progression.RuinMilestones`; nothing opens these
-signals yet.
+tag `neroruins:relics`. Reading a test shard opens the first-log gate; the remaining signals await
+their gameplay systems. See [data shards and the archive](wiki/Data-Shards.md).
 
 It also ships a **NeroQuests** quest pack — chapter `neroruins:expedition_notes` "Expedition Notes",
 7 quests — that appears in the quest book when NeroQuests is installed and is inert otherwise

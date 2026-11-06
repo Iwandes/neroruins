@@ -1,0 +1,70 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:earth.1"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:earth.2"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:earth.3"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:earth.4"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:earth.5"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:earth.6"
+            },
+            "type": "minecraft:set_components"
+          }
+        }
+      ]
+    }
+  ]
+}

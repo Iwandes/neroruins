@@ -24,6 +24,16 @@ def mcFloor = project.findProperty("mc_floor_${mc}") ?: mc
 // templates live in the BRANCH root (neoforge/). Resolve branch-root paths via the parent.
 def branchDir = project.parent.projectDir
 
+sourceSets.test.java.srcDir "${rootProject.projectDir}/common/src/test/java"
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:6.1.3')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test', Test) { useJUnitPlatform() }
+
 // Distinct, descriptive jar name per cell (the node project is named after the MC version, so the
 // default jar would be "<mc>-<version>.jar" and COLLIDE with the fabric cell of the same version).
 base { archivesName = "neroruins-neoforge-${mc}" }
@@ -122,6 +132,7 @@ sourceSets.main.resources.srcDir generateModMetadata
 
 neoForge {
     version = neoVersion
+    addModdingDependenciesTo sourceSets.test
     ideSyncTask generateModMetadata
 
     def at = rootProject.file('common/src/main/resources/META-INF/accesstransformer.cfg')

@@ -1,0 +1,50 @@
+{
+  "fallback": "neroruins:bunker_room_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_room_store",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_room_lab",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_room_service",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_room_archive",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_room_canteen",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

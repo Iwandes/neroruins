@@ -1,9 +1,8 @@
 # Expedition Notes (progression & quests)
 
 NeroRuins records what explorers do through **Neroland Core** progression signals, and ships a quest
-chapter that reads them. Nothing on this page is completable yet: NeroRuins has no structures, so no
-code opens the gates below or counts a claimed vault. The signals and the chapter are in place so that,
-when ruins land, questing them costs only data.
+chapter that reads them. Reading a data shard opens the first-log gate, but shards currently have no
+survival source. The vault, puzzle and temple signals remain in place for the unfinished structures.
 
 ## Personal milestones (player-scope record gates)
 
@@ -55,14 +54,14 @@ Rewards are experience, a few plain items, and two **hook** rewards handled by N
 | `neroruins:hook/unlock_log` | First Log | will unlock one lore entry in your data-log archive |
 | `neroruins:hook/reveal_ruin` | Temple Cleared | will give you a one-use survey map to the nearest unclaimed ruin in your dimension |
 
-Until the archive and survey maps exist, each hook sends you one chat line saying the reward has been
-reserved, and re-arms. The real effects arrive with the content.
+Both hook rewards currently send a chat line saying the reward has been reserved, and re-arm. The
+archive exists for data-shard reads, but the hook's archive effect and the survey scanner are not yet implemented.
 
 ## Privacy
 
-Personal milestones live in Neroland Core's player-scope gate store (covered by Core's own privacy
-notes and erasure hook). The vault ledger holds structure type ids and counts only. No log line, chat
-message or event carries a player name, UUID or position.
+Personal milestones live in Neroland Core's player-scope gate store. The vault ledger holds structure
+type IDs and counts only. The shard archive stores each reader's UUID, log ID and first-read time in
+the world save and is covered by Core's erasure hook; see [Data shards and the archive](Data-Shards.md).
 
 ## See also
 

@@ -127,7 +127,11 @@ public final class QuestHooks {
         String key = REVEAL_RUIN.equals(hook)
                 ? "hook.neroruins.reveal_ruin.placeholder"
                 : "hook.neroruins.unlock_log.placeholder";
+        //? if >=26.1 {
         player.sendSystemMessage(Component.translatable(key));
+        //?} else {
+        /*player.displayClientMessage(Component.translatable(key), false);
+        *///?}
     }
 
     private static void warn(Throwable e) {

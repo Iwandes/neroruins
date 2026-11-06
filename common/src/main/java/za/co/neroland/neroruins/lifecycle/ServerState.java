@@ -27,6 +27,8 @@ public final class ServerState {
 
     /** Records the server that has just finished starting. Called once per world load. */
     public static void serverStarted(MinecraftServer server) {
+        za.co.neroland.neroruins.data.ClaimLedger.applyRetention(server, System.currentTimeMillis(),
+                za.co.neroland.neroruins.config.NeroRuinsConfig.CLAIM_RETENTION_DAYS.get());
         currentServer = server;
     }
 

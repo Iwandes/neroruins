@@ -17,6 +17,8 @@ import za.co.neroland.neroruins.NeroRuinsCommon;
 public final class Services {
 
     public static final PlatformInfo PLATFORM = load(PlatformInfo.class);
+    public static final NetworkPlatform NETWORK = load(NetworkPlatform.class);
+    public static final RegistrationPlatform REGISTRATION = load(RegistrationPlatform.class);
 
     private Services() {
     }

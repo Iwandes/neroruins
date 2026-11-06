@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Data shards, an erasure-aware personal archive, and a book-style Codex.
+  Prototype bunker chests can contain Earth shards, but the bunker does not
+  generate naturally.
+- A prototype log terminal with a paginated screen and per-player archive action.
+  The command-placeable bunker archive room can contain a terminal; natural bunker
+  generation remains in development. A rotating shard marks the terminal.
+- A command-placeable vault-cache prototype and personal claim ledger. Puzzle locking,
+  survival placement, multiplayer and crash-recovery verification remain unfinished.
+- A distinct Survey-style data shard texture.
+- Survey Hull and Rusted Survey Hull blocks, with procedural weathering in the
+  bunker prototype.
+- A self-service archive export, including first-read times; Core erasure also
+  removes the player's export file.
+- Seed-bound hub and satellite placement with temporary test templates. The
+  finished ruin families and their gameplay are not yet implemented.
+
+### Changed
+
+- The Codex checks client support before sending its screen payload and gives
+  an explanation when the client cannot receive it.
+- The archive stores reader UUIDs, log IDs and first-read times in the world
+  save and recovery backup. Core's erasure hook removes a player's entries.
+
 ## [0.4.1-alpha.1] - 2026-10-31
 
 ### Changed
@@ -99,4 +124,3 @@ Minecraft **26.3** support. No gameplay, id, tag or config change.
 
 - Build: the shared `common/` Java source is now preprocessed by Stonecutter for every non-active node (`stonecutterProcessCommon`), so common code can carry `//? if >=26.3 {` blocks, and `common/src/main/resources-<mc>` overlay folders are merged over the shared resources for matching nodes (`mergeCommonResources`). The active node still compiles the raw `common/` folder.
 - Build plugins aligned with Neroland Core: ModDevGradle `2.0.147` (the older 2.0.141 cannot set up NeoForge 26.3), ForgeGradle `7.0.40`, Stonecutter `0.9.8`.
-

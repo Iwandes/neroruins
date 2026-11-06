@@ -11,10 +11,10 @@ plugins {
 }
 
 // The version checked out in the IDE / used by a plain `build`. Switch with the
-// generated `stonecutterSwitchTo26_1_2` / `...26_2` tasks (or the IDE button).
+// generated `stonecutterSwitchTo26.3` task (or the IDE button).
 // A string LITERAL — Stonecutter rewrites it in place on switch. Groovy needs the
 // dot form (`stonecutter.active`, not the Kotlin infix `stonecutter active`).
-stonecutter.active '26.2'
+stonecutter.active '26.3'
 
 allprojects {
     group = rootProject.mod_group_id

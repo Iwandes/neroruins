@@ -1,0 +1,41 @@
+{
+  "fallback": "neroruins:bunker_corridor_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_corridor_short",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_corridor_long",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_corridor_turn",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:bunker_corridor_junction",
+        "processors": "neroruins:bunker_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

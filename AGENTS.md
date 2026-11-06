@@ -16,6 +16,7 @@
 - Mod id: **`neroruins`** (matches the registry namespace + every loader manifest). Package root:
   `za.co.neroland.neroruins`. Author: **Neroland**.
 - Version: **0.4.1-alpha.1**.
+- **Development and runtime acceptance target: MC 26.3** on all three loaders.
 - Targets **MC 1.21.1, 1.21.4, 1.21.5, 1.21.8, 1.21.10, 1.21.11, 26.1.2, 26.2 AND 26.3** on **NeoForge,
   MinecraftForge/Forge, and Fabric** → the **"27 cells"**. **Java 21** for 1.21.x, **Java 25** for 26.x.
   Mappings = official Mojang names (26.x ships de-obfuscated; 1.21.x Fabric is remapped). Source is written
@@ -45,10 +46,10 @@
 
 ## Build & verify
 
-- Build the cells with the Gradle wrapper, e.g. `./gradlew :fabric:26.2:build` or all nine:
+- Build the cells with the Gradle wrapper, e.g. `./gradlew :fabric:26.3:build` or all nine:
   `:neoforge:26.1.2:build :neoforge:26.2:build :neoforge:26.3:build :forge:26.1.2:build :forge:26.2:build :forge:26.3:build
   :fabric:26.1.2:build :fabric:26.2:build :fabric:26.3:build`.
-- Static analysis: `./gradlew :fabric:26.2:ecjCheck` (the VS Code Problems panel, via `tools/ecj.prefs`).
+- Static analysis: `./gradlew :fabric:26.3:ecjCheck` (the VS Code Problems panel, via `tools/ecj.prefs`).
   The task only FAILS on errors.
 - A Cowork agent sandbox cannot decompile Minecraft — run builds natively (or via the local gradle MCP)
   on the developer's machine.
@@ -89,3 +90,7 @@
 - Commit or push automatically — leave changes staged for the developer.
 - Hard-code absolute machine paths in committed files.
 - Add loader-specific code to `common/` — use the platform seams.
+
+## Translation workflow
+
+English is the source language for new and changed text. Community translations are intended to be contributed through Weblate; other-language translations are not required when implementing a feature. Preserve existing translations. This supersedes older instructions that require translating every change.

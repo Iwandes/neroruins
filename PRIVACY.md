@@ -6,12 +6,8 @@ can be found and fixed. It is **on by default** and **opt-out** (see
 moderation rules for mods that use an external analytics/error service, and it documents how
 the system is designed to comply with the GDPR (EU) and POPIA (South Africa).
 
-> **Note:** error reporting is **active by default** as described on this page, and can be
-> switched off at any time with `telemetryEnabled = false` (see
-> [How to opt out](#how-to-opt-out)). Any build whose `NeroRuinsTelemetry.DSN` field is still the
-> placeholder (for example, an unconfigured fork or source build) sends
-> **nothing**, ever — no report leaves the machine and no network connection is opened,
-> regardless of the settings below.
+> Error reporting is enabled by default and can be switched off with `telemetryEnabled = false`
+> (see [How to opt out](#how-to-opt-out)).
 
 ## What is collected (error reporting)
 
@@ -52,12 +48,31 @@ nothing is ever sent before the config — and therefore your choice — has bee
 
 ## Player data
 
-NeroRuins does not currently store any player data of its own — no player UUIDs, names, positions or
-gameplay records are written to the world save or anywhere else. Its progression milestones
+NeroRuins stores the archive in the world's overworld save. For each player who reads a data shard it
+stores their UUID, the log ID and the time of the first read. It stores no player name or position
+in the archive. This data stays in the world save and its recovery backup; it is not sent as telemetry.
+Archive entries remain until erasure or Core's configured inactivity purge. `/neroland data eraseme`
+requests deletion across participating Neroland mods, including the archive and its recovery backup.
+`/neroruins codex` shows the requesting player's own archived logs. `/neroruins privacy export` writes
+the requesting player's log IDs, first-read times and vault-claim records to `neroruins-exports/<player-UUID>.json` inside
+the world folder. The server operator can access that file. A later export replaces it; it remains
+until it is replaced or the player is erased through Core, which also deletes the export. Data shards
+are currently obtainable from prototype bunker chests placed using commands or through creative mode. Prototype log
+terminals also add reads to the archive; the terminal itself does not store who read it.
+
+The claim ledger stores a claimant's UUID, cache dimension and position, and claim time in the world
+save and its recovery backup. It is included in personal exports and Core erasure. The ledger is in
+development: prototype vault caches are command-placeable but do not yet generate in survival.
+The server's `privacy.claimRetentionDays` setting defaults to zero (keep until erasure). When set
+to a positive number, expired claims are removed and their backup refreshed when the world starts;
+the affected players' existing export files are deleted so those files do not retain expired claims.
+Expiring a claim can make that cache claimable again.
+
+The progression milestones
 (`neroruins:first_log`, `first_vault`, `puzzle_solver`, `temple_cleared` and the two `hook/` gates) are
 player-scope gates kept in Neroland Core's progression store, which Core's PRIVACY.md covers
-(including erasure). The one store NeroRuins keeps itself, the vault ledger
-(`neroruins:vault_ledger`), holds structure type ids and counts only. Neroland Core (a required
+(including erasure). A separate aggregate vault ledger (`neroruins:vault_ledger`) holds structure
+type ids and counts only. Neroland Core (a required
 dependency) documents its own data handling in its own PRIVACY.md.
 
 ## Legal basis and your rights (GDPR / POPIA)
@@ -76,10 +91,8 @@ the [Sentry privacy policy](https://sentry.io/privacy/) and
 
 ## Changes to this policy
 
-When a future version of NeroRuins starts storing any player-attributable data, this page will be
-updated **before** that version is released, with the change called out in the changelog, and
-that data will be registered with Neroland Core's shared per-player data-erasure hook so a single
-erasure request purges it alongside every other Neroland mod. Likewise, if a future version ever
+If a future version stores additional player-attributable data, this page will be updated before
+release and the data will be registered with Neroland Core's shared erasure hook. If a future version
 collects additional telemetry, this page will be updated before release and the same opt-out
 (`telemetryEnabled = false`) will continue to cover everything error reporting sends.
 
