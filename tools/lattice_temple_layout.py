@@ -210,12 +210,42 @@ def seal(t, gated_entry=False):
         if (c["name"] == ENTRY and gated_entry) or (pool in GATED_POOLS):
             openings |= opening_cells(t.size, c)
     gated = gated_air(t.size, grid, openings)
+    # Chests and terminals standing in a gated room belong to it: seal around them, not through them.
     fixed = {tuple(e["pos"]) for key in ("containers", "terminals") for e in getattr(t, key)}
-    for pos in sorted(breaches(t.size, grid, gated, openings)):
+    gated |= {p for p in fixed if any(n in gated for n in neighbours(p))}
+    by_block = {}
+    for pos in breaches(t.size, grid, gated, openings):
         assert pos not in fixed, f"{t.name}: a container or terminal sits in the gated room's shell at {pos}"
-        block = REINFORCED.get(grid.get(pos), REINFORCED_DEFAULT)
-        t.box(pos, pos, block)
+        by_block.setdefault(REINFORCED.get(grid.get(pos), REINFORCED_DEFAULT), set()).add(pos)
+    for block in sorted(by_block):
+        for a, b in boxes(by_block[block]):
+            t.box(a, b, block)
     return t
+
+
+def boxes(cells):
+    """Cover a set of cells exactly with axis-aligned boxes: x runs, widened along z, then stacked along y."""
+    cells = set(cells)
+    out = []
+    while cells:
+        x0, y0, z0 = min(cells, key=lambda p: (p[1], p[2], p[0]))
+        x1 = x0
+        while (x1 + 1, y0, z0) in cells:
+            x1 += 1
+        row = lambda z, y: all((x, y, z) in cells for x in range(x0, x1 + 1))
+        z1 = z0
+        while row(z1 + 1, y0):
+            z1 += 1
+        layer = lambda y: all(row(z, y) for z in range(z0, z1 + 1))
+        y1 = y0
+        while layer(y1 + 1):
+            y1 += 1
+        for x in range(x0, x1 + 1):
+            for y in range(y0, y1 + 1):
+                for z in range(z0, z1 + 1):
+                    cells.discard((x, y, z))
+        out.append(((x0, y0, z0), (x1, y1, z1)))
+    return out
 
 
 # ---------------------------------------------------------------- decoration helpers
@@ -406,9 +436,11 @@ def spiral_well(name, v, log, next_pool, exit_face, drop):
     t.box((0, 0, 0), (w - 1, h - 1, d - 1), L)
 
     def tread(cells, y, block):
-        for (x, z) in cells:
-            t.box((x, y, z), (x, y, z), block)
-            t.box((x, y + 1, z), (x, y + 5, z), A)
+        # Every step is a rectangle of the ring: one box of floor, one of headroom.
+        xs, zs = [c[0] for c in cells], [c[1] for c in cells]
+        assert len(cells) == (max(xs) - min(xs) + 1) * (max(zs) - min(zs) + 1)
+        t.box((min(xs), y, min(zs)), (max(xs), y, max(zs)), block)
+        t.box((min(xs), y + 1, min(zs)), (max(xs), y + 5, max(zs)), A)
 
     tread([(x, z) for x in range(4, 9) for z in range(1, 4)], top, F)
     ring = spiral_units()

@@ -5,6 +5,7 @@ import unittest
 from collections import deque
 
 import crash_site_layout as layout
+import gated_enclosure
 from build_templates import SPEC_DIRECTORY, ROOT, build_template
 
 DATA = ROOT / "common/src/main/resources/data/neroruins"
@@ -178,7 +179,32 @@ def hub_specs(kind):
     return [specs()[name] for name in layout.HUBS[kind]["pieces"]]
 
 
+def mining_breaches(spec):
+    """Decision 039: from behind each sealed door, mining can reach neither the open world nor the near side."""
+    blocks = blocks_of(spec)
+    found = []
+    for pos, block in blocks.items():
+        if bid(block) != "neroruins:sealed_door" or block["properties"]["half"] != "lower":
+            continue
+        dx, dz = STEP[block["properties"]["facing"]]
+        near, far = (pos[0] + dx, pos[1], pos[2] + dz), (pos[0] - dx, pos[1], pos[2] - dz)
+        hit = gated_enclosure.breach(blocks, far, forbidden={near})
+        if hit is not None:
+            found.append((pos, hit))
+    return found
+
+
 class CrashSiteTest(unittest.TestCase):
+    def test_gated_rooms_cannot_be_mined_into(self):
+        for kind in layout.HUBS:
+            for spec in hub_specs(kind):
+                with self.subTest(hub=spec["name"]):
+                    self.assertTrue(any(bid(f["block"]) == "neroruins:sealed_door" for f in spec["fills"]))
+                    self.assertEqual([], mining_breaches(spec))
+        weakened = copy.deepcopy(hub_specs("meridian")[0])
+        weakened["fills"].append({"from": [0, 8, 4], "to": [0, 8, 4], "block": layout.HULL})
+        self.assertTrue(mining_breaches(weakened), "one mineable panel in the cockpit wall is caught")
+
     def test_checked_in_files_match_the_authoring_script(self):
         self.assertEqual(layout.templates(), json.loads(layout.SPECS.read_text())["templates"])
         for path, value in layout.data_files().items():
