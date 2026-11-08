@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 
 class GalleryLayoutTest {
@@ -61,6 +62,51 @@ class GalleryLayoutTest {
                 "clearing the gallery must reach the Sentinels");
         assertTrue(GalleryLayout.SENTINEL_START_X > GalleryLayout.START_X + 7 * GalleryLayout.PLATE_SPACING,
                 "Sentinels must not stand on a plate");
+    }
+
+    @Test
+    void templatesBelongToTheLongestMatchingFamily() {
+        assertEquals(Optional.of("bunker"), GalleryLayout.familyOf("bunker_hub_a"));
+        assertEquals(Optional.of("bunker"), GalleryLayout.familyOf("bunker"));
+        assertEquals(Optional.of("lattice_temple"), GalleryLayout.familyOf("lattice_temple_citadel_hub"));
+        assertEquals(Optional.of("puzzle"), GalleryLayout.familyOf("puzzle_glyph"));
+        assertEquals(Optional.empty(), GalleryLayout.familyOf("bunkerish_room"), "a prefix must end at an underscore");
+        assertEquals(Optional.empty(), GalleryLayout.familyOf("probe_hub"));
+        assertEquals(Optional.empty(), GalleryLayout.familyOf(null));
+        assertEquals(List.of("bunker", "halcyon_ark", "puzzle"),
+                GalleryLayout.familiesPresent(List.of("puzzle_relic", "bunker_hub_a", "halcyon_ark_bridge", "probe")));
+    }
+
+    @Test
+    void theDefaultShowsBunkerAndPuzzlesAndAFamilyShowsOnlyItself() {
+        List<String> paths = List.of("bunker_hub_a", "puzzle_glyph", "lattice_temple_hall_a", "halcyon_ark_bridge_a",
+                "probe_hub");
+        assertEquals(List.of("bunker_hub_a", "puzzle_glyph"),
+                paths.stream().filter(path -> GalleryLayout.shows(path, Optional.empty())).toList());
+        assertEquals(List.of("lattice_temple_hall_a"),
+                paths.stream().filter(path -> GalleryLayout.shows(path, Optional.of("lattice_temple"))).toList());
+        assertTrue(paths.stream().noneMatch(path -> GalleryLayout.shows(path, Optional.of("crash_site"))));
+    }
+
+    @Test
+    void clearingWithTheSameFamilyCoversTheBuildAndTheDefaultDoesNot() {
+        List<GalleryLayout.Piece> all = List.of(new GalleryLayout.Piece("bunker_hub_a", 9, 14, 9),
+                new GalleryLayout.Piece("puzzle_glyph", 11, 6, 13),
+                new GalleryLayout.Piece("lattice_temple_citadel_hub", 48, 30, 48),
+                new GalleryLayout.Piece("lattice_temple_hall_a", 40, 20, 40),
+                new GalleryLayout.Piece("lattice_temple_hall_b", 40, 20, 40));
+        var built = plan(all, Optional.of("lattice_temple"));
+        assertEquals(built, plan(all, Optional.of("lattice_temple")), "build and clear plan the same footprint");
+        var defaultBox = plan(all, Optional.empty()).bounds();
+        boolean defaultCoversFamily = built.templates().stream().allMatch(placed -> defaultBox.contains(
+                placed.x() + placed.piece().sizeX() - 1, placed.y() + placed.piece().sizeY() - 1,
+                placed.z() + placed.piece().sizeZ() - 1));
+        assertFalse(defaultCoversFamily, "a family gallery must be cleared with its family named");
+    }
+
+    private static GalleryLayout.Plan plan(List<GalleryLayout.Piece> pieces, Optional<String> family) {
+        return GalleryLayout.plan(21, 8, 16, 39,
+                pieces.stream().filter(piece -> GalleryLayout.shows(piece.name(), family)).toList());
     }
 
     @Test

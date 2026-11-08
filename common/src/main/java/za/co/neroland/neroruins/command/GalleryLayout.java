@@ -1,7 +1,10 @@
 package za.co.neroland.neroruins.command;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.TreeSet;
 
 /**
  * Where {@code /neroruins gallery} puts things, relative to the player who runs it. Pure arithmetic so the
@@ -23,6 +26,12 @@ public final class GalleryLayout {
     public static final int SENTINEL_START_X = START_X + 8 * PLATE_SPACING + 2;
     public static final int SENTINELS = 3;
     public static final int ROW_WIDTH = 96;
+    /** Template families, matched as name prefixes; the longest match wins (so no family can shadow a longer one). */
+    public static final List<String> FAMILIES = List.of("bunker", "lattice_temple", "halcyon_ark", "survey_lab",
+            "colony_field", "crash_site", "puzzle").stream()
+            .sorted(Comparator.comparingInt(String::length).reversed().thenComparing(Comparator.naturalOrder())).toList();
+    /** What the gallery shows when no family is named: the small Earth set and the puzzle demonstration rooms. */
+    public static final List<String> DEFAULT_FAMILIES = List.of("bunker", "puzzle");
     public static final int GAP = 4;
     public static final int MAX_TEMPLATE_SIZE = 64;
 
@@ -48,6 +57,32 @@ public final class GalleryLayout {
             Box bounds) { }
 
     private GalleryLayout() { }
+
+    /** The family a template belongs to: the longest family name the path equals or starts with followed by "_". */
+    public static Optional<String> familyOf(String templatePath) {
+        if (templatePath == null) return Optional.empty();
+        for (String family : FAMILIES) {
+            if (templatePath.equals(family) || templatePath.startsWith(family + "_")) return Optional.of(family);
+        }
+        return Optional.empty();
+    }
+
+    /** The distinct families present among these template paths, sorted, for command suggestions. */
+    public static List<String> familiesPresent(List<String> templatePaths) {
+        TreeSet<String> present = new TreeSet<>();
+        for (String path : templatePaths) familyOf(path).ifPresent(present::add);
+        return List.copyOf(present);
+    }
+
+    /**
+     * Whether a template is shown: with no family named, the default families; otherwise only that family. Build and
+     * clear call this with the same argument, so they always plan the same footprint.
+     */
+    public static boolean shows(String templatePath, Optional<String> family) {
+        Optional<String> own = familyOf(templatePath);
+        if (own.isEmpty()) return false;
+        return family.map(own.get()::equals).orElseGet(() -> DEFAULT_FAMILIES.contains(own.get()));
+    }
 
     public static Plan plan(int blocks, int plates, int glyphs, int items, List<Piece> pieces) {
         if (blocks < 0 || plates < 0 || glyphs < 0 || items < 0 || pieces == null) {

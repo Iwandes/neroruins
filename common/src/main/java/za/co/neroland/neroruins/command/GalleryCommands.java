@@ -3,13 +3,19 @@ package za.co.neroland.neroruins.command;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.mojang.brigadier.builder.RequiredArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.suggestion.SuggestionProvider;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -46,12 +52,14 @@ import za.co.neroland.neroruins.registry.ModItems;
 import za.co.neroland.neroruins.vault.VaultCacheBlockEntity;
 
 /**
- * {@code /neroruins gallery [clear]} (operator, creative, player only): builds a labelled showcase next to the
- * player of everything NeroRuins adds — every block floating for inspection, the eight Ballast Plate targets,
- * every item in frames (including the nine relics and a readable data shard), and every structure template
- * placed with the generation processors, so each bunker hub holds a working sealed vault and plate puzzle and
- * the archive room a working Log Terminal. {@code clear} empties the same footprint (blocks and non-player
- * entities) so a rebuild never stacks. Showcase vaults are detached from the world's per-structure counts.
+ * {@code /neroruins gallery [family]} and {@code /neroruins gallery clear [family]} (operator, creative, player
+ * only): builds a labelled showcase next to the player of everything NeroRuins adds — every block floating for
+ * inspection, the eight Ballast Plate targets, the Sentinel marks, every item in frames (including the nine relics
+ * and a readable data shard), and structure templates placed with the generation processors, so each hub holds a
+ * working sealed vault and puzzle. With no family it places the bunker and puzzle-room templates; naming a family
+ * ({@link GalleryLayout#FAMILIES}) places that family's templates instead. {@code clear} with the same argument
+ * empties the same footprint (blocks and non-player entities) so a rebuild never stacks. Showcase vaults are
+ * detached from the world's per-structure counts.
  */
 public final class GalleryCommands {
     private static final int FLOAT_ABOVE = 3;
@@ -62,10 +70,49 @@ public final class GalleryCommands {
         dispatcher.register(LiteralArgumentBuilder.<CommandSourceStack>literal("neroruins").then(
                 LiteralArgumentBuilder.<CommandSourceStack>literal("gallery")
                         .requires(source -> source.getPlayer() != null && operator().test(source))
-                        .executes(context -> safely(context.getSource(), "gallery", () -> build(context.getSource())))
+                        .executes(context -> safely(context.getSource(), "gallery",
+                                () -> build(context.getSource(), Optional.empty())))
                         .then(LiteralArgumentBuilder.<CommandSourceStack>literal("clear")
                                 .executes(context -> safely(context.getSource(), "gallery clear",
-                                        () -> clear(context.getSource()))))));
+                                        () -> clear(context.getSource(), Optional.empty())))
+                                .then(family().executes(context -> safely(context.getSource(), "gallery clear",
+                                        () -> clear(context.getSource(), family(context))))))
+                        .then(family().executes(context -> safely(context.getSource(), "gallery",
+                                () -> build(context.getSource(), family(context)))))));
+    }
+
+    private static final SuggestionProvider<CommandSourceStack> FAMILY_SUGGESTIONS = (context, builder) ->
+            SharedSuggestionProvider.suggest(GalleryLayout.familiesPresent(templatePaths(context.getSource().getLevel())),
+                    builder);
+
+    private static RequiredArgumentBuilder<CommandSourceStack, String> family() {
+        return RequiredArgumentBuilder.<CommandSourceStack, String>argument("family", StringArgumentType.word())
+                .suggests(FAMILY_SUGGESTIONS);
+    }
+
+    private static Optional<String> family(CommandContext<CommandSourceStack> context) {
+        return Optional.of(StringArgumentType.getString(context, "family"));
+    }
+
+    /** False (after telling the caller) when a named family has no templates in the loaded data. */
+    private static boolean knownFamily(CommandSourceStack source, ServerLevel level, Optional<String> family) {
+        if (family.isEmpty() || GalleryLayout.familiesPresent(templatePaths(level)).contains(family.get())) return true;
+        source.sendFailure(Component.translatable("command.neroruins.gallery.unknown_family", family.get()));
+        return false;
+    }
+
+    private static List<String> templatePaths(ServerLevel level) {
+        return templateIds(level).stream().map(Identifier::getPath).toList();
+    }
+
+    private static List<Identifier> templateIds(ServerLevel level) {
+        //? if >=26.3 {
+        var manager = level.getStructureTemplateManager();
+        //?} else {
+        /*var manager = level.getStructureManager();
+        *///?}
+        return manager.listTemplates().filter(id -> NeroRuinsCommon.MOD_ID.equals(id.getNamespace()))
+                .sorted(Comparator.comparing(Identifier::toString)).toList();
     }
 
     private static Predicate<CommandSourceStack> operator() {
@@ -92,7 +139,7 @@ public final class GalleryCommands {
     private record Showcase(List<Block> blocks, List<ItemStack> items, List<Identifier> templateIds,
             List<StructureTemplate> templates, GalleryLayout.Plan plan) { }
 
-    private static Showcase showcase(ServerLevel level) {
+    private static Showcase showcase(ServerLevel level, Optional<String> family) {
         List<Block> blocks = new ArrayList<>();
         for (Block block : BuiltInRegistries.BLOCK) {
             if (NeroRuinsCommon.MOD_ID.equals(BuiltInRegistries.BLOCK.getKey(block).getNamespace())) blocks.add(block);
@@ -113,9 +160,8 @@ public final class GalleryCommands {
         //?} else {
         /*var manager = level.getStructureManager();
         *///?}
-        List<Identifier> ids = manager.listTemplates()
-                .filter(id -> NeroRuinsCommon.MOD_ID.equals(id.getNamespace()))
-                .sorted(Comparator.comparing(Identifier::toString)).toList();
+        List<Identifier> ids = templateIds(level).stream()
+                .filter(id -> GalleryLayout.shows(id.getPath(), family)).toList();
         List<StructureTemplate> templates = new ArrayList<>();
         List<GalleryLayout.Piece> pieces = new ArrayList<>();
         List<Identifier> placed = new ArrayList<>();
@@ -142,11 +188,12 @@ public final class GalleryCommands {
         return player;
     }
 
-    private static int build(CommandSourceStack source) {
+    private static int build(CommandSourceStack source, Optional<String> family) {
         ServerPlayer player = creativePlayer(source);
         if (player == null || !(player.level() instanceof ServerLevel level)) return 0;
+        if (!knownFamily(source, level, family)) return 0;
         BlockPos origin = player.blockPosition();
-        Showcase showcase = showcase(level);
+        Showcase showcase = showcase(level, family);
         GalleryLayout.Box box = showcase.plan().bounds();
         clearBox(level, origin, box);
 
@@ -238,15 +285,19 @@ public final class GalleryCommands {
                     Component.literal(showcase.templateIds().get(i).getPath()));
         }
 
-        source.sendSuccess(() -> Component.translatable("command.neroruins.gallery.built", showcase.blocks().size(),
-                showcase.items().size(), placements.size()), false);
+        source.sendSuccess(() -> family.isEmpty()
+                ? Component.translatable("command.neroruins.gallery.built", showcase.blocks().size(),
+                        showcase.items().size(), placements.size())
+                : Component.translatable("command.neroruins.gallery.built_family", showcase.blocks().size(),
+                        showcase.items().size(), placements.size(), family.get()), false);
         return Command.SINGLE_SUCCESS;
     }
 
-    private static int clear(CommandSourceStack source) {
+    private static int clear(CommandSourceStack source, Optional<String> family) {
         ServerPlayer player = creativePlayer(source);
         if (player == null || !(player.level() instanceof ServerLevel level)) return 0;
-        int[] counts = clearBox(level, player.blockPosition(), showcase(level).plan().bounds());
+        if (!knownFamily(source, level, family)) return 0;
+        int[] counts = clearBox(level, player.blockPosition(), showcase(level, family).plan().bounds());
         source.sendSuccess(() -> Component.translatable("command.neroruins.gallery.cleared", counts[0], counts[1]), false);
         return Command.SINGLE_SUCCESS;
     }

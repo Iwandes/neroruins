@@ -24,6 +24,7 @@ public final class CodexCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         GalleryCommands.register(dispatcher);
+        BenchCommands.register(dispatcher);
         dispatcher.register(LiteralArgumentBuilder.<CommandSourceStack>literal("neroruins").then(
                 LiteralArgumentBuilder.<CommandSourceStack>literal("codex")
                 .executes(context -> list(context.getSource().getPlayerOrException()))
