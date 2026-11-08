@@ -5,6 +5,7 @@ import unittest
 from collections import deque
 
 from build_templates import build_template, DESTINATION, SPEC_DIRECTORY, ROOT
+import gated_enclosure
 from test_build_templates import room_blocks, block_id, props, conduit_reaches_lock, HORIZONTAL_REACH, VERTICAL_REACH
 
 DATA = ROOT / "common" / "src" / "main" / "resources" / "data" / "neroruins"
@@ -232,6 +233,36 @@ class ColonyFieldTemplateTest(unittest.TestCase):
                           if abs(p[0] - vault[0]) <= PLATE_REACH and abs(p[2] - vault[2]) <= PLATE_REACH
                           and abs(p[1] - vault[1]) <= PLATE_HEIGHT]
                 self.assertTrue(3 <= len(plates) <= 8, "the vault stays sealed until its plates are loaded")
+
+    def test_gated_rooms_cannot_be_mined_into(self):
+        """Decision 039: behind every sealed door the rooms are plated; mining reaches neither the open world nor
+        the door's near side. The complex has no door: its vault is sealed by plates in a guarded room, as the
+        bunker's is."""
+        step = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}
+
+        def breaches(spec):
+            blocks, found = blocks_of(spec), []
+            for pos, block in blocks.items():
+                if block_id(block) == "neroruins:sealed_door" and props(block)["half"] == "lower":
+                    dx, dz = step[props(block)["facing"]]
+                    near, far = (pos[0] + dx, pos[1], pos[2] + dz), (pos[0] - dx, pos[1], pos[2] - dz)
+                    hit = gated_enclosure.breach(blocks, far, forbidden={near})
+                    if hit is not None:
+                        found.append((pos, hit))
+            return found
+
+        for size_class in ("citadel", "outpost"):
+            for spec in hubs(size_class):
+                with self.subTest(hub=spec["name"]):
+                    self.assertEqual([], breaches(spec))
+        weakened = copy.deepcopy(hubs("citadel")[0])
+        door = next(f for f in weakened["fills"] if block_id(f["block"]) == "neroruins:sealed_door")
+        dx, dz = step[props(door["block"])["facing"]]
+        floor_plate = (door["from"][0] - dx, 0, door["from"][2] - dz)  # the floor just behind the door
+        self.assertEqual("neroruins:reinforced_survey_hull", block_id(blocks_of(weakened)[floor_plate]))
+        weakened["fills"].append({"from": list(floor_plate), "to": list(floor_plate),
+                                  "block": "neroruins:survey_hull"})
+        self.assertTrue(breaches(weakened), "one mineable plate in a gated floor is caught")
 
     def test_every_gate_lies_inside_a_guardian_zone(self):
         for size_class in CLASSES:

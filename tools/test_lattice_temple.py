@@ -6,6 +6,7 @@ import unittest
 from collections import deque
 
 from build_templates import ROOT, SPEC_DIRECTORY, build_template
+from lattice_temple_layout import UNBREAKABLE, spiral_well
 
 DATA = ROOT / "common" / "src" / "main" / "resources" / "data" / "neroruins"
 WORLDGEN = DATA / "worldgen"
@@ -22,6 +23,8 @@ STRUCTURES = {
     "lattice_temple_outpost": ([], 40, 2),
 }
 LOCKS = ("neroruins:glyph_lock", "neroruins:relic_socket", "neroruins:resonance_pylon")
+CITADEL_PLAZA = 3            # the citadel hub's plaza floor, local y
+MIN_CITADEL_DEPTH = 70      # decision 039
 
 
 def load_specs():
@@ -442,6 +445,126 @@ class LatticeTempleTest(unittest.TestCase):
         nyxara = json.loads((DATA / "loot_table/chests/lattice_temple_nyxara_vault.json").read_text("utf-8"))
         self.assertIn("neroruins:resonance_heart", json.dumps(sanctum))
         self.assertIn("neroruins:twilight_prism", json.dumps(nyxara))
+
+    # -- decision 039: depth, bounds and sealed gated rooms
+
+    def citadel_depths(self, specs):
+        chain = spine_pools(self.pools, specs, self.start_pool("lattice_temple"))
+        depths = []
+        for placed in spine_layouts(self.pools, specs, chain):
+            plaza = placed[0].offset[1] + CITADEL_PLAZA
+            depths.append(plaza - placed[-1].offset[1])
+        return depths
+
+    def test_citadel_final_room_lies_at_least_seventy_blocks_below_the_plaza(self):
+        depths = self.citadel_depths(self.specs)
+        self.assertGreaterEqual(min(depths), MIN_CITADEL_DEPTH)
+        shallow = copy.deepcopy(self.specs)
+        for pool, face in (("neroruins:lattice_temple_citadel_approaches", "w"),
+                           ("neroruins:lattice_temple_citadel_deep_stairs", "n")):
+            for name in self.pools[pool]["items"]:
+                old = shallow[name]
+                well = spiral_well(name, 0, None, exits(old)[0]["pool"].split(":", 1)[1], face,
+                                   16 if face == "w" else 22).spec()
+                shallow[name] = well
+        self.assertLess(min(self.citadel_depths(shallow)), MIN_CITADEL_DEPTH, "shallow wells are caught")
+        floor = load_structure("lattice_temple")["ground_check"]["min_depth"]
+        self.assertGreaterEqual(floor, max(depths) + 16, "the ground check keeps the sanctum above the world floor")
+
+    def vertical_reach(self, specs):
+        chain = spine_pools(self.pools, specs, self.start_pool("lattice_temple"))
+        reach = 0
+        for placed in spine_layouts(self.pools, specs, chain):
+            start = placed[0].offset[1]
+            reach = max([reach] + [max(abs(p.lo[1] - start), abs(p.hi[1] - start)) for p in placed])
+        return reach
+
+    def test_spiral_descent_stays_inside_the_vertical_jigsaw_bound(self):
+        limit = min(layout["layout"]["max_distance_from_center"]
+                    for layout in load_structure("lattice_temple")["layouts"])
+        self.assertLessEqual(self.vertical_reach(self.specs), limit)
+        deep = copy.deepcopy(self.specs)
+        for name in self.pools["neroruins:lattice_temple_citadel_deep_stairs"]["items"]:
+            deep[name] = spiral_well(name, 0, None, "lattice_temple_citadel_guardians", "n", 118).spec()
+        self.assertGreater(self.vertical_reach(deep), limit, "a well past the bound is caught")
+
+    def gated_pools(self):
+        gated, queue = set(), deque(p for p in self.pools if p.endswith("_gates"))
+        while queue:
+            for name in self.pools[queue.popleft()]["items"]:
+                for c in exits(self.specs[name]):
+                    if c.get("priority") and c["pool"] not in gated:
+                        gated.add(c["pool"])
+                        queue.append(c["pool"])
+        return gated
+
+    def breached(self, spec, gated_entry, gated_pools):
+        """Cells of the gated rooms a player tunnelling in from outside the piece could reach."""
+        w, h, d = spec["size"]
+        grid = cells(spec)
+        inside = lambda p: 0 <= p[0] < w and 0 <= p[1] < h and 0 <= p[2] < d
+        sides = ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1))
+        around = lambda p: [(p[0] + a, p[1] + b, p[2] + c) for a, b, c in sides]
+        openings = set()
+        for c in spec.get("connectors", []):
+            if (c["name"] == ENTRY and gated_entry) or (c["name"] != ENTRY and c["pool"] in gated_pools):
+                x, y, z = c["pos"]
+                for a in (-1, 0, 1):
+                    for dy in range(4):
+                        openings.add({"north_up": (x + a, y + dy, 0), "south_up": (x + a, y + dy, d - 1),
+                                      "west_up": (0, y + dy, z + a), "east_up": (w - 1, y + dy, z + a)}[c["orientation"]])
+        air = {p for p, b in grid.items() if b == "minecraft:air"}
+        on_face = lambda p: p[0] in (0, w - 1) or p[1] in (0, h - 1) or p[2] in (0, d - 1)
+        open_air = set(p for p in air if on_face(p) and p not in openings)
+        queue = deque(open_air)
+        while queue:
+            for n in around(queue.popleft()):
+                if n in air and n not in open_air and inside(n):
+                    open_air.add(n)
+                    queue.append(n)
+        gated = air - open_air
+        if not gated:
+            return None
+        outside = [(x, y, z) for x in range(-1, w + 1) for y in range(-1, h + 1) for z in range(-1, d + 1)
+                   if not inside((x, y, z))]
+        seen, queue = set(outside), deque(outside)
+        while queue:
+            for n in around(queue.popleft()):
+                if n in seen or not inside(n) or n in openings or grid.get(n) in UNBREAKABLE:
+                    continue
+                seen.add(n)
+                queue.append(n)
+        return seen & gated
+
+    def test_gated_rooms_are_sealed_by_unbreakable_blocks(self):
+        gated_pools = self.gated_pools()
+        self.assertEqual({"neroruins:lattice_temple_citadel_organs", "neroruins:lattice_temple_citadel_finals"},
+                         gated_pools)
+        checked = 0
+        for pool, data in self.pools.items():
+            for name in data["items"]:
+                spec = self.specs[name]
+                if not (spec.get("vaults") or pool in gated_pools):
+                    continue
+                with self.subTest(template=name):
+                    breach = self.breached(spec, pool in gated_pools, gated_pools)
+                    self.assertIsNotNone(breach, "a gated piece has gated rooms")
+                    self.assertEqual(set(), breach)
+                    checked += 1
+        self.assertGreaterEqual(checked, 17)
+        # Failure case: one ordinary Latticework block in the organ's sealed wall opens a tunnel.
+        organ = copy.deepcopy(self.specs["lattice_temple_citadel_organ_0"])
+        organ["fills"].append({"from": [0, 5, 20], "to": [0, 5, 20], "block": "neroruins:latticework"})
+        self.assertTrue(self.breached(organ, True, gated_pools), "a mineable block in the shell is caught")
+        gate = copy.deepcopy(self.specs["lattice_temple_citadel_gate_0"])
+        gate["fills"].append({"from": [6, 0, 18], "to": [6, 0, 18], "block": "neroruins:lattice_floor"})
+        self.assertTrue(self.breached(gate, False, gated_pools), "a mineable floor block under the vault room is caught")
+
+    def test_no_window_or_glass_lets_light_or_pearls_into_a_gated_room(self):
+        for name, spec in self.specs.items():
+            ids = {block_id(f["block"]) for f in spec["fills"]}
+            with self.subTest(template=name):
+                self.assertFalse({i for i in ids if "glass" in i or "bars" in i})
 
     # -- placement data
 

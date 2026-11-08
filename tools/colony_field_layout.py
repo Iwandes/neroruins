@@ -10,6 +10,8 @@ Hull (chapter 7, Greenxertz), and outposts carry no unique logs. See decision 03
 import json
 from pathlib import Path
 
+import gated_enclosure
+
 ROOT = Path(__file__).resolve().parent.parent
 SPEC_FILE = ROOT / "tools" / "templates" / "colony_field.json"
 DATA = ROOT / "common" / "src" / "main" / "resources" / "data" / "neroruins"
@@ -21,6 +23,7 @@ EMPTY = "minecraft:empty"
 
 AIR = "minecraft:air"
 HULL = "neroruins:survey_hull"
+REINFORCED = "neroruins:reinforced_survey_hull"
 RUST = "neroruins:rusted_survey_hull"
 PLAZA = "minecraft:polished_andesite"
 ROOF = "minecraft:smooth_stone"
@@ -85,6 +88,33 @@ class Template:
             if getattr(self, key):
                 spec[key] = getattr(self, key)
         return spec
+
+
+def block_at(t, pos):
+    for f in reversed(t.fills):
+        if all(f["from"][i] <= pos[i] <= f["to"][i] for i in range(3)):
+            return f["block"]
+    return None
+
+
+def armour(t, boxes):
+    """Plate the outer surface of the union of ``boxes`` in unbreakable hull (decision 039), keeping puzzle fixtures
+    and the doorways between the boxes, so a gated suite of rooms cannot be mined into from outside."""
+    cells = {(x, y, z) for (a, b) in boxes for x in range(a[0], b[0] + 1) for y in range(a[1], b[1] + 1)
+             for z in range(a[2], b[2] + 1)}
+    surface = sorted((y, z, x) for (x, y, z) in cells
+                     if any(n not in cells for n in ((x - 1, y, z), (x + 1, y, z), (x, y - 1, z), (x, y + 1, z),
+                                                     (x, y, z - 1), (x, y, z + 1)))
+                     and not (isinstance(block_at(t, (x, y, z)), dict)
+                              and block_at(t, (x, y, z))["id"] in gated_enclosure.UNBREAKABLE))
+    run = None
+    for y, z, x in surface + [(None, None, None)]:
+        if run and (y, z) == run[1:] and x == run[0][1] + 1:
+            run = ((run[0][0], x), y, z)
+            continue
+        if run:
+            t.fill((run[0][0], run[1], run[2]), (run[0][1], run[1], run[2]), REINFORCED)
+        run = ((x, x), y, z) if y is not None else None
 
 
 def mirror_x(spec):
@@ -283,8 +313,11 @@ def citadel_hub(variant):
     t.put((41, 2, 8), state("neroruins:relic_socket", facing="west", chapter=6, lit=False))
     t.vault((43, 1, 6), "neroruins:chests/colony_field_reliquary", structure)
     t.terminal((36, 1, 9), "glacira.6", "east")
-    for i, x in enumerate(range(35, 41)):
-        t.put((x, 3, 1), state("neroruins:glyph_stone", glyph=(i * 3 + variant) % 16))
+    for i, x in enumerate(range(35, 41)):  # plaques inside the plated sanctum wall
+        t.put((x, 3, 2), state("neroruins:glyph_stone", glyph=(i * 3 + variant) % 16))
+    # The council vault, the passage and the sanctum lie behind the conduit gate; the reliquary behind the socket.
+    armour(t, [((16, 0, 1), (31, 5, 5)), ((31, 0, 2), (34, 5, 4)), ((34, 0, 1), (45, 5, 11))])
+    armour(t, [((41, 0, 1), (45, 5, 11))])
     # Exits into the sprawl; the first is the pad entrance.
     t.exit((24, 1, 47), "south_up", PATHS)
     t.exit((0, 1, 30), "west_up", PATHS)
@@ -348,6 +381,7 @@ def outpost_hub(variant):
     t.put((12, 2, 6), state("neroruins:card_reader", facing="south", tier=1, accepted=False))
     t.vault((14, 1, 4), "neroruins:chests/colony_field_outpost_vault", "neroruins:colony_field_outpost")
     t.spawner((14, 0, 9))
+    armour(t, [((10, 0, 2), (18, 5, 6))])  # the vault room behind the reader gate
     keycard_hut, bunk_hut = ((1, 2, 7, 8), (1, 11, 7, 17)) if variant != 2 else ((1, 11, 7, 17), (1, 2, 7, 8))
     x0, z0, x1, z1 = keycard_hut
     building(t, x0, z0, x1, z1, wall, [(x1, (z0 + z1) // 2)])
