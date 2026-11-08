@@ -12,8 +12,10 @@ public final class GalleryLayout {
     public static final int START_X = 4;
     public static final int BLOCK_ROW_Z = 4;
     public static final int PLATE_ROW_Z = 8;
-    public static final int ITEM_WALL_Z = 12;
-    public static final int TEMPLATE_START_Z = 17;
+    public static final int GLYPH_ROW_Z = 12;
+    public static final int GLYPH_SPACING = 2;
+    public static final int ITEM_WALL_Z = 16;
+    public static final int TEMPLATE_START_Z = 21;
     public static final int BLOCK_SPACING = 3;
     public static final int PLATE_SPACING = 4;
     public static final int FRAME_ROWS = 3;
@@ -39,15 +41,19 @@ public final class GalleryLayout {
         }
     }
 
-    public record Plan(int blocks, int plates, int items, int frameColumns, List<Placement> templates, Box bounds) { }
+    public record Plan(int blocks, int plates, int glyphs, int items, int frameColumns, List<Placement> templates,
+            Box bounds) { }
 
     private GalleryLayout() { }
 
-    public static Plan plan(int blocks, int plates, int items, List<Piece> pieces) {
-        if (blocks < 0 || plates < 0 || items < 0 || pieces == null) throw new IllegalArgumentException("Invalid gallery");
+    public static Plan plan(int blocks, int plates, int glyphs, int items, List<Piece> pieces) {
+        if (blocks < 0 || plates < 0 || glyphs < 0 || items < 0 || pieces == null) {
+            throw new IllegalArgumentException("Invalid gallery");
+        }
         int frameColumns = Math.max(1, (items + FRAME_ROWS - 1) / FRAME_ROWS);
         int maxX = Math.max(START_X + Math.max(0, blocks - 1) * BLOCK_SPACING,
-                Math.max(START_X + Math.max(0, plates - 1) * PLATE_SPACING, START_X + frameColumns - 1));
+                Math.max(START_X + Math.max(0, plates - 1) * PLATE_SPACING,
+                        Math.max(START_X + Math.max(0, glyphs - 1) * GLYPH_SPACING, START_X + frameColumns - 1)));
         int maxY = 5;
         List<Placement> placements = new ArrayList<>();
         int x = START_X;
@@ -66,7 +72,7 @@ public final class GalleryLayout {
             x += piece.sizeX() + GAP;
         }
         int maxZ = placements.isEmpty() ? ITEM_WALL_Z + 2 : z + rowDepth;
-        return new Plan(blocks, plates, items, frameColumns, List.copyOf(placements),
+        return new Plan(blocks, plates, glyphs, items, frameColumns, List.copyOf(placements),
                 new Box(START_X - 2, 0, BLOCK_ROW_Z - 2, maxX + 2, maxY, maxZ + 2));
     }
 }

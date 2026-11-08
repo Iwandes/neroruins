@@ -1,1 +1,10 @@
-{"variants":{"":{"model":"neroruins:block/vault_cache"}}}
+{
+  "variants": {
+    "sealed=false": {
+      "model": "neroruins:block/vault_cache_open"
+    },
+    "sealed=true": {
+      "model": "neroruins:block/vault_cache"
+    }
+  }
+}

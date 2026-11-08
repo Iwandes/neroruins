@@ -2,6 +2,8 @@ import copy
 import gzip
 import json
 import struct
+import pathlib
+import tempfile
 import unittest
 from collections import deque
 
@@ -189,6 +191,23 @@ class TemplateBuilderTest(unittest.TestCase):
         broken = copy.deepcopy(hubs[0])
         broken["fills"].append({"from": [4, 5, 5], "to": [4, 5, 5], "block": "minecraft:air"})
         self.assertFalse(has_accessible_shaft(broken))
+
+    def test_bunker_hatch_reaches_the_surface_from_the_sunk_hub(self):
+        specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
+        hubs = [spec for spec in specs if spec["name"].startswith("bunker_hub_")]
+        structures = ROOT / "common" / "src" / "main" / "resources" / "data" / "neroruins" / "worldgen" / "structure"
+
+        def hatch_clears_ground(hub_height, depth):
+            return hub_height - depth >= 1
+
+        for name in ("bunker", "bunker_earth"):
+            layouts = json.loads((structures / (name + ".json")).read_text(encoding="utf-8"))["layouts"]
+            for layout in layouts:
+                depth = -layout["layout"]["start_height"]["absolute"]
+                for hub in hubs:
+                    with self.subTest(structure=name, hub=hub["name"]):
+                        self.assertTrue(hatch_clears_ground(hub["size"][1], depth))
+        self.assertFalse(hatch_clears_ground(10, 10), "a shaft as tall as the hub is deep ends underground")
 
     def test_archive_terminal_is_reachable_from_the_entrance(self):
         specs = json.loads((SPEC_DIRECTORY / "bunker.json").read_text(encoding="utf-8"))["templates"]
@@ -521,6 +540,41 @@ class TemplateBuilderTest(unittest.TestCase):
         bad["terminals"] = [{"pos": [1, 0, 1], "log_id": "neroruins:earth.1", "facing": "up"}]
         with self.assertRaises(ValueError):
             build_template(bad)
+
+
+    def test_every_block_has_models_textures_lang_and_drops(self):
+        resources = ROOT / "common/src/main/resources"
+        assets = resources / "assets/neroruins"
+        language = json.loads((assets / "lang/en_us.json").read_text(encoding="utf-8"))
+        mineable = json.loads((resources / "data/minecraft/tags/block/mineable/pickaxe.json").read_text())["values"]
+
+        def problems(blockstate_dir):
+            found = []
+            for state_file in sorted(blockstate_dir.glob("*.json")):
+                name = state_file.stem
+                if "block.neroruins." + name not in language:
+                    found.append(name + ": no English name")
+                for variant in json.loads(state_file.read_text())["variants"].values():
+                    model_id = variant["model"].split(":", 1)[1]
+                    model_file = assets / "models" / (model_id + ".json")
+                    if not model_file.is_file():
+                        found.append(name + ": missing model " + model_id)
+                        continue
+                    for texture in json.loads(model_file.read_text()).get("textures", {}).values():
+                        if texture.startswith("neroruins:") and not (
+                                assets / "textures" / (texture.split(":", 1)[1] + ".png")).is_file():
+                            found.append(name + ": missing texture " + texture)
+                if "neroruins:" + name in mineable:
+                    for loot_root in (resources, ROOT / "common/src/main/resources-26.3"):
+                        if not (loot_root / "data/neroruins/loot_table/blocks" / (name + ".json")).is_file():
+                            found.append(name + ": no drop in " + loot_root.name)
+            return found
+
+        self.assertEqual([], problems(assets / "blockstates"))
+        with tempfile.TemporaryDirectory() as scratch:
+            broken = pathlib.Path(scratch)
+            (broken / "ghost.json").write_text('{"variants":{"":{"model":"neroruins:block/ghost"}}}')
+            self.assertEqual(2, len(problems(broken)), "an unnamed block with a missing model is caught")
 
 
 if __name__ == "__main__":

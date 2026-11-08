@@ -283,5 +283,14 @@
   "command.neroruins.gallery.label.blocks": "Blocks",
   "command.neroruins.gallery.label.plate": "Target %s",
   "command.neroruins.gallery.label.items": "Items and relics",
-  "command.neroruins.gallery.label.plates": "Ballast Plates"
+  "command.neroruins.gallery.label.plates": "Ballast Plates",
+  "block.neroruins.latticework": "Latticework",
+  "item.neroruins.latticework": "Latticework",
+  "block.neroruins.lattice_floor": "Lattice Floor",
+  "item.neroruins.lattice_floor": "Lattice Floor",
+  "block.neroruins.resonance_crystal_block": "Resonance Crystal Block",
+  "item.neroruins.resonance_crystal_block": "Resonance Crystal Block",
+  "block.neroruins.glyph_stone": "Glyph Stone",
+  "item.neroruins.glyph_stone": "Glyph Stone",
+  "command.neroruins.gallery.label.glyphs": "Architect glyphs"
 }

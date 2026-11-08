@@ -18,7 +18,7 @@ class GalleryLayoutTest {
 
     @Test
     void piecesNeverOverlapAndAllLieInsideTheClearedBox() {
-        var plan = GalleryLayout.plan(7, 8, 18, pieces(40));
+        var plan = GalleryLayout.plan(7, 8, 16, 18, pieces(40));
         var box = plan.bounds();
         var placed = plan.templates();
         assertEquals(40, placed.size());
@@ -38,20 +38,22 @@ class GalleryLayoutTest {
         assertTrue(box.contains(GalleryLayout.START_X + 6 * GalleryLayout.BLOCK_SPACING, 3, GalleryLayout.BLOCK_ROW_Z));
         assertTrue(box.contains(GalleryLayout.START_X + 7 * GalleryLayout.PLATE_SPACING, 1, GalleryLayout.PLATE_ROW_Z));
         assertTrue(box.contains(GalleryLayout.START_X + plan.frameColumns() - 1, 3, GalleryLayout.ITEM_WALL_Z + 1));
+        assertTrue(box.contains(GalleryLayout.START_X + 15 * GalleryLayout.GLYPH_SPACING, 2, GalleryLayout.GLYPH_ROW_Z));
+        assertTrue(GalleryLayout.PLATE_ROW_Z < GalleryLayout.GLYPH_ROW_Z && GalleryLayout.GLYPH_ROW_Z < GalleryLayout.ITEM_WALL_Z);
         assertFalse(box.contains(0, 1, 0), "the player's own spot is never cleared");
         assertFalse(box.contains(0, 0, 0));
     }
 
     @Test
     void rowsWrapAndTheLayoutIsRepeatable() {
-        var first = GalleryLayout.plan(3, 8, 10, pieces(30));
-        assertEquals(first, GalleryLayout.plan(3, 8, 10, pieces(30)), "build and clear compute the same footprint");
+        var first = GalleryLayout.plan(3, 8, 16, 10, pieces(30));
+        assertEquals(first, GalleryLayout.plan(3, 8, 16, 10, pieces(30)), "build and clear compute the same footprint");
         assertTrue(first.templates().stream().map(GalleryLayout.Placement::z).distinct().count() > 1, "long rows wrap");
         for (var placement : first.templates()) {
             assertTrue(placement.x() + placement.piece().sizeX() <= GalleryLayout.START_X + GalleryLayout.ROW_WIDTH
                     || placement.x() == GalleryLayout.START_X);
         }
-        var empty = GalleryLayout.plan(0, 0, 0, List.of());
+        var empty = GalleryLayout.plan(0, 0, 0, 0, List.of());
         assertTrue(empty.templates().isEmpty());
         assertTrue(empty.bounds().maxZ() >= GalleryLayout.ITEM_WALL_Z + 1);
     }
@@ -61,7 +63,7 @@ class GalleryLayoutTest {
         assertThrows(IllegalArgumentException.class, () -> new GalleryLayout.Piece("x", 0, 1, 1));
         assertThrows(IllegalArgumentException.class, () -> new GalleryLayout.Piece("x", 1, 1, GalleryLayout.MAX_TEMPLATE_SIZE + 1));
         assertThrows(IllegalArgumentException.class, () -> new GalleryLayout.Piece("", 1, 1, 1));
-        assertThrows(IllegalArgumentException.class, () -> GalleryLayout.plan(-1, 0, 0, List.of()));
-        assertThrows(IllegalArgumentException.class, () -> GalleryLayout.plan(0, 0, 0, null));
+        assertThrows(IllegalArgumentException.class, () -> GalleryLayout.plan(-1, 0, 0, 0, List.of()));
+        assertThrows(IllegalArgumentException.class, () -> GalleryLayout.plan(0, 0, 0, 0, null));
     }
 }

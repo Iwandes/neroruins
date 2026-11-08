@@ -37,6 +37,14 @@ public final class ModItems {
             ITEMS.register("log_terminal", key -> new BlockItem(ModBlocks.LOG_TERMINAL.get(), PropertiesCompat.item(key)));
     public static final RegistrationProvider.RegistryEntry<BlockItem> VAULT_CACHE =
             ITEMS.register("vault_cache", key -> new BlockItem(ModBlocks.VAULT_CACHE.get(), PropertiesCompat.item(key)));
+    public static final RegistrationProvider.RegistryEntry<BlockItem> LATTICEWORK =
+            ITEMS.register("latticework", key -> new BlockItem(ModBlocks.LATTICEWORK.get(), PropertiesCompat.item(key)));
+    public static final RegistrationProvider.RegistryEntry<BlockItem> LATTICE_FLOOR =
+            ITEMS.register("lattice_floor", key -> new BlockItem(ModBlocks.LATTICE_FLOOR.get(), PropertiesCompat.item(key)));
+    public static final RegistrationProvider.RegistryEntry<BlockItem> RESONANCE_CRYSTAL_BLOCK =
+            ITEMS.register("resonance_crystal_block", key -> new BlockItem(ModBlocks.RESONANCE_CRYSTAL_BLOCK.get(), PropertiesCompat.item(key)));
+    public static final RegistrationProvider.RegistryEntry<BlockItem> GLYPH_STONE =
+            ITEMS.register("glyph_stone", key -> new BlockItem(ModBlocks.GLYPH_STONE.get(), PropertiesCompat.item(key)));
     public static final RegistrationProvider.RegistryEntry<BlockItem> BALLAST_PLATE =
             ITEMS.register("ballast_plate", key -> new BlockItem(ModBlocks.BALLAST_PLATE.get(), PropertiesCompat.item(key)));
 

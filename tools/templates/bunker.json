@@ -4,7 +4,7 @@
       "name": "bunker_hub_a",
       "size": [
         9,
-        10,
+        14,
         9
       ],
       "fills": [
@@ -55,7 +55,7 @@
           ],
           "to": [
             5,
-            9,
+            13,
             5
           ],
           "block": "neroruins:survey_hull"
@@ -68,7 +68,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             4
           ],
           "block": "minecraft:air"
@@ -81,7 +81,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             5
           ],
           "block": "neroruins:survey_hull"
@@ -94,7 +94,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             4
           ],
           "block": {
@@ -238,7 +238,7 @@
       "name": "bunker_hub_b",
       "size": [
         9,
-        10,
+        14,
         9
       ],
       "fills": [
@@ -289,7 +289,7 @@
           ],
           "to": [
             5,
-            9,
+            13,
             5
           ],
           "block": "neroruins:rusted_survey_hull"
@@ -302,7 +302,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             4
           ],
           "block": "minecraft:air"
@@ -315,7 +315,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             5
           ],
           "block": "neroruins:rusted_survey_hull"
@@ -328,7 +328,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             4
           ],
           "block": {
@@ -472,7 +472,7 @@
       "name": "bunker_hub_c",
       "size": [
         9,
-        10,
+        14,
         9
       ],
       "fills": [
@@ -523,7 +523,7 @@
           ],
           "to": [
             5,
-            9,
+            13,
             5
           ],
           "block": "minecraft:mossy_stone_bricks"
@@ -536,7 +536,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             4
           ],
           "block": "minecraft:air"
@@ -549,7 +549,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             5
           ],
           "block": "minecraft:mossy_stone_bricks"
@@ -562,7 +562,7 @@
           ],
           "to": [
             4,
-            9,
+            13,
             4
           ],
           "block": {

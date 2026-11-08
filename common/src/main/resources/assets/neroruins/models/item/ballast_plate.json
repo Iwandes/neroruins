@@ -1,1 +1,6 @@
-{"parent": "neroruins:block/ballast_plate_3"}
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "neroruins:item/ballast_plate"
+  }
+}

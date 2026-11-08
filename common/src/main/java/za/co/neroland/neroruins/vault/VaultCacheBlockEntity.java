@@ -7,6 +7,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
@@ -37,6 +38,9 @@ public final class VaultCacheBlockEntity extends BlockEntity implements MenuProv
         if (!puzzle || solved) return;
         solved = true;
         setChanged();
+        if (level != null && getBlockState().hasProperty(VaultCacheBlock.SEALED)) {
+            level.setBlock(worldPosition, getBlockState().setValue(VaultCacheBlock.SEALED, false), Block.UPDATE_ALL);
+        }
     }
     public boolean stillValid(Player player) {
         return level != null && player.level() == level && level.getBlockEntity(worldPosition) == this

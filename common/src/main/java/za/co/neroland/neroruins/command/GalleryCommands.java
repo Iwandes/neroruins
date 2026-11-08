@@ -31,6 +31,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlac
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.phys.AABB;
 import za.co.neroland.neroruins.NeroRuinsCommon;
+import za.co.neroland.neroruins.lattice.GlyphStoneBlock;
 import za.co.neroland.neroruins.lore.LogCatalog;
 import za.co.neroland.neroruins.puzzle.BallastPlateBlock;
 import za.co.neroland.neroruins.puzzle.BallastPuzzle;
@@ -124,7 +125,7 @@ public final class GalleryCommands {
         }
         int plates = BallastPuzzle.MAX - BallastPuzzle.MIN + 1;
         return new Showcase(blocks, items, placed, templates,
-                GalleryLayout.plan(blocks.size(), plates, items.size(), pieces));
+                GalleryLayout.plan(blocks.size(), plates, GlyphStoneBlock.GLYPHS, items.size(), pieces));
     }
 
     private static ServerPlayer creativePlayer(CommandSourceStack source) {
@@ -169,6 +170,15 @@ public final class GalleryCommands {
         }
         label(level, origin.offset(GalleryLayout.START_X - 1, 3, GalleryLayout.PLATE_ROW_Z),
                 Component.translatable("command.neroruins.gallery.label.plates"));
+
+        // All sixteen Architect glyphs, the alphabet later puzzles draw their wall clues from.
+        for (int glyph = 0; glyph < GlyphStoneBlock.GLYPHS; glyph++) {
+            level.setBlock(origin.offset(GalleryLayout.START_X + glyph * GalleryLayout.GLYPH_SPACING, 2,
+                    GalleryLayout.GLYPH_ROW_Z), ModBlocks.GLYPH_STONE.get().defaultBlockState()
+                    .setValue(GlyphStoneBlock.GLYPH, glyph), Block.UPDATE_CLIENTS);
+        }
+        label(level, origin.offset(GalleryLayout.START_X - 1, 3, GalleryLayout.GLYPH_ROW_Z),
+                Component.translatable("command.neroruins.gallery.label.glyphs"));
 
         // Every item in frames on a short wall.
         int columns = showcase.plan().frameColumns();

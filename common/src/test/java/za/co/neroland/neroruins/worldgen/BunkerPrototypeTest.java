@@ -68,6 +68,11 @@ class BunkerPrototypeTest {
                 assertEquals("none", layout.get("terrain_adaptation").getAsString());
                 assertEquals(structure.get("biomes").getAsString(), layout.get("biomes").getAsString());
                 int size = layout.get("size").getAsInt();
+                // Rooms are five blocks tall with the interior ending one below their roof. A hub sunk this deep
+                // keeps every room interior below the lowest ground the ground check allows on a slope.
+                int depth = -layout.getAsJsonObject("start_height").get("absolute").getAsInt();
+                int allowedDrop = structure.getAsJsonObject("ground_check").get("max_height_delta").getAsInt();
+                assertTrue(depth - 4 >= allowedDrop, name + " rooms would be exposed on the downhill side");
                 assertTrue(size >= 1 && size <= 5, "bunker jigsaw depth stays within its budget");
                 depths.add(size);
             }

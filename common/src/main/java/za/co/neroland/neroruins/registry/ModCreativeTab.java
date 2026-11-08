@@ -25,6 +25,10 @@ public final class ModCreativeTab {
                         output.accept(ModItems.LOG_TERMINAL.get());
                         output.accept(ModItems.VAULT_CACHE.get());
                         output.accept(ModItems.BALLAST_PLATE.get());
+                        output.accept(ModItems.LATTICEWORK.get());
+                        output.accept(ModItems.LATTICE_FLOOR.get());
+                        output.accept(ModItems.RESONANCE_CRYSTAL_BLOCK.get());
+                        output.accept(ModItems.GLYPH_STONE.get());
                         for (var relic : ModItems.RELICS) {
                             output.accept(relic.get());
                         }

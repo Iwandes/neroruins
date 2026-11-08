@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "neroruins:block/vault_cache_top_open",
+    "bottom": "neroruins:block/vault_cache_bottom",
+    "side": "neroruins:block/vault_cache_side_open",
+    "particle": "neroruins:block/vault_cache_side"
+  }
+}

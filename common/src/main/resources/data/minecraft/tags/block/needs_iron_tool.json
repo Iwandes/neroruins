@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "neroruins:latticework",
+    "neroruins:lattice_floor",
+    "neroruins:resonance_crystal_block",
+    "neroruins:glyph_stone"
+  ]
+}

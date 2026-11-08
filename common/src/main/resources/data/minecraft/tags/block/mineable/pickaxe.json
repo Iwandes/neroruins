@@ -3,6 +3,10 @@
   "values": [
     "neroruins:survey_hull",
     "neroruins:rusted_survey_hull",
-    "neroruins:log_terminal"
+    "neroruins:log_terminal",
+    "neroruins:latticework",
+    "neroruins:lattice_floor",
+    "neroruins:resonance_crystal_block",
+    "neroruins:glyph_stone"
   ]
 }
