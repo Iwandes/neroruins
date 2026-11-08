@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_outpost_surface_a",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_outpost_surface_b",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_outpost_surface_c",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "fallback": "neroruins:survey_lab_shaft_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_level_5_a",
+        "processors": "neroruins:survey_lab_mars_dust",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_level_5_b",
+        "processors": "neroruins:survey_lab_mars_dust",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_level_5_c",
+        "processors": "neroruins:survey_lab_mars_dust",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

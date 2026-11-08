@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_antenna_field",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_antenna_fallen",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

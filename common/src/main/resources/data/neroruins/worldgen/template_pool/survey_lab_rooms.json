@@ -1,0 +1,41 @@
+{
+  "fallback": "neroruins:survey_lab_room_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_room_storage",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_room_lab",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_room_records",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_room_quarters",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

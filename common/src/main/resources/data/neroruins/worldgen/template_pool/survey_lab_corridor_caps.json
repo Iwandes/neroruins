@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_corridor_cap",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

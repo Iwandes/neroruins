@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:survey_lab_outpost_antenna",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:survey_lab_outpost",
+    "family": "survey_lab",
+    "index": 0,
+    "min_radius": 1,
+    "max_radius": 3,
+    "chance_percent": 50,
+    "type": "neroruins:satellite"
+  }
+}

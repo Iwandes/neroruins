@@ -1,0 +1,41 @@
+{
+  "fallback": "neroruins:survey_lab_corridor_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_corridor_short",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_corridor_collapsed",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_corridor_turn_left",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:survey_lab_corridor_turn_right",
+        "processors": "neroruins:survey_lab_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}
