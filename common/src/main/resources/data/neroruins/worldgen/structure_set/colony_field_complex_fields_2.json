@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:colony_field_complex_fields_2",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:colony_field_complex",
+    "family": "colony_field",
+    "index": 3,
+    "min_radius": 3,
+    "max_radius": 7,
+    "chance_percent": 70,
+    "type": "neroruins:satellite"
+  }
+}

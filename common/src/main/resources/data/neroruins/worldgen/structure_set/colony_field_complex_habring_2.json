@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:colony_field_complex_habring_2",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:colony_field_complex",
+    "family": "colony_field",
+    "index": 1,
+    "min_radius": 4,
+    "max_radius": 8,
+    "chance_percent": 65,
+    "type": "neroruins:satellite"
+  }
+}

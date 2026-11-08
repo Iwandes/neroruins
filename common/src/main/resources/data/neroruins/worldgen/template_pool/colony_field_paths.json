@@ -1,0 +1,50 @@
+{
+  "fallback": "neroruins:colony_field_caps",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_straight_a",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_straight_b",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_turn_left",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_turn_right",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_fork",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

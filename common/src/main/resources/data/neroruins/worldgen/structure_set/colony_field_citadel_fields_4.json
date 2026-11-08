@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:colony_field_citadel_fields_4",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:colony_field_citadel",
+    "family": "colony_field",
+    "index": 7,
+    "min_radius": 8,
+    "max_radius": 14,
+    "chance_percent": 70,
+    "type": "neroruins:satellite"
+  }
+}

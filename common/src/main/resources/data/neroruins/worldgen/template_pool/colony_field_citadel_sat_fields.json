@@ -1,0 +1,23 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_fields_a",
+        "processors": "neroruins:colony_field_frost",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_fields_b",
+        "processors": "neroruins:colony_field_frost",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

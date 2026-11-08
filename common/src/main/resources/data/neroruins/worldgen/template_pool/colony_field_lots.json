@@ -1,0 +1,122 @@
+{
+  "fallback": "neroruins:colony_field_caps",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_house_a",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_house_b",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_house_c",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_farm_a",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_farm_b",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_farm_c",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_store_a",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_store_b",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_store_c",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_straight_a",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_straight_b",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_turn_left",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_path_turn_right",
+        "processors": "neroruins:colony_field_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

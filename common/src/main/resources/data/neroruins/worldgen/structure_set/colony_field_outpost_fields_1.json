@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:colony_field_outpost_fields_1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:colony_field_outpost",
+    "family": "colony_field",
+    "index": 0,
+    "min_radius": 2,
+    "max_radius": 3,
+    "chance_percent": 60,
+    "type": "neroruins:satellite"
+  }
+}

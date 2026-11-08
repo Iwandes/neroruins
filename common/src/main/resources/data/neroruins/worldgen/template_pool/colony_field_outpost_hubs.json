@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_outpost_hub_a",
+        "processors": "neroruins:colony_field_dust",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_outpost_hub_b",
+        "processors": "neroruins:colony_field_dust",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:colony_field_outpost_hub_c",
+        "processors": "neroruins:colony_field_dust",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

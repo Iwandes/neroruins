@@ -91,12 +91,6 @@ def in_reach(lock, target):
             and abs(lock[1] - target[1]) <= REACH_V)
 
 
-def hubs():
-    return {name: spec for name, spec in specs().items()
-            if any(name.startswith(layout.HUBS[k]["structure"].replace("_complex", "_complex"))
-                   for k in layout.HUBS) and spec.get("vaults")}
-
-
 def gate_problems(spec):
     """Every reason a hub's progress gates could be skipped or left unsolvable."""
     problems = []
@@ -119,16 +113,15 @@ def gate_problems(spec):
     for door in doors:
         if not any(in_reach(lock, door) for lock in locks):
             problems.append("door %s has no lock" % (door,))
+    # The gate in front of the main vault (not the Meridian's keystone locker) sits in a guardian zone.
     spawners = [tuple(s["pos"]) for s in spec.get("spawners", [])]
-    gate_lock = max(locks, key=lambda p: -min((distance_to(closed, p) or 0, 10 ** 6)))  # nearest-to-vault lock
-    for lock in locks:
-        guarded = [p for p in [lock] + [d for d in doors if in_reach(lock, d)]]
-        last = min((tuple(v["pos"]) for v in spec["vaults"]), key=lambda v: sum((a - b) ** 2 for a, b in zip(v, lock)))
-        if distance_to(opened, last) == max(distance_to(opened, tuple(v["pos"])) or 0 for v in spec["vaults"]):
-            for point in guarded:
+    for vault in spec["vaults"]:
+        if not vault["loot_table"].endswith("_vault"):
+            continue
+        for lock in (lock for lock in locks if in_reach(lock, tuple(vault["pos"]))):
+            for point in [lock] + [d for d in doors if in_reach(lock, d)]:
                 if not any(sum((a - b) ** 2 for a, b in zip(point, s)) <= SPAWNER_RANGE ** 2 for s in spawners):
                     problems.append("gate %s outside every guardian zone" % (point,))
-    del gate_lock
     gated = set(opened) - set(closed)
     for c in spec["connectors"]:
         inner = [n for n in ((c["pos"][0] + dx, c["pos"][1], c["pos"][2] + dz)
@@ -259,11 +252,6 @@ class CrashSiteTest(unittest.TestCase):
             readers = [b for b in blocks_of(spec).values() if bid(b) == "neroruins:card_reader"]
             self.assertEqual("1", readers[0]["properties"]["tier"])
             self.assertIn("neroruins:chests/crash_site_keycard", {c["loot_table"] for c in spec["containers"]})
-        turned = blocks_of(hub_specs("meridian")[1])
-        first = next(p for p, b in turned.items() if bid(b) == "neroruins:conduit")
-        turned[first] = dict(turned[first], properties=dict(turned[first]["properties"], facing="north",
-                                                            corner="false"))
-        self.assertFalse(conduit_solved(turned) and conduit_solved(blocks_of(hub_specs("meridian")[0])) and False)
         keystone = json.loads((DATA / "loot_table/chests/crash_site_keystone.json").read_text())
         self.assertEqual("neroruins:meridian_keystone", keystone["pools"][0]["entries"][0]["name"])
         keycard = json.loads((DATA / "loot_table/chests/crash_site_keycard.json").read_text())
