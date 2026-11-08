@@ -53,20 +53,33 @@ stores their UUID, the log ID and the time of the first read. It stores no playe
 in the archive. This data stays in the world save and its recovery backup; it is not sent as telemetry.
 Archive entries remain until erasure or Core's configured inactivity purge. `/neroland data eraseme`
 requests deletion across participating Neroland mods, including the archive and its recovery backup.
-`/neroruins codex` shows the requesting player's own archived logs. `/neroruins privacy export` writes
-the requesting player's log IDs, first-read times and vault-claim records to `neroruins-exports/<player-UUID>.json` inside
-the world folder. The server operator can access that file. A later export replaces it; it remains
-until it is replaced or the player is erased through Core, which also deletes the export. Data shards
-are currently obtainable from prototype bunker chests placed using commands or through creative mode. Prototype log
-terminals also add reads to the archive; the terminal itself does not store who read it.
+`/neroruins codex` shows the requesting player's own archived logs. Data shards drop from ruin
+containers and log terminals stand in the ruins; reading either adds to the archive, and terminals
+themselves do not store who read them.
 
-The claim ledger stores a claimant's UUID, cache dimension and position, and claim time in the world
-save and its recovery backup. It is included in personal exports and Core erasure. The ledger is in
-development: prototype vault caches are command-placeable but do not yet generate in survival.
-The server's `privacy.claimRetentionDays` setting defaults to zero (keep until erasure). When set
-to a positive number, expired claims are removed and their backup refreshed when the world starts;
-the affected players' existing export files are deleted so those files do not retain expired claims.
-Expiring a claim can make that cache claimable again.
+The claim ledger stores a claimant's UUID, the vault cache's dimension and position, and the claim time in
+the world save and its recovery backup. When a vault roll does not fit in a player's inventory, or a puzzle
+solver's roll is reserved under the `first_come` vault mode, the ledger also holds that **held reward**:
+the claimant's UUID, the cache's dimension and position, its loot table, when the roll was made and the
+rolled items, until they are delivered. The server's `privacy.claimRetentionDays` setting defaults to zero
+(keep until erasure). When set to a positive number, expired claims and held rewards are removed and their
+backup refreshed when the world starts; the affected players' existing export files are deleted so those
+files do not retain expired entries. Expiring a claim can make that cache claimable again.
+
+The **Expedition Record** stores, for each player who enters a ruin hub, their UUID and, per ruin, its
+structure type, family, size class, world, the time of first entry and the hub position. Positions are
+dropped after `privacy.expeditionRetentionDays` (default 365) or never stored when
+`privacy.recordDiscoveryPositions=false`; entries otherwise remain until erasure. Positions are shown only
+to that player (Expedition Map). The Surveyor's Compass and Survey Scanner read world generation and the
+holder's own record in memory and store nothing.
+
+`/neroruins privacy export` writes the requesting player's log IDs, first-read times, vault claims, held
+rewards and Expedition Record to `neroruins-exports/<player-UUID>.json` inside the world folder. The
+server operator can access that file. A later export replaces it; it remains until it is replaced or the
+player is erased through Core. `/neroland data eraseme` removes the archive, claims, held rewards,
+Expedition Record, their recovery backups and the export file, together with the player's data in other
+participating Neroland mods; if any part cannot be erased, Core reports the erasure as incomplete so it
+can be retried.
 
 The progression milestones
 (`neroruins:first_log`, `first_vault`, `puzzle_solver`, `temple_cleared` and the two `hook/` gates) are

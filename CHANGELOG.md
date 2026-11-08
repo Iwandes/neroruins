@@ -48,6 +48,10 @@ most structures have not yet been played through in a survival world. Please rep
   entered; the scanner gives the direction and rough distance of the nearest ruin, never coordinates.
 - **Data logs** placed through the structures in story order, readable from terminals and shards, collected
   in the Codex.
+- **Expedition Notes quests** (NeroQuests, optional): 29 quests that walk you through the release — the
+  first bunker and log, Sentinels, vaults, puzzles, keycards and relics, finding each ruin family, finishing
+  each Codex chapter, and server milestones for claiming each citadel's vault. Completing a Codex chapter now
+  opens a progression gate other mods and quest packs can use.
 - Blocks: Lattice palette (Latticework, Lattice Floor, Resonance Crystal Block, sixteen Glyph Stones),
   puzzle fixtures, reinforced variants, and a facing Log Terminal.
 - Commands for operators: `/neroruins gallery [family]` builds a showcase of the mod's blocks, items,

@@ -14,8 +14,8 @@ an expedition from the first bunker to the Lattice's last room:
 - **The families** — enter each kind of ruin: Lattice Temple, Halcyon Ark, Survey Lab, Colony Field and
   Crash Site.
 - **The story** — complete each chapter of the Codex by archiving all six of its logs.
-- **Server milestones** — shared quests that complete when someone on the server claims the first vault of
-  each family, the first vault anywhere, and fifty vaults of one ruin type.
+- **Server milestones** — shared quests that complete when someone on the server claims the first vault
+  anywhere, fifty vaults of one ruin type, and the vault of each family's citadel.
 
 Rewards are experience and expedition gear. The book shows each quest's objective and reward.
 
@@ -42,5 +42,8 @@ it says how much has been plundered, never where or by whom.
 
 - `neroruins:relics` — the nine relics.
 - `neroruins:keycards` — the three keycards.
+- `neroruins:sentinels` (entity types) — the three Sentinel marks.
+- `neroruins:family/<family>` (structures) — every structure of a ruin family, for example
+  `neroruins:family/survey_lab`.
 
 [Home](Home.md)
