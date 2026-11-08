@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_outpost_hub_0",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_outpost_hub_1",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_outpost_hub_2",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

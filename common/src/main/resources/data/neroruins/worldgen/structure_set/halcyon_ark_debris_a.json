@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:halcyon_ark_debris_a",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:halcyon_ark",
+    "family": "halcyon_ark",
+    "index": 4,
+    "min_radius": 2,
+    "max_radius": 6,
+    "chance_percent": 80,
+    "type": "neroruins:satellite"
+  }
+}

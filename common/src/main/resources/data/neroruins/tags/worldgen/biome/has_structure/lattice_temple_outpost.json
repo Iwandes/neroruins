@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#neroland:space/planet_biomes",
+      "required": false
+    },
+    {
+      "id": "#neroland:space/moon_biomes",
+      "required": false
+    }
+  ]
+}

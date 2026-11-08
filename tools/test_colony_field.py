@@ -87,8 +87,14 @@ def guarded(spec, positions):
 
 
 def gate_positions(spec):
-    vaults = [tuple(v["pos"]) for v in spec.get("vaults", [])]
-    return vaults + fixtures(spec, LOCKS + ("neroruins:ballast_plate",))
+    """The outer gate: locks and plates usable before any door opens, and the vaults they answer for. A lock that
+    is itself behind that gate (the citadel's sanctum socket) is guarded by the gate in front of it."""
+    shut = walk(spec, False)
+    locks = [lock for lock in fixtures(spec, LOCKS) if usable(shut, lock)]
+    plates = fixtures(spec, ("neroruins:ballast_plate",))
+    vaults = [tuple(v["pos"]) for v in spec.get("vaults", [])
+              if any(in_reach(lock, v["pos"]) for lock in locks) or (plates and usable(shut, v["pos"]))]
+    return locks + plates + vaults
 
 
 def vault_needs_gate(spec):
@@ -203,8 +209,11 @@ class ColonyFieldTemplateTest(unittest.TestCase):
                         self.assertIn(tuple(connector["pos"]), cells, "exit %s" % connector["pos"])
                     for container in spec.get("containers", []):
                         self.assertTrue(usable(cells, container["pos"]), "chest at %s" % container["pos"])
+                    opened = walk(spec, True)
                     for lock in fixtures(spec, LOCKS):
-                        self.assertTrue(usable(cells, lock), "lock at %s" % (lock,))
+                        self.assertTrue(usable(opened, lock), "lock at %s" % (lock,))
+                    self.assertTrue(any(usable(cells, lock) for lock in fixtures(spec, LOCKS))
+                                    or fixtures(spec, ("neroruins:ballast_plate",)), "the gate faces the approach")
 
     def test_no_vault_is_reachable_without_passing_its_gate(self):
         for size_class in ("citadel", "outpost"):
@@ -283,8 +292,10 @@ class ColonyFieldTemplateTest(unittest.TestCase):
                         self.assertIn(front(log), shut, "log %d is read before the gate" % log)
                     self.assertEqual(1, min(range(1, 7), key=lambda n: opened[front(n)]),
                                      "the landing pad log is the first one met")
-                    self.assertTrue(guarded(spec, [front(5), front(6)]), "the last two logs lie in the guardian zone")
-                    if size_class == "citadel":
+                    self.assertTrue(guarded(spec, [front(5)]), "the gate log lies in the guardian zone")
+                    if size_class == "complex":
+                        self.assertTrue(guarded(spec, [front(6)]), "the vault log lies in the guardian zone")
+                    else:
                         self.assertNotIn(front(6), shut, "the revelation waits behind the gate")
                         self.assertEqual(6, max(range(1, 7), key=lambda n: opened[front(n)]))
         doubled = copy.deepcopy(hubs("citadel")[0])

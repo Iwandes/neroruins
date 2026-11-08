@@ -1,0 +1,32 @@
+{
+  "fallback": "neroruins:halcyon_ark_spine_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:halcyon_ark_captain_0",
+        "processors": "neroruins:halcyon_ark_station",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:halcyon_ark_captain_1",
+        "processors": "neroruins:halcyon_ark_station",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:halcyon_ark_captain_2",
+        "processors": "neroruins:halcyon_ark_station",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

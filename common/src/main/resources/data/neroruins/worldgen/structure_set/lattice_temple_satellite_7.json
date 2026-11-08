@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:lattice_temple_satellite_7",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:lattice_temple",
+    "family": "lattice_temple",
+    "index": 7,
+    "min_radius": 9,
+    "max_radius": 13,
+    "chance_percent": 70,
+    "type": "neroruins:satellite"
+  }
+}

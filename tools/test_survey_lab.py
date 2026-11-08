@@ -3,6 +3,7 @@ import copy
 import json
 import unittest
 from collections import deque
+from functools import lru_cache
 
 from build_templates import ROOT, SPEC_DIRECTORY
 
@@ -18,6 +19,7 @@ SPAWNER_RANGE = 8
 BUDGETS = {"survey_lab": (10, 120), "survey_lab_complex": (5, 66), "survey_lab_outpost": (3, 30)}
 
 
+@lru_cache(maxsize=None)
 def json_file(*parts):
     return json.loads(DATA.joinpath(*parts).read_text(encoding="utf-8"))
 
@@ -177,7 +179,7 @@ def unlocks_hold(spec):
     locks = at(blocks, *LOCKS)
     plates = at(blocks, "neroruins:ballast_plate")
     for door in lower_doors(blocks):
-        if not any(within_unlock(lock, door) for lock in locks):
+        if sum(1 for lock in locks if within_unlock(lock, door)) != 1:
             return False
     for vault in at(blocks, "neroruins:vault_cache"):
         by_lock = [lock for lock in locks if within_unlock(lock, vault)]
@@ -258,6 +260,7 @@ def budget(structure):
     layout = json_file("worldgen", "structure", structure + ".json")["layouts"][0]["layout"]
     limit = layout["size"]
 
+    @lru_cache(maxsize=None)
     def expand(pool_name, depth):
         if pool_name == "minecraft:empty" or depth > limit:
             return depth - 1, 0
@@ -295,6 +298,10 @@ class SurveyLabTest(unittest.TestCase):
         far["fills"].append({"from": [16, 8, 31], "to": [16, 8, 31], "block": "minecraft:air"})
         far["vaults"][0]["pos"] = [2, 8, 30]
         self.assertFalse(unlocks_hold(far), "a vault no lock or plate can reach must be caught")
+        shared = copy.deepcopy(SPECS["survey_lab_level_6_a"])
+        shared["fills"].append({"from": [17, 5, 10], "to": [17, 5, 10], "block": {
+            "id": "neroruins:card_reader", "properties": {"facing": "north", "tier": "1", "accepted": "false"}}})
+        self.assertFalse(unlocks_hold(shared), "a lock that also reaches the sanctum door must be caught")
 
     def test_every_gate_lies_inside_a_guardian_zone(self):
         for name, spec in levels().items():

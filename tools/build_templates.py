@@ -159,6 +159,12 @@ def build_template(spec):
             raise ValueError("Invalid connector final state")
         fields.append(tag(8, "final_state", nbt_string(final_state)))
         fields.append(tag(8, "joint", nbt_string("rollable")))
+        priority = connector.get("priority", 0)
+        if type(priority) is not int or not 0 <= priority <= 100:
+            raise ValueError("Invalid connector priority")
+        if priority:
+            fields.append(tag(3, "placement_priority", integer(priority)))
+            fields.append(tag(3, "selection_priority", integer(priority)))
         blocks[pos] = (index, compound(*fields))
     if not blocks:
         raise ValueError("Template must contain blocks")

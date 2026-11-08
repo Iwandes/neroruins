@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:lattice_temple_cindara_satellite_2",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:lattice_temple_cindara",
+    "family": "lattice_temple",
+    "index": 2,
+    "min_radius": 7,
+    "max_radius": 10,
+    "chance_percent": 80,
+    "type": "neroruins:satellite"
+  }
+}

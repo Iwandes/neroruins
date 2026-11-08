@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_cap",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "neroruins:satellite",
+  "biomes": "#neroruins:has_structure/halcyon_ark",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "placement": {
+    "hub_set": "neroruins:halcyon_ark",
+    "family": "halcyon_ark",
+    "index": 0,
+    "min_radius": 6,
+    "max_radius": 10,
+    "chance_percent": 100
+  },
+  "layout": {
+    "biomes": "#neroruins:has_structure/halcyon_ark",
+    "spawn_overrides": {},
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "max_distance_from_center": 24,
+    "size": 1,
+    "start_height": {
+      "absolute": 58
+    },
+    "start_pool": "neroruins:halcyon_ark_sterns",
+    "use_expansion_hack": false
+  }
+}

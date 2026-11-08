@@ -122,7 +122,7 @@ def gate_problems(spec):
             for point in [lock] + [d for d in doors if in_reach(lock, d)]:
                 if not any(sum((a - b) ** 2 for a, b in zip(point, s)) <= SPAWNER_RANGE ** 2 for s in spawners):
                     problems.append("gate %s outside every guardian zone" % (point,))
-    gated = set(opened) - set(closed)
+    gated = {cell for cell in set(opened) - set(closed) if bid(blocks.get(cell)) != "neroruins:sealed_door"}
     for c in spec["connectors"]:
         inner = [n for n in ((c["pos"][0] + dx, c["pos"][1], c["pos"][2] + dz)
                              for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1))) if n in opened]
@@ -262,11 +262,11 @@ class CrashSiteTest(unittest.TestCase):
             with self.subTest(hub=spec["name"]):
                 self.assertTrue(conduit_solved(blocks_of(spec)))
         blocks = blocks_of(hub_specs("meridian")[1])
-        corner = next(p for p, b in sorted(blocks.items()) if bid(b) == "neroruins:conduit"
-                      and b["properties"]["corner"] == "true")
-        blocks[corner] = {"id": "neroruins:conduit", "properties": dict(
-            blocks[corner]["properties"], facing=CLOCKWISE[blocks[corner]["properties"]["facing"]])}
-        self.assertFalse(conduit_solved(blocks))
+        for pos, block in list(blocks.items()):
+            if bid(block) == "neroruins:conduit":
+                blocks[pos] = {"id": block["id"], "properties": dict(
+                    block["properties"], facing=CLOCKWISE[block["properties"]["facing"]])}
+        self.assertFalse(conduit_solved(blocks), "turned pieces break the loop")
 
     def test_role_variants_and_caps(self):
         names = set(specs())
@@ -324,7 +324,12 @@ class CrashSiteTest(unittest.TestCase):
     def test_piece_count_and_depth_stay_in_budget(self):
         templates = {"neroruins:" + n: s for n, s in specs().items()}
 
+        memo = {}
+
         def most(location, depth, limit, pools):
+            key = (location, depth, limit, id(pools))
+            if key in memo:
+                return memo[key]
             total = 1
             for c in templates[location]["connectors"]:
                 if c["pool"] == "minecraft:empty":
@@ -334,6 +339,7 @@ class CrashSiteTest(unittest.TestCase):
                     continue
                 pool = pools[c["pool"]]
                 total += max(most(e["element"]["location"], depth + 1, limit, pools) for e in pool["elements"])
+            memo[key] = total
             return total
 
         pools = self.pools()

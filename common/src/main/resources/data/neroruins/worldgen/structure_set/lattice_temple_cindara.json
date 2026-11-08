@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:lattice_temple_cindara",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 40,
+    "separation": 16,
+    "salt": 1873402931
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "fallback": "neroruins:lattice_temple_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_citadel_gate_0",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_citadel_gate_1",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_citadel_gate_2",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -3374,24 +3374,6 @@
               "glyph": "15"
             }
           }
-        },
-        {
-          "from": [
-            41,
-            3,
-            1
-          ],
-          "to": [
-            41,
-            3,
-            1
-          ],
-          "block": {
-            "id": "neroruins:glyph_stone",
-            "properties": {
-              "glyph": "2"
-            }
-          }
         }
       ],
       "connectors": [
@@ -6936,24 +6918,6 @@
               "glyph": "0"
             }
           }
-        },
-        {
-          "from": [
-            6,
-            3,
-            1
-          ],
-          "to": [
-            6,
-            3,
-            1
-          ],
-          "block": {
-            "id": "neroruins:glyph_stone",
-            "properties": {
-              "glyph": "3"
-            }
-          }
         }
       ],
       "connectors": [
@@ -10496,24 +10460,6 @@
             "id": "neroruins:glyph_stone",
             "properties": {
               "glyph": "1"
-            }
-          }
-        },
-        {
-          "from": [
-            41,
-            3,
-            1
-          ],
-          "to": [
-            41,
-            3,
-            1
-          ],
-          "block": {
-            "id": "neroruins:glyph_stone",
-            "properties": {
-              "glyph": "4"
             }
           }
         }
@@ -18760,71 +18706,6 @@
         },
         {
           "from": [
-            3,
-            1,
-            8
-          ],
-          "to": [
-            3,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            4,
-            1,
-            8
-          ],
-          "to": [
-            4,
-            1,
-            8
-          ],
-          "block": "minecraft:smooth_stone_slab"
-        },
-        {
-          "from": [
-            5,
-            1,
-            8
-          ],
-          "to": [
-            5,
-            1,
-            8
-          ],
-          "block": "minecraft:white_wool"
-        },
-        {
-          "from": [
-            6,
-            1,
-            8
-          ],
-          "to": [
-            6,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            7,
-            1,
-            8
-          ],
-          "to": [
-            7,
-            1,
-            8
-          ],
-          "block": "minecraft:smooth_stone_slab"
-        },
-        {
-          "from": [
             5,
             0,
             10
@@ -19145,71 +19026,6 @@
         },
         {
           "from": [
-            3,
-            1,
-            8
-          ],
-          "to": [
-            3,
-            1,
-            8
-          ],
-          "block": "minecraft:smoker"
-        },
-        {
-          "from": [
-            4,
-            1,
-            8
-          ],
-          "to": [
-            4,
-            1,
-            8
-          ],
-          "block": "minecraft:white_wool"
-        },
-        {
-          "from": [
-            5,
-            1,
-            8
-          ],
-          "to": [
-            5,
-            1,
-            8
-          ],
-          "block": "minecraft:crafting_table"
-        },
-        {
-          "from": [
-            6,
-            1,
-            8
-          ],
-          "to": [
-            6,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            7,
-            1,
-            8
-          ],
-          "to": [
-            7,
-            1,
-            8
-          ],
-          "block": "minecraft:smoker"
-        },
-        {
-          "from": [
             5,
             0,
             10
@@ -19527,71 +19343,6 @@
             2
           ],
           "block": "minecraft:white_wool"
-        },
-        {
-          "from": [
-            3,
-            1,
-            8
-          ],
-          "to": [
-            3,
-            1,
-            8
-          ],
-          "block": "minecraft:spruce_slab"
-        },
-        {
-          "from": [
-            4,
-            1,
-            8
-          ],
-          "to": [
-            4,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            5,
-            1,
-            8
-          ],
-          "to": [
-            5,
-            1,
-            8
-          ],
-          "block": "minecraft:flower_pot"
-        },
-        {
-          "from": [
-            6,
-            1,
-            8
-          ],
-          "to": [
-            6,
-            1,
-            8
-          ],
-          "block": "minecraft:white_wool"
-        },
-        {
-          "from": [
-            7,
-            1,
-            8
-          ],
-          "to": [
-            7,
-            1,
-            8
-          ],
-          "block": "minecraft:spruce_slab"
         },
         {
           "from": [
@@ -19958,7 +19709,7 @@
             0,
             8
           ],
-          "block": "minecraft:farmland"
+          "block": "minecraft:podzol"
         },
         {
           "from": [
@@ -20758,71 +20509,6 @@
         },
         {
           "from": [
-            3,
-            1,
-            8
-          ],
-          "to": [
-            3,
-            1,
-            8
-          ],
-          "block": "neroruins:survey_hull"
-        },
-        {
-          "from": [
-            4,
-            1,
-            8
-          ],
-          "to": [
-            4,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            5,
-            1,
-            8
-          ],
-          "to": [
-            5,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            6,
-            1,
-            8
-          ],
-          "to": [
-            6,
-            1,
-            8
-          ],
-          "block": "neroruins:survey_hull"
-        },
-        {
-          "from": [
-            7,
-            1,
-            8
-          ],
-          "to": [
-            7,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
             5,
             0,
             10
@@ -21143,71 +20829,6 @@
         },
         {
           "from": [
-            3,
-            1,
-            8
-          ],
-          "to": [
-            3,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            4,
-            1,
-            8
-          ],
-          "to": [
-            4,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            5,
-            1,
-            8
-          ],
-          "to": [
-            5,
-            1,
-            8
-          ],
-          "block": "minecraft:crafting_table"
-        },
-        {
-          "from": [
-            6,
-            1,
-            8
-          ],
-          "to": [
-            6,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            7,
-            1,
-            8
-          ],
-          "to": [
-            7,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
             5,
             0,
             10
@@ -21525,71 +21146,6 @@
             2
           ],
           "block": "neroruins:survey_hull"
-        },
-        {
-          "from": [
-            3,
-            1,
-            8
-          ],
-          "to": [
-            3,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            4,
-            1,
-            8
-          ],
-          "to": [
-            4,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
-        },
-        {
-          "from": [
-            5,
-            1,
-            8
-          ],
-          "to": [
-            5,
-            1,
-            8
-          ],
-          "block": "minecraft:smithing_table"
-        },
-        {
-          "from": [
-            6,
-            1,
-            8
-          ],
-          "to": [
-            6,
-            1,
-            8
-          ],
-          "block": "neroruins:survey_hull"
-        },
-        {
-          "from": [
-            7,
-            1,
-            8
-          ],
-          "to": [
-            7,
-            1,
-            8
-          ],
-          "block": "minecraft:barrel"
         },
         {
           "from": [
@@ -22926,12 +22482,12 @@
           "from": [
             1,
             1,
-            1
+            2
           ],
           "to": [
             1,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -22939,12 +22495,12 @@
           "from": [
             3,
             1,
-            1
+            2
           ],
           "to": [
             3,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -22952,12 +22508,12 @@
           "from": [
             5,
             1,
-            1
+            2
           ],
           "to": [
             5,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -22965,12 +22521,12 @@
           "from": [
             7,
             1,
-            1
+            2
           ],
           "to": [
             7,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -22978,12 +22534,12 @@
           "from": [
             9,
             1,
-            1
+            2
           ],
           "to": [
             9,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -22991,12 +22547,12 @@
           "from": [
             11,
             1,
-            1
+            2
           ],
           "to": [
             11,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23004,12 +22560,12 @@
           "from": [
             13,
             1,
-            1
+            2
           ],
           "to": [
             13,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23030,12 +22586,12 @@
           "from": [
             1,
             1,
-            4
+            5
           ],
           "to": [
             1,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23043,12 +22599,12 @@
           "from": [
             3,
             1,
-            4
+            5
           ],
           "to": [
             3,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23056,12 +22612,12 @@
           "from": [
             5,
             1,
-            4
+            5
           ],
           "to": [
             5,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23069,12 +22625,12 @@
           "from": [
             7,
             1,
-            4
+            5
           ],
           "to": [
             7,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23082,12 +22638,12 @@
           "from": [
             9,
             1,
-            4
+            5
           ],
           "to": [
             9,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23095,12 +22651,12 @@
           "from": [
             11,
             1,
-            4
+            5
           ],
           "to": [
             11,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23108,12 +22664,12 @@
           "from": [
             13,
             1,
-            4
+            5
           ],
           "to": [
             13,
             1,
-            4
+            5
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23134,12 +22690,12 @@
           "from": [
             1,
             1,
-            7
+            8
           ],
           "to": [
             1,
             1,
-            7
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23147,12 +22703,12 @@
           "from": [
             3,
             1,
-            7
+            8
           ],
           "to": [
             3,
             1,
-            7
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23160,12 +22716,12 @@
           "from": [
             5,
             1,
-            7
+            8
           ],
           "to": [
             5,
             1,
-            7
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23173,12 +22729,12 @@
           "from": [
             7,
             1,
-            7
+            8
           ],
           "to": [
             7,
             1,
-            7
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23186,12 +22742,12 @@
           "from": [
             9,
             1,
-            7
+            8
           ],
           "to": [
             9,
             1,
-            7
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23199,12 +22755,12 @@
           "from": [
             11,
             1,
-            7
+            8
           ],
           "to": [
             11,
             1,
-            7
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23212,220 +22768,12 @@
           "from": [
             13,
             1,
-            7
+            8
           ],
           "to": [
             13,
             1,
-            7
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            1,
-            0,
-            10
-          ],
-          "to": [
-            13,
-            0,
-            10
-          ],
-          "block": "minecraft:farmland"
-        },
-        {
-          "from": [
-            1,
-            1,
-            10
-          ],
-          "to": [
-            1,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            3,
-            1,
-            10
-          ],
-          "to": [
-            3,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            5,
-            1,
-            10
-          ],
-          "to": [
-            5,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            7,
-            1,
-            10
-          ],
-          "to": [
-            7,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            9,
-            1,
-            10
-          ],
-          "to": [
-            9,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            11,
-            1,
-            10
-          ],
-          "to": [
-            11,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            13,
-            1,
-            10
-          ],
-          "to": [
-            13,
-            1,
-            10
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            1,
-            0,
-            13
-          ],
-          "to": [
-            13,
-            0,
-            13
-          ],
-          "block": "minecraft:farmland"
-        },
-        {
-          "from": [
-            1,
-            1,
-            13
-          ],
-          "to": [
-            1,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            3,
-            1,
-            13
-          ],
-          "to": [
-            3,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            5,
-            1,
-            13
-          ],
-          "to": [
-            5,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            7,
-            1,
-            13
-          ],
-          "to": [
-            7,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            9,
-            1,
-            13
-          ],
-          "to": [
-            9,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            11,
-            1,
-            13
-          ],
-          "to": [
-            11,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            13,
-            1,
-            13
-          ],
-          "to": [
-            13,
-            1,
-            13
+            8
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23570,12 +22918,12 @@
           "from": [
             1,
             1,
-            1
+            2
           ],
           "to": [
             1,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23583,12 +22931,12 @@
           "from": [
             3,
             1,
-            1
+            2
           ],
           "to": [
             3,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23596,12 +22944,12 @@
           "from": [
             5,
             1,
-            1
+            2
           ],
           "to": [
             5,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23609,12 +22957,12 @@
           "from": [
             7,
             1,
-            1
+            2
           ],
           "to": [
             7,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23622,12 +22970,12 @@
           "from": [
             9,
             1,
-            1
+            2
           ],
           "to": [
             9,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23635,12 +22983,12 @@
           "from": [
             11,
             1,
-            1
+            2
           ],
           "to": [
             11,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23648,12 +22996,12 @@
           "from": [
             13,
             1,
-            1
+            2
           ],
           "to": [
             13,
             1,
-            1
+            2
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23674,12 +23022,12 @@
           "from": [
             1,
             1,
-            5
+            6
           ],
           "to": [
             1,
             1,
-            5
+            6
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23687,12 +23035,12 @@
           "from": [
             3,
             1,
-            5
+            6
           ],
           "to": [
             3,
             1,
-            5
+            6
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23700,12 +23048,12 @@
           "from": [
             5,
             1,
-            5
+            6
           ],
           "to": [
             5,
             1,
-            5
+            6
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23713,12 +23061,12 @@
           "from": [
             7,
             1,
-            5
+            6
           ],
           "to": [
             7,
             1,
-            5
+            6
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23726,12 +23074,12 @@
           "from": [
             9,
             1,
-            5
+            6
           ],
           "to": [
             9,
             1,
-            5
+            6
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23739,12 +23087,12 @@
           "from": [
             11,
             1,
-            5
+            6
           ],
           "to": [
             11,
             1,
-            5
+            6
           ],
           "block": "minecraft:dead_bush"
         },
@@ -23752,220 +23100,12 @@
           "from": [
             13,
             1,
-            5
+            6
           ],
           "to": [
             13,
             1,
-            5
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            1,
-            0,
-            9
-          ],
-          "to": [
-            13,
-            0,
-            9
-          ],
-          "block": "minecraft:farmland"
-        },
-        {
-          "from": [
-            1,
-            1,
-            9
-          ],
-          "to": [
-            1,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            3,
-            1,
-            9
-          ],
-          "to": [
-            3,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            5,
-            1,
-            9
-          ],
-          "to": [
-            5,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            7,
-            1,
-            9
-          ],
-          "to": [
-            7,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            9,
-            1,
-            9
-          ],
-          "to": [
-            9,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            11,
-            1,
-            9
-          ],
-          "to": [
-            11,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            13,
-            1,
-            9
-          ],
-          "to": [
-            13,
-            1,
-            9
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            1,
-            0,
-            13
-          ],
-          "to": [
-            13,
-            0,
-            13
-          ],
-          "block": "minecraft:farmland"
-        },
-        {
-          "from": [
-            1,
-            1,
-            13
-          ],
-          "to": [
-            1,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            3,
-            1,
-            13
-          ],
-          "to": [
-            3,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            5,
-            1,
-            13
-          ],
-          "to": [
-            5,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            7,
-            1,
-            13
-          ],
-          "to": [
-            7,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            9,
-            1,
-            13
-          ],
-          "to": [
-            9,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            11,
-            1,
-            13
-          ],
-          "to": [
-            11,
-            1,
-            13
-          ],
-          "block": "minecraft:dead_bush"
-        },
-        {
-          "from": [
-            13,
-            1,
-            13
-          ],
-          "to": [
-            13,
-            1,
-            13
+            6
           ],
           "block": "minecraft:dead_bush"
         },

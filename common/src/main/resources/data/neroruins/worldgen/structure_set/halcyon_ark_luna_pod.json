@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:halcyon_ark_luna_pod",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:halcyon_ark_luna",
+    "family": "halcyon_ark",
+    "index": 1,
+    "min_radius": 2,
+    "max_radius": 6,
+    "chance_percent": 60,
+    "type": "neroruins:satellite"
+  }
+}

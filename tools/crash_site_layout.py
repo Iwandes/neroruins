@@ -201,14 +201,14 @@ def meridian(name, breach, profile, crates):
     # guardian approach
     p.spawner((c, F, 17), 2)
     p.spawner((c - 6, F, 14), 3)
-    p.terminal((1, Y, 16), 4, "east")
+    p.terminal((c - 3, Y, 21), 4, "east")
     p.terminal((c + 4, Y, 12), 5, "south")
     # crew deck: bunks, medical locker, third log
     for z in (24, 27):
         p.fill((W - 6, Y, z), (W - 3, Y, z), "minecraft:white_wool")
     p.chest((1, Y, 26), "crash_site_cabin")
     p.chest((1, Y, 28), "crash_site_logs")
-    p.terminal((W - 2, Y, 29), 3, "west")
+    p.terminal((c - 3, Y, 29), 3, "east")
     # cargo hold: the conduit loop (the inner loop in the second log), the keystone locker
     lock = conduit_loop(p, 8, Y, 36)
     p.terminal((lock[0] + 1, Y, lock[2]), 2, "north")

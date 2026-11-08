@@ -1,0 +1,29 @@
+{
+  "type": "neroruins:satellite",
+  "biomes": "#neroruins:has_structure/lattice_temple_cindara",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "beard_thin",
+  "placement": {
+    "hub_set": "neroruins:lattice_temple_cindara",
+    "family": "lattice_temple",
+    "index": 2,
+    "min_radius": 7,
+    "max_radius": 10,
+    "chance_percent": 80
+  },
+  "layout": {
+    "biomes": "#neroruins:has_structure/lattice_temple_cindara",
+    "spawn_overrides": {},
+    "step": "surface_structures",
+    "terrain_adaptation": "beard_thin",
+    "max_distance_from_center": 24,
+    "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "size": 1,
+    "start_height": {
+      "absolute": 0
+    },
+    "start_pool": "neroruins:lattice_temple_ruin_halls",
+    "use_expansion_hack": false
+  }
+}

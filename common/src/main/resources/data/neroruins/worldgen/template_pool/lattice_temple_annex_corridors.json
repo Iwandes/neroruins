@@ -1,0 +1,23 @@
+{
+  "fallback": "neroruins:lattice_temple_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_annex_corridor_0",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:lattice_temple_annex_corridor_1",
+        "processors": "neroruins:lattice_temple",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "neroruins:satellite",
+  "biomes": "#neroruins:has_structure/halcyon_ark_luna",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "placement": {
+    "hub_set": "neroruins:halcyon_ark_luna",
+    "family": "halcyon_ark",
+    "index": 1,
+    "min_radius": 2,
+    "max_radius": 6,
+    "chance_percent": 60
+  },
+  "layout": {
+    "biomes": "#neroruins:has_structure/halcyon_ark_luna",
+    "spawn_overrides": {},
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "max_distance_from_center": 24,
+    "size": 1,
+    "start_height": {
+      "absolute": 0
+    },
+    "start_pool": "neroruins:halcyon_ark_pods",
+    "use_expansion_hack": false,
+    "project_start_to_heightmap": "WORLD_SURFACE_WG"
+  }
+}

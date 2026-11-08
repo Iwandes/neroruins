@@ -146,10 +146,10 @@ def building(t, x0, z0, x1, z1, wall, doors, windows=True, height=4):
         t.fill((x, 1, z), (x, 2, z), AIR)
 
 
-def furnish(t, x0, z0, x1, z1, items):
-    """Lines the north and south inner walls with furniture, leaving the middle rows and both end columns open."""
+def furnish(t, x0, z0, x1, z1, items, rows=None):
+    """Lines inner walls (north and south by default) with furniture, leaving the middle and both end columns open."""
     row = 0
-    for z in (z0 + 1, z1 - 1):
+    for z in rows or (z0 + 1, z1 - 1):
         for x in range(x0 + 2, x1 - 1):
             t.put((x, 1, z), items[row % len(items)])
             row += 1
@@ -283,8 +283,8 @@ def citadel_hub(variant):
     t.put((41, 2, 8), state("neroruins:relic_socket", facing="west", chapter=6, lit=False))
     t.vault((43, 1, 6), "neroruins:chests/colony_field_reliquary", structure)
     t.terminal((36, 1, 9), "glacira.6", "east")
-    for i, z in enumerate(range(3, 10)):
-        t.put((45, 3, z) if False else (35 + i, 3, 1), state("neroruins:glyph_stone", glyph=(i * 3 + variant) % 16))
+    for i, x in enumerate(range(35, 41)):
+        t.put((x, 3, 1), state("neroruins:glyph_stone", glyph=(i * 3 + variant) % 16))
     # Exits into the sprawl; the first is the pad entrance.
     t.exit((24, 1, 47), "south_up", PATHS)
     t.exit((0, 1, 30), "west_up", PATHS)
@@ -419,7 +419,7 @@ def lot(role, variant):
     t.fill((0, 1, 0), (10, 6, 10), AIR)
     wall = WALLS[variant]
     if role == "farm":
-        t.fill((1, 0, 1), (9, 0, 8), "minecraft:farmland" if variant == 1 else SOIL)
+        t.fill((1, 0, 1), (9, 0, 8), "minecraft:podzol" if variant == 1 else SOIL)
         for x in range(2, 9, 2):
             for z in range(2, 8, 2):
                 t.put((x, 1, z), DEAD)
@@ -430,7 +430,7 @@ def lot(role, variant):
         t.chest((9, 1, 9), "neroruins:chests/colony_field_supplies")
     else:
         building(t, 1, 1, 9, 9, wall, [(5, 9)])
-        furnish(t, 1, 1, 9, 9, ROOMS["hab" if role == "house" else "store"][variant])
+        furnish(t, 1, 1, 9, 9, ROOMS["hab" if role == "house" else "store"][variant], rows=(2,))
         t.chest((2, 1, 5), "neroruins:chests/colony_field_" + ("supplies" if role == "house" else "store"))
         t.put((5, 0, 10), PLAZA)
     t.entry((5, 1, 10), "south_up")
@@ -503,8 +503,8 @@ def habring(variant):
     huts = [(0, 0, 5, 5), (11, 0, 16, 5), (0, 11, 5, 16), (11, 11, 16, 16)] if variant == 0 \
         else [(0, 0, 6, 6), (10, 5, 16, 11), (0, 10, 6, 16)]
     for i, (x0, z0, x1, z1) in enumerate(huts):
-        door = (x1, (z0 + z1) // 2) if x0 == 0 else (x0, (z0 + z1) // 2)
-        building(t, x0, z0, x1, z1, WALLS[(i + variant) % 3], [door], height=3)
+        doorway = (x1, (z0 + z1) // 2) if x0 == 0 else (x0, (z0 + z1) // 2)
+        building(t, x0, z0, x1, z1, WALLS[(i + variant) % 3], [doorway], height=3)
         if i == 0:
             t.chest((x0 + 1, 1, z0 + 1), "neroruins:chests/colony_field_supplies")
     if variant == 1:
@@ -519,10 +519,10 @@ def sat_farm(variant):
     t = Template("colony_field_fields_" + "ab"[variant], (15, 6, 15))
     t.fill((0, 0, 0), (14, 0, 14), SOIL)
     t.fill((0, 1, 0), (14, 5, 14), AIR)
-    for z in range(1, 14, 3 if variant == 0 else 4):
+    for z in range(1, 9, 3 if variant == 0 else 4):
         t.fill((1, 0, z), (13, 0, z), "minecraft:farmland")
         for x in range(1, 14, 2):
-            t.put((x, 1, z), DEAD)
+            t.put((x, 1, z + 1), DEAD)
     building(t, 10, 10, 14, 14, HULL, [(10, 12)], windows=False, height=3)
     t.chest((13, 1, 13), "neroruins:chests/colony_field_supplies")
     return t.spec()
@@ -560,11 +560,9 @@ CLASSES = {
         "ground": {"radius": 12, "max_height_delta": 6, "require_dry": True, "min_depth": 8, "headroom": 10},
         "processor": "colony_field_dust"},
 }
-HUBS = {"citadel": citadel_hub, "complex": complex_hub, "outpost": outpost_hub}
-SATELLITE_SALT_BASE = 1593017300
 
 PROCESSORS = {
-    "colony_field_frost": [(HULL, RUST, 0.15), (PLAZA, "minecraft:snow_block", 0.2), (SOIL, "minecraft:snow_block", 0.3)],
+    "colony_field_frost": [(HULL, RUST, 0.15), (PLAZA, "minecraft:snow_block", 0.2)],
     "colony_field_overgrowth": [(HULL, RUST, 0.25), (PLAZA, "minecraft:moss_block", 0.25),
                                 (SOIL, "minecraft:rooted_dirt", 0.3)],
     "colony_field_dust": [(HULL, RUST, 0.3), (PLAZA, "minecraft:smooth_red_sandstone", 0.2)],
@@ -620,7 +618,6 @@ def data_files():
                 "output_state": target if overlay else {"Name": target}} for source, target, chance in rules]},
                 {"processor_type": "neroruins:puzzle_seed"}]
             files[("26.3:" if overlay else "") + "worldgen/processor_list/%s.json" % name] = {"processors": processors}
-    salt = SATELLITE_SALT_BASE
     for size_class, config in CLASSES.items():
         name = "colony_field_" + size_class
         tag = "#neroruins:has_structure/" + name
@@ -662,7 +659,6 @@ def data_files():
             files["worldgen/structure_set/%s.json" % satellite] = {
                 "structures": [{"structure": "neroruins:" + satellite, "weight": 1}],
                 "placement": dict(placement, type="neroruins:satellite")}
-            salt += 1
     files["spawn_tables/colony_field.json"] = {"entries": [
         {"entity": "neroruins:sentinel_mk1", "weight": 8, "min_tier": 1, "max_tier": 2},
         {"entity": "neroruins:sentinel_mk2", "weight": 2, "min_tier": 2, "max_tier": 3},

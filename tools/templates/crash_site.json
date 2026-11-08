@@ -1144,9 +1144,9 @@
         },
         {
           "pos": [
-            1,
+            10,
             7,
-            16
+            21
           ],
           "log_id": "neroruins:cindara.4",
           "facing": "east"
@@ -1162,12 +1162,12 @@
         },
         {
           "pos": [
-            25,
+            10,
             7,
             29
           ],
           "log_id": "neroruins:cindara.3",
-          "facing": "west"
+          "facing": "east"
         },
         {
           "pos": [
@@ -2320,9 +2320,9 @@
         },
         {
           "pos": [
-            25,
+            16,
             7,
-            16
+            21
           ],
           "log_id": "neroruins:cindara.4",
           "facing": "west"
@@ -2338,12 +2338,12 @@
         },
         {
           "pos": [
-            1,
+            16,
             7,
             29
           ],
           "log_id": "neroruins:cindara.3",
-          "facing": "east"
+          "facing": "west"
         },
         {
           "pos": [
@@ -3496,9 +3496,9 @@
         },
         {
           "pos": [
-            1,
+            10,
             7,
-            16
+            21
           ],
           "log_id": "neroruins:cindara.4",
           "facing": "east"
@@ -3514,12 +3514,12 @@
         },
         {
           "pos": [
-            25,
+            10,
             7,
             29
           ],
           "log_id": "neroruins:cindara.3",
-          "facing": "west"
+          "facing": "east"
         },
         {
           "pos": [
