@@ -6,6 +6,7 @@ from collections import deque
 from functools import lru_cache
 
 from build_templates import ROOT, SPEC_DIRECTORY
+import gated_enclosure
 
 DATA = ROOT / "common" / "src" / "main" / "resources" / "data" / "neroruins"
 SPECS = {spec["name"]: spec for spec in json.loads(
@@ -279,7 +280,83 @@ def budget(structure):
     return expand(layout["start_pool"], 0), limit
 
 
+FACING_STEP = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}
+
+
+def sealed_where_joined(spec):
+    """The piece's blocks with every connector doorway shut: a joined doorway leads only into another plated piece
+    (a level, corridor, room or cap), so the enclosure check stops there."""
+    blocks = blocks_of(spec)
+    for c in spec["connectors"]:
+        x, y, z = c["pos"]
+        blocks[(x, y, z)] = "neroruins:reinforced_survey_hull"
+        if not c["orientation"].startswith(("up", "down")):
+            blocks[(x, y + 1, z)] = "neroruins:reinforced_survey_hull"
+    return blocks
+
+
+def level_breaches(spec):
+    """Decision 039: from behind each sealed door, mining reaches neither the world nor the door's near side."""
+    blocks, found = sealed_where_joined(spec), []
+    for pos in lower_doors(blocks):
+        dx, dz = FACING_STEP[props(blocks[pos])["facing"]]
+        near, far = (pos[0] + dx, pos[1], pos[2] + dz), (pos[0] - dx, pos[1], pos[2] - dz)
+        hit = gated_enclosure.breach(blocks, far, forbidden={near})
+        if hit is not None:
+            found.append((pos, hit))
+    return found
+
+
+def branch_breaches(spec):
+    """A corridor, room or cap off a gated floor: no interior cell can be mined out to the world."""
+    blocks = sealed_where_joined(spec)
+    for pos, block in blocks.items():
+        if block_id(block) == "minecraft:air":
+            hit = gated_enclosure.breach(blocks, pos)
+            if hit is not None:
+                return [(pos, hit)]
+    return []
+
+
+def branch_templates():
+    names, queue = set(), [c["pool"] for spec in levels().values() for c in spec["connectors"]
+                           if not c["orientation"].startswith(("up", "down"))]
+    visited = set()
+    while queue:
+        current = queue.pop()
+        if current == "minecraft:empty" or current in visited:
+            continue
+        visited.add(current)
+        document = pool(current)
+        for name in pool_templates(current):
+            if name not in names:
+                names.add(name)
+                queue += [c["pool"] for c in SPECS[name]["connectors"]]
+        fallback = document.get("fallback", "minecraft:empty")
+        if fallback != "minecraft:empty" and fallback != current:
+            queue.append(fallback)
+    return sorted(names)
+
+
 class SurveyLabTest(unittest.TestCase):
+    def test_gated_floors_cannot_be_mined_into(self):
+        for name, spec in levels().items():
+            with self.subTest(level=name):
+                self.assertTrue(lower_doors(blocks_of(spec)))
+                self.assertEqual([], level_breaches(spec))
+        for name in branch_templates():
+            with self.subTest(branch=name):
+                self.assertEqual([], branch_breaches(SPECS[name]))
+        self.assertIn("survey_lab_corridor_cap", branch_templates())
+
+    def test_one_mineable_panel_under_a_gated_floor_is_caught(self):
+        weakened = copy.deepcopy(SPECS["survey_lab_level_1_a"])
+        weakened["fills"].append({"from": [5, 0, 5], "to": [5, 0, 5], "block": "neroruins:survey_hull"})
+        self.assertTrue(level_breaches(weakened))
+        corridor = copy.deepcopy(SPECS["survey_lab_corridor_short"])
+        corridor["fills"].append({"from": [4, 4, 2], "to": [4, 4, 2], "block": "neroruins:survey_hull"})
+        self.assertTrue(branch_breaches(corridor))
+
     def test_every_level_gates_its_vault_and_descent_behind_its_lock(self):
         self.assertEqual(30, len(levels()))
         for name, spec in levels().items():
