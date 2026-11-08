@@ -1,0 +1,7865 @@
+{
+  "templates": [
+    {
+      "name": "crash_site_meridian_a",
+      "size": [
+        27,
+        19,
+        64
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            63
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            25,
+            5,
+            62
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            1
+          ],
+          "to": [
+            25,
+            11,
+            62
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            13,
+            8
+          ],
+          "to": [
+            24,
+            13,
+            15
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            16
+          ],
+          "to": [
+            24,
+            14,
+            23
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            24
+          ],
+          "to": [
+            24,
+            14,
+            31
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            32
+          ],
+          "to": [
+            24,
+            15,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            40
+          ],
+          "to": [
+            24,
+            16,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            48
+          ],
+          "to": [
+            24,
+            16,
+            55
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            56
+          ],
+          "to": [
+            24,
+            18,
+            63
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            7,
+            5
+          ],
+          "to": [
+            25,
+            11,
+            5
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            5
+          ],
+          "to": [
+            14,
+            9,
+            5
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            11
+          ],
+          "to": [
+            25,
+            11,
+            11
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            11
+          ],
+          "to": [
+            13,
+            7,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            8,
+            11
+          ],
+          "to": [
+            13,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            8,
+            11
+          ],
+          "to": [
+            15,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:relic_socket",
+            "properties": {
+              "facing": "south",
+              "chapter": "5",
+              "lit": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            9,
+            11
+          ],
+          "to": [
+            15,
+            9,
+            11
+          ],
+          "block": {
+            "id": "neroruins:glyph_stone",
+            "properties": {
+              "glyph": "4"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            8,
+            11
+          ],
+          "to": [
+            11,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:glyph_stone",
+            "properties": {
+              "glyph": "11"
+            }
+          }
+        },
+        {
+          "from": [
+            1,
+            7,
+            22
+          ],
+          "to": [
+            25,
+            11,
+            22
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            22
+          ],
+          "to": [
+            14,
+            9,
+            22
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            30
+          ],
+          "to": [
+            25,
+            11,
+            30
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            30
+          ],
+          "to": [
+            14,
+            9,
+            30
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            49
+          ],
+          "to": [
+            25,
+            11,
+            49
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            49
+          ],
+          "to": [
+            14,
+            9,
+            49
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            3,
+            7,
+            1
+          ],
+          "to": [
+            23,
+            7,
+            1
+          ],
+          "block": "minecraft:polished_deepslate"
+        },
+        {
+          "from": [
+            10,
+            8,
+            1
+          ],
+          "to": [
+            10,
+            8,
+            1
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            16,
+            8,
+            1
+          ],
+          "to": [
+            16,
+            8,
+            1
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            2,
+            7,
+            6
+          ],
+          "to": [
+            4,
+            8,
+            6
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            21,
+            7,
+            24
+          ],
+          "to": [
+            24,
+            7,
+            24
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            21,
+            7,
+            27
+          ],
+          "to": [
+            24,
+            7,
+            27
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            9,
+            7,
+            40
+          ],
+          "to": [
+            9,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit_source",
+            "properties": {
+              "facing": "east"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            7,
+            40
+          ],
+          "to": [
+            10,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            40
+          ],
+          "to": [
+            11,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            39
+          ],
+          "to": [
+            11,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            38
+          ],
+          "to": [
+            11,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            38
+          ],
+          "to": [
+            12,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            7,
+            38
+          ],
+          "to": [
+            13,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            38
+          ],
+          "to": [
+            14,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            39
+          ],
+          "to": [
+            14,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            40
+          ],
+          "to": [
+            14,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            41
+          ],
+          "to": [
+            14,
+            7,
+            41
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            42
+          ],
+          "to": [
+            14,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            42
+          ],
+          "to": [
+            15,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            16,
+            7,
+            42
+          ],
+          "to": [
+            16,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit_lock",
+            "properties": {
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            40
+          ],
+          "to": [
+            12,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            41
+          ],
+          "to": [
+            12,
+            7,
+            41
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            7,
+            42
+          ],
+          "to": [
+            10,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            39
+          ],
+          "to": [
+            15,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            16,
+            7,
+            40
+          ],
+          "to": [
+            16,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            7,
+            39
+          ],
+          "to": [
+            20,
+            11,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            39
+          ],
+          "to": [
+            25,
+            11,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            47
+          ],
+          "to": [
+            25,
+            11,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            43
+          ],
+          "to": [
+            20,
+            7,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            8,
+            43
+          ],
+          "to": [
+            20,
+            8,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            0,
+            7,
+            54
+          ],
+          "to": [
+            0,
+            9,
+            57
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            10,
+            55
+          ],
+          "to": [
+            0,
+            10,
+            56
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            58
+          ],
+          "to": [
+            2,
+            7,
+            59
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            63
+          ],
+          "to": [
+            13,
+            8,
+            63
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            7,
+            26
+          ],
+          "to": [
+            26,
+            8,
+            26
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            7,
+            34
+          ],
+          "to": [
+            26,
+            8,
+            34
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            7,
+            56
+          ],
+          "to": [
+            26,
+            8,
+            56
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            13,
+            7,
+            63
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            26,
+            7,
+            26
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            26,
+            7,
+            34
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            26,
+            7,
+            56
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            2,
+            7,
+            8
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            24,
+            7,
+            8
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            26
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            28
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        },
+        {
+          "pos": [
+            2,
+            7,
+            32
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            2,
+            7,
+            47
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            10,
+            7,
+            46
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            61
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            13,
+            7,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_meridian_vault",
+          "structure": "neroruins:crash_site_meridian"
+        },
+        {
+          "pos": [
+            23,
+            7,
+            43
+          ],
+          "loot_table": "neroruins:chests/crash_site_keystone",
+          "structure": "neroruins:crash_site_meridian"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            13,
+            6,
+            17
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 2
+        },
+        {
+          "pos": [
+            7,
+            6,
+            14
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 3
+        }
+      ],
+      "terminals": [
+        {
+          "pos": [
+            9,
+            7,
+            3
+          ],
+          "log_id": "neroruins:cindara.6",
+          "facing": "south"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            16
+          ],
+          "log_id": "neroruins:cindara.4",
+          "facing": "east"
+        },
+        {
+          "pos": [
+            17,
+            7,
+            12
+          ],
+          "log_id": "neroruins:cindara.5",
+          "facing": "south"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            29
+          ],
+          "log_id": "neroruins:cindara.3",
+          "facing": "west"
+        },
+        {
+          "pos": [
+            17,
+            7,
+            42
+          ],
+          "log_id": "neroruins:cindara.2",
+          "facing": "north"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            52
+          ],
+          "log_id": "neroruins:cindara.1",
+          "facing": "east"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_meridian_b",
+      "size": [
+        27,
+        19,
+        64
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            63
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            25,
+            5,
+            62
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            1
+          ],
+          "to": [
+            25,
+            11,
+            62
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            13,
+            16
+          ],
+          "to": [
+            24,
+            14,
+            23
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            24
+          ],
+          "to": [
+            24,
+            15,
+            31
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            32
+          ],
+          "to": [
+            24,
+            15,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            40
+          ],
+          "to": [
+            24,
+            17,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            48
+          ],
+          "to": [
+            24,
+            18,
+            55
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            56
+          ],
+          "to": [
+            24,
+            17,
+            63
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            7,
+            5
+          ],
+          "to": [
+            25,
+            11,
+            5
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            5
+          ],
+          "to": [
+            14,
+            9,
+            5
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            11
+          ],
+          "to": [
+            25,
+            11,
+            11
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            11
+          ],
+          "to": [
+            13,
+            7,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            8,
+            11
+          ],
+          "to": [
+            13,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            8,
+            11
+          ],
+          "to": [
+            11,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:relic_socket",
+            "properties": {
+              "facing": "south",
+              "chapter": "5",
+              "lit": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            9,
+            11
+          ],
+          "to": [
+            11,
+            9,
+            11
+          ],
+          "block": {
+            "id": "neroruins:glyph_stone",
+            "properties": {
+              "glyph": "4"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            8,
+            11
+          ],
+          "to": [
+            15,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:glyph_stone",
+            "properties": {
+              "glyph": "11"
+            }
+          }
+        },
+        {
+          "from": [
+            1,
+            7,
+            22
+          ],
+          "to": [
+            25,
+            11,
+            22
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            22
+          ],
+          "to": [
+            14,
+            9,
+            22
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            30
+          ],
+          "to": [
+            25,
+            11,
+            30
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            30
+          ],
+          "to": [
+            14,
+            9,
+            30
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            49
+          ],
+          "to": [
+            25,
+            11,
+            49
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            49
+          ],
+          "to": [
+            14,
+            9,
+            49
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            3,
+            7,
+            1
+          ],
+          "to": [
+            23,
+            7,
+            1
+          ],
+          "block": "minecraft:polished_deepslate"
+        },
+        {
+          "from": [
+            16,
+            8,
+            1
+          ],
+          "to": [
+            16,
+            8,
+            1
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            10,
+            8,
+            1
+          ],
+          "to": [
+            10,
+            8,
+            1
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            22,
+            7,
+            6
+          ],
+          "to": [
+            24,
+            8,
+            6
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            2,
+            7,
+            24
+          ],
+          "to": [
+            5,
+            7,
+            24
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            2,
+            7,
+            27
+          ],
+          "to": [
+            5,
+            7,
+            27
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            17,
+            7,
+            40
+          ],
+          "to": [
+            17,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit_source",
+            "properties": {
+              "facing": "west"
+            }
+          }
+        },
+        {
+          "from": [
+            16,
+            7,
+            40
+          ],
+          "to": [
+            16,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            40
+          ],
+          "to": [
+            15,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            39
+          ],
+          "to": [
+            15,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            38
+          ],
+          "to": [
+            15,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            38
+          ],
+          "to": [
+            14,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            7,
+            38
+          ],
+          "to": [
+            13,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            38
+          ],
+          "to": [
+            12,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            39
+          ],
+          "to": [
+            12,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            40
+          ],
+          "to": [
+            12,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            41
+          ],
+          "to": [
+            12,
+            7,
+            41
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            42
+          ],
+          "to": [
+            12,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            42
+          ],
+          "to": [
+            11,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            7,
+            42
+          ],
+          "to": [
+            10,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit_lock",
+            "properties": {
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            40
+          ],
+          "to": [
+            14,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            41
+          ],
+          "to": [
+            14,
+            7,
+            41
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            16,
+            7,
+            42
+          ],
+          "to": [
+            16,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            39
+          ],
+          "to": [
+            11,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            7,
+            40
+          ],
+          "to": [
+            10,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            7,
+            39
+          ],
+          "to": [
+            6,
+            11,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            7,
+            39
+          ],
+          "to": [
+            6,
+            11,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            7,
+            47
+          ],
+          "to": [
+            6,
+            11,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            6,
+            7,
+            43
+          ],
+          "to": [
+            6,
+            7,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "east",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            8,
+            43
+          ],
+          "to": [
+            6,
+            8,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "east",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            26,
+            7,
+            54
+          ],
+          "to": [
+            26,
+            9,
+            57
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            10,
+            55
+          ],
+          "to": [
+            26,
+            10,
+            56
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            24,
+            7,
+            58
+          ],
+          "to": [
+            25,
+            7,
+            59
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            63
+          ],
+          "to": [
+            13,
+            8,
+            63
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            7,
+            26
+          ],
+          "to": [
+            0,
+            8,
+            26
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            7,
+            34
+          ],
+          "to": [
+            0,
+            8,
+            34
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            7,
+            56
+          ],
+          "to": [
+            0,
+            8,
+            56
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            13,
+            7,
+            63
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            0,
+            7,
+            26
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            0,
+            7,
+            34
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            0,
+            7,
+            56
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            24,
+            7,
+            8
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            2,
+            7,
+            8
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            26
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            28
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        },
+        {
+          "pos": [
+            24,
+            7,
+            33
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            20,
+            7,
+            47
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            14,
+            7,
+            31
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            61
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            13,
+            7,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_meridian_vault",
+          "structure": "neroruins:crash_site_meridian"
+        },
+        {
+          "pos": [
+            3,
+            7,
+            43
+          ],
+          "loot_table": "neroruins:chests/crash_site_keystone",
+          "structure": "neroruins:crash_site_meridian"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            13,
+            6,
+            17
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 2
+        },
+        {
+          "pos": [
+            19,
+            6,
+            14
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 3
+        }
+      ],
+      "terminals": [
+        {
+          "pos": [
+            17,
+            7,
+            3
+          ],
+          "log_id": "neroruins:cindara.6",
+          "facing": "south"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            16
+          ],
+          "log_id": "neroruins:cindara.4",
+          "facing": "west"
+        },
+        {
+          "pos": [
+            9,
+            7,
+            12
+          ],
+          "log_id": "neroruins:cindara.5",
+          "facing": "south"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            29
+          ],
+          "log_id": "neroruins:cindara.3",
+          "facing": "east"
+        },
+        {
+          "pos": [
+            9,
+            7,
+            42
+          ],
+          "log_id": "neroruins:cindara.2",
+          "facing": "north"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            52
+          ],
+          "log_id": "neroruins:cindara.1",
+          "facing": "west"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_meridian_c",
+      "size": [
+        27,
+        19,
+        64
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            63
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            25,
+            5,
+            62
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            1
+          ],
+          "to": [
+            25,
+            11,
+            62
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            13,
+            8
+          ],
+          "to": [
+            24,
+            14,
+            15
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            16
+          ],
+          "to": [
+            24,
+            14,
+            23
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            24
+          ],
+          "to": [
+            24,
+            15,
+            31
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            32
+          ],
+          "to": [
+            24,
+            16,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            40
+          ],
+          "to": [
+            24,
+            18,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            48
+          ],
+          "to": [
+            24,
+            17,
+            55
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            13,
+            56
+          ],
+          "to": [
+            24,
+            15,
+            63
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            7,
+            5
+          ],
+          "to": [
+            25,
+            11,
+            5
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            5
+          ],
+          "to": [
+            14,
+            9,
+            5
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            11
+          ],
+          "to": [
+            25,
+            11,
+            11
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            11
+          ],
+          "to": [
+            13,
+            7,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            8,
+            11
+          ],
+          "to": [
+            13,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            8,
+            11
+          ],
+          "to": [
+            15,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:relic_socket",
+            "properties": {
+              "facing": "south",
+              "chapter": "5",
+              "lit": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            9,
+            11
+          ],
+          "to": [
+            15,
+            9,
+            11
+          ],
+          "block": {
+            "id": "neroruins:glyph_stone",
+            "properties": {
+              "glyph": "4"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            8,
+            11
+          ],
+          "to": [
+            11,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:glyph_stone",
+            "properties": {
+              "glyph": "11"
+            }
+          }
+        },
+        {
+          "from": [
+            1,
+            7,
+            22
+          ],
+          "to": [
+            25,
+            11,
+            22
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            22
+          ],
+          "to": [
+            14,
+            9,
+            22
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            30
+          ],
+          "to": [
+            25,
+            11,
+            30
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            30
+          ],
+          "to": [
+            14,
+            9,
+            30
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            7,
+            49
+          ],
+          "to": [
+            25,
+            11,
+            49
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            12,
+            7,
+            49
+          ],
+          "to": [
+            14,
+            9,
+            49
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            3,
+            7,
+            1
+          ],
+          "to": [
+            23,
+            7,
+            1
+          ],
+          "block": "minecraft:polished_deepslate"
+        },
+        {
+          "from": [
+            10,
+            8,
+            1
+          ],
+          "to": [
+            10,
+            8,
+            1
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            16,
+            8,
+            1
+          ],
+          "to": [
+            16,
+            8,
+            1
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            2,
+            7,
+            6
+          ],
+          "to": [
+            4,
+            8,
+            6
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            21,
+            7,
+            24
+          ],
+          "to": [
+            24,
+            7,
+            24
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            21,
+            7,
+            27
+          ],
+          "to": [
+            24,
+            7,
+            27
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            9,
+            7,
+            40
+          ],
+          "to": [
+            9,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit_source",
+            "properties": {
+              "facing": "east"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            7,
+            40
+          ],
+          "to": [
+            10,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            40
+          ],
+          "to": [
+            11,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            39
+          ],
+          "to": [
+            11,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            7,
+            38
+          ],
+          "to": [
+            11,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            38
+          ],
+          "to": [
+            12,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            7,
+            38
+          ],
+          "to": [
+            13,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            38
+          ],
+          "to": [
+            14,
+            7,
+            38
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            39
+          ],
+          "to": [
+            14,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            40
+          ],
+          "to": [
+            14,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            41
+          ],
+          "to": [
+            14,
+            7,
+            41
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            14,
+            7,
+            42
+          ],
+          "to": [
+            14,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            42
+          ],
+          "to": [
+            15,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            16,
+            7,
+            42
+          ],
+          "to": [
+            16,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit_lock",
+            "properties": {
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            40
+          ],
+          "to": [
+            12,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            41
+          ],
+          "to": [
+            12,
+            7,
+            41
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            7,
+            42
+          ],
+          "to": [
+            10,
+            7,
+            42
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            7,
+            39
+          ],
+          "to": [
+            15,
+            7,
+            39
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            16,
+            7,
+            40
+          ],
+          "to": [
+            16,
+            7,
+            40
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            7,
+            39
+          ],
+          "to": [
+            20,
+            11,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            39
+          ],
+          "to": [
+            25,
+            11,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            47
+          ],
+          "to": [
+            25,
+            11,
+            47
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            43
+          ],
+          "to": [
+            20,
+            7,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            8,
+            43
+          ],
+          "to": [
+            20,
+            8,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            7,
+            63
+          ],
+          "to": [
+            14,
+            9,
+            63
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            13,
+            10,
+            63
+          ],
+          "to": [
+            13,
+            10,
+            63
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            7,
+            56
+          ],
+          "to": [
+            0,
+            8,
+            56
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            7,
+            26
+          ],
+          "to": [
+            26,
+            8,
+            26
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            7,
+            34
+          ],
+          "to": [
+            26,
+            8,
+            34
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            26,
+            7,
+            56
+          ],
+          "to": [
+            26,
+            8,
+            56
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            0,
+            7,
+            56
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            26,
+            7,
+            26
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            26,
+            7,
+            34
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            26,
+            7,
+            56
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            2,
+            7,
+            8
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            24,
+            7,
+            8
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            26
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            28
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        },
+        {
+          "pos": [
+            2,
+            7,
+            32
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            3,
+            7,
+            47
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            18,
+            7,
+            46
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            61
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            13,
+            7,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_meridian_vault",
+          "structure": "neroruins:crash_site_meridian"
+        },
+        {
+          "pos": [
+            23,
+            7,
+            43
+          ],
+          "loot_table": "neroruins:chests/crash_site_keystone",
+          "structure": "neroruins:crash_site_meridian"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            13,
+            6,
+            17
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 2
+        },
+        {
+          "pos": [
+            7,
+            6,
+            14
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 3
+        }
+      ],
+      "terminals": [
+        {
+          "pos": [
+            9,
+            7,
+            3
+          ],
+          "log_id": "neroruins:cindara.6",
+          "facing": "south"
+        },
+        {
+          "pos": [
+            1,
+            7,
+            16
+          ],
+          "log_id": "neroruins:cindara.4",
+          "facing": "east"
+        },
+        {
+          "pos": [
+            17,
+            7,
+            12
+          ],
+          "log_id": "neroruins:cindara.5",
+          "facing": "south"
+        },
+        {
+          "pos": [
+            25,
+            7,
+            29
+          ],
+          "log_id": "neroruins:cindara.3",
+          "facing": "west"
+        },
+        {
+          "pos": [
+            17,
+            7,
+            42
+          ],
+          "log_id": "neroruins:cindara.2",
+          "facing": "north"
+        },
+        {
+          "pos": [
+            10,
+            7,
+            62
+          ],
+          "log_id": "neroruins:cindara.1",
+          "facing": "north"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_complex_a",
+      "size": [
+        19,
+        15,
+        40
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            17,
+            3,
+            38
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            5,
+            1
+          ],
+          "to": [
+            17,
+            9,
+            38
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            11,
+            8
+          ],
+          "to": [
+            16,
+            11,
+            15
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            16
+          ],
+          "to": [
+            16,
+            12,
+            23
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            24
+          ],
+          "to": [
+            16,
+            13,
+            31
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            32
+          ],
+          "to": [
+            16,
+            14,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            5,
+            8
+          ],
+          "to": [
+            17,
+            9,
+            8
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            9,
+            5,
+            8
+          ],
+          "to": [
+            9,
+            5,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            6,
+            8
+          ],
+          "to": [
+            9,
+            6,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            4,
+            5,
+            1
+          ],
+          "to": [
+            14,
+            5,
+            1
+          ],
+          "block": "minecraft:polished_deepslate"
+        },
+        {
+          "from": [
+            5,
+            5,
+            12
+          ],
+          "to": [
+            5,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit_source",
+            "properties": {
+              "facing": "east"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            5,
+            12
+          ],
+          "to": [
+            6,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            12
+          ],
+          "to": [
+            7,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            11
+          ],
+          "to": [
+            7,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            10
+          ],
+          "to": [
+            7,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            10
+          ],
+          "to": [
+            8,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            5,
+            10
+          ],
+          "to": [
+            9,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            10
+          ],
+          "to": [
+            10,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            11
+          ],
+          "to": [
+            10,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            12
+          ],
+          "to": [
+            10,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            13
+          ],
+          "to": [
+            10,
+            5,
+            13
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            14
+          ],
+          "to": [
+            10,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            14
+          ],
+          "to": [
+            11,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            5,
+            14
+          ],
+          "to": [
+            12,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit_lock",
+            "properties": {
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            12
+          ],
+          "to": [
+            8,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            13
+          ],
+          "to": [
+            8,
+            5,
+            13
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            5,
+            14
+          ],
+          "to": [
+            6,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            11
+          ],
+          "to": [
+            11,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            5,
+            12
+          ],
+          "to": [
+            12,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            1,
+            5,
+            18
+          ],
+          "to": [
+            17,
+            9,
+            18
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            18
+          ],
+          "to": [
+            10,
+            7,
+            18
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            5,
+            29
+          ],
+          "to": [
+            17,
+            9,
+            29
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            29
+          ],
+          "to": [
+            10,
+            7,
+            29
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            5,
+            24
+          ],
+          "to": [
+            4,
+            6,
+            26
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            5,
+            32
+          ],
+          "to": [
+            0,
+            7,
+            35
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            9,
+            5,
+            39
+          ],
+          "to": [
+            9,
+            6,
+            39
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            18,
+            5,
+            23
+          ],
+          "to": [
+            18,
+            6,
+            23
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            18,
+            5,
+            34
+          ],
+          "to": [
+            18,
+            6,
+            34
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            9,
+            5,
+            39
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            18,
+            5,
+            23
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            18,
+            5,
+            34
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            2,
+            5,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            5,
+            20
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            17,
+            5,
+            27
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        },
+        {
+          "pos": [
+            17,
+            5,
+            37
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            9,
+            5,
+            6
+          ],
+          "loot_table": "neroruins:chests/crash_site_vault",
+          "structure": "neroruins:crash_site_complex"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            9,
+            4,
+            15
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "name": "crash_site_complex_b",
+      "size": [
+        19,
+        15,
+        40
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            17,
+            3,
+            38
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            5,
+            1
+          ],
+          "to": [
+            17,
+            9,
+            38
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            11,
+            8
+          ],
+          "to": [
+            16,
+            12,
+            15
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            16
+          ],
+          "to": [
+            16,
+            12,
+            23
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            24
+          ],
+          "to": [
+            16,
+            14,
+            31
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            32
+          ],
+          "to": [
+            16,
+            13,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            5,
+            8
+          ],
+          "to": [
+            17,
+            9,
+            8
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            9,
+            5,
+            8
+          ],
+          "to": [
+            9,
+            5,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            6,
+            8
+          ],
+          "to": [
+            9,
+            6,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            4,
+            5,
+            1
+          ],
+          "to": [
+            14,
+            5,
+            1
+          ],
+          "block": "minecraft:polished_deepslate"
+        },
+        {
+          "from": [
+            13,
+            5,
+            12
+          ],
+          "to": [
+            13,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit_source",
+            "properties": {
+              "facing": "west"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            5,
+            12
+          ],
+          "to": [
+            12,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            12
+          ],
+          "to": [
+            11,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            11
+          ],
+          "to": [
+            11,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            10
+          ],
+          "to": [
+            11,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            10
+          ],
+          "to": [
+            10,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            5,
+            10
+          ],
+          "to": [
+            9,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            10
+          ],
+          "to": [
+            8,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            11
+          ],
+          "to": [
+            8,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            12
+          ],
+          "to": [
+            8,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            13
+          ],
+          "to": [
+            8,
+            5,
+            13
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            14
+          ],
+          "to": [
+            8,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            14
+          ],
+          "to": [
+            7,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            5,
+            14
+          ],
+          "to": [
+            6,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit_lock",
+            "properties": {
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            12
+          ],
+          "to": [
+            10,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            13
+          ],
+          "to": [
+            10,
+            5,
+            13
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            5,
+            14
+          ],
+          "to": [
+            12,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            11
+          ],
+          "to": [
+            7,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            5,
+            12
+          ],
+          "to": [
+            6,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            1,
+            5,
+            18
+          ],
+          "to": [
+            17,
+            9,
+            18
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            18
+          ],
+          "to": [
+            10,
+            7,
+            18
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            5,
+            29
+          ],
+          "to": [
+            17,
+            9,
+            29
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            29
+          ],
+          "to": [
+            10,
+            7,
+            29
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            14,
+            5,
+            24
+          ],
+          "to": [
+            16,
+            6,
+            26
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            18,
+            5,
+            32
+          ],
+          "to": [
+            18,
+            7,
+            35
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            9,
+            5,
+            39
+          ],
+          "to": [
+            9,
+            6,
+            39
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            5,
+            23
+          ],
+          "to": [
+            0,
+            6,
+            23
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            5,
+            34
+          ],
+          "to": [
+            0,
+            6,
+            34
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            9,
+            5,
+            39
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            0,
+            5,
+            23
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            0,
+            5,
+            34
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            16,
+            5,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            17,
+            5,
+            20
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            5,
+            27
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        },
+        {
+          "pos": [
+            1,
+            5,
+            37
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            9,
+            5,
+            6
+          ],
+          "loot_table": "neroruins:chests/crash_site_vault",
+          "structure": "neroruins:crash_site_complex"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            9,
+            4,
+            15
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "name": "crash_site_complex_c",
+      "size": [
+        19,
+        15,
+        40
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            17,
+            3,
+            38
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            5,
+            1
+          ],
+          "to": [
+            17,
+            9,
+            38
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            11,
+            0
+          ],
+          "to": [
+            16,
+            11,
+            7
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            8
+          ],
+          "to": [
+            16,
+            11,
+            15
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            16
+          ],
+          "to": [
+            16,
+            13,
+            23
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            24
+          ],
+          "to": [
+            16,
+            14,
+            31
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            11,
+            32
+          ],
+          "to": [
+            16,
+            12,
+            39
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            5,
+            8
+          ],
+          "to": [
+            17,
+            9,
+            8
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            9,
+            5,
+            8
+          ],
+          "to": [
+            9,
+            5,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            6,
+            8
+          ],
+          "to": [
+            9,
+            6,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            4,
+            5,
+            1
+          ],
+          "to": [
+            14,
+            5,
+            1
+          ],
+          "block": "minecraft:polished_deepslate"
+        },
+        {
+          "from": [
+            5,
+            5,
+            12
+          ],
+          "to": [
+            5,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit_source",
+            "properties": {
+              "facing": "east"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            5,
+            12
+          ],
+          "to": [
+            6,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            12
+          ],
+          "to": [
+            7,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "west",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            11
+          ],
+          "to": [
+            7,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            7,
+            5,
+            10
+          ],
+          "to": [
+            7,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            10
+          ],
+          "to": [
+            8,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            5,
+            10
+          ],
+          "to": [
+            9,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            10
+          ],
+          "to": [
+            10,
+            5,
+            10
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            11
+          ],
+          "to": [
+            10,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            12
+          ],
+          "to": [
+            10,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            13
+          ],
+          "to": [
+            10,
+            5,
+            13
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            10,
+            5,
+            14
+          ],
+          "to": [
+            10,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            14
+          ],
+          "to": [
+            11,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            5,
+            14
+          ],
+          "to": [
+            12,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit_lock",
+            "properties": {
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            12
+          ],
+          "to": [
+            8,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            5,
+            13
+          ],
+          "to": [
+            8,
+            5,
+            13
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            5,
+            14
+          ],
+          "to": [
+            6,
+            5,
+            14
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "south",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            5,
+            11
+          ],
+          "to": [
+            11,
+            5,
+            11
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "east",
+              "corner": "true",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            5,
+            12
+          ],
+          "to": [
+            12,
+            5,
+            12
+          ],
+          "block": {
+            "id": "neroruins:conduit",
+            "properties": {
+              "facing": "north",
+              "corner": "false",
+              "powered": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            1,
+            5,
+            18
+          ],
+          "to": [
+            17,
+            9,
+            18
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            18
+          ],
+          "to": [
+            10,
+            7,
+            18
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            5,
+            29
+          ],
+          "to": [
+            17,
+            9,
+            29
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            29
+          ],
+          "to": [
+            10,
+            7,
+            29
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            5,
+            24
+          ],
+          "to": [
+            4,
+            6,
+            26
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            8,
+            5,
+            39
+          ],
+          "to": [
+            10,
+            7,
+            39
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            5,
+            34
+          ],
+          "to": [
+            0,
+            6,
+            34
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            18,
+            5,
+            23
+          ],
+          "to": [
+            18,
+            6,
+            23
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            18,
+            5,
+            34
+          ],
+          "to": [
+            18,
+            6,
+            34
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            0,
+            5,
+            34
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            18,
+            5,
+            23
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            18,
+            5,
+            34
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            2,
+            5,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            5,
+            20
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            17,
+            5,
+            27
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        },
+        {
+          "pos": [
+            17,
+            5,
+            37
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            9,
+            5,
+            6
+          ],
+          "loot_table": "neroruins:chests/crash_site_vault",
+          "structure": "neroruins:crash_site_complex"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            9,
+            4,
+            15
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "name": "crash_site_outpost_a",
+      "size": [
+        13,
+        10,
+        21
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            20
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            11,
+            1,
+            19
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            3,
+            1
+          ],
+          "to": [
+            11,
+            6,
+            19
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            8,
+            7
+          ],
+          "to": [
+            10,
+            8,
+            13
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            8,
+            14
+          ],
+          "to": [
+            10,
+            9,
+            20
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            3,
+            10
+          ],
+          "to": [
+            11,
+            6,
+            10
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            6,
+            3,
+            10
+          ],
+          "to": [
+            6,
+            3,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            4,
+            10
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            4,
+            10
+          ],
+          "to": [
+            8,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:card_reader",
+            "properties": {
+              "facing": "south",
+              "tier": "1",
+              "accepted": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            0,
+            3,
+            15
+          ],
+          "to": [
+            0,
+            5,
+            17
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            12,
+            3,
+            15
+          ],
+          "to": [
+            12,
+            4,
+            15
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            12,
+            3,
+            15
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            2,
+            3,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            3,
+            12
+          ],
+          "loot_table": "neroruins:chests/crash_site_keycard"
+        },
+        {
+          "pos": [
+            11,
+            3,
+            18
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            6,
+            3,
+            5
+          ],
+          "loot_table": "neroruins:chests/crash_site_outpost_vault",
+          "structure": "neroruins:crash_site_outpost"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            6,
+            2,
+            14
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "name": "crash_site_outpost_b",
+      "size": [
+        13,
+        10,
+        21
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            20
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            11,
+            1,
+            19
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            3,
+            1
+          ],
+          "to": [
+            11,
+            6,
+            19
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            8,
+            7
+          ],
+          "to": [
+            10,
+            9,
+            13
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            8,
+            14
+          ],
+          "to": [
+            10,
+            8,
+            20
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            3,
+            10
+          ],
+          "to": [
+            11,
+            6,
+            10
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            6,
+            3,
+            10
+          ],
+          "to": [
+            6,
+            3,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            4,
+            10
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            4,
+            4,
+            10
+          ],
+          "to": [
+            4,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:card_reader",
+            "properties": {
+              "facing": "south",
+              "tier": "1",
+              "accepted": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            12,
+            3,
+            15
+          ],
+          "to": [
+            12,
+            5,
+            17
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            3,
+            15
+          ],
+          "to": [
+            0,
+            4,
+            15
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            0,
+            3,
+            15
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            10,
+            3,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            11,
+            3,
+            12
+          ],
+          "loot_table": "neroruins:chests/crash_site_keycard"
+        },
+        {
+          "pos": [
+            1,
+            3,
+            18
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            6,
+            3,
+            5
+          ],
+          "loot_table": "neroruins:chests/crash_site_outpost_vault",
+          "structure": "neroruins:crash_site_outpost"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            6,
+            2,
+            14
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "name": "crash_site_outpost_c",
+      "size": [
+        13,
+        10,
+        21
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            20
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            11,
+            1,
+            19
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            3,
+            1
+          ],
+          "to": [
+            11,
+            6,
+            19
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            8,
+            0
+          ],
+          "to": [
+            10,
+            8,
+            6
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            8,
+            7
+          ],
+          "to": [
+            10,
+            8,
+            13
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            2,
+            8,
+            14
+          ],
+          "to": [
+            10,
+            9,
+            20
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            3,
+            10
+          ],
+          "to": [
+            11,
+            6,
+            10
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            6,
+            3,
+            10
+          ],
+          "to": [
+            6,
+            3,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            4,
+            10
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            4,
+            10
+          ],
+          "to": [
+            8,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:card_reader",
+            "properties": {
+              "facing": "south",
+              "tier": "1",
+              "accepted": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            5,
+            3,
+            20
+          ],
+          "to": [
+            7,
+            5,
+            20
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            3,
+            15
+          ],
+          "to": [
+            0,
+            4,
+            15
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            0,
+            3,
+            15
+          ],
+          "orientation": "west_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            2,
+            3,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            3,
+            12
+          ],
+          "loot_table": "neroruins:chests/crash_site_keycard"
+        },
+        {
+          "pos": [
+            11,
+            3,
+            18
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        }
+      ],
+      "vaults": [
+        {
+          "pos": [
+            6,
+            3,
+            5
+          ],
+          "loot_table": "neroruins:chests/crash_site_outpost_vault",
+          "structure": "neroruins:crash_site_outpost"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            6,
+            2,
+            14
+          ],
+          "table": "neroruins:crash_site",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "name": "crash_site_corridor_straight",
+      "size": [
+        5,
+        5,
+        9
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            4,
+            4,
+            8
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            3,
+            3,
+            7
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            1,
+            0
+          ],
+          "to": [
+            2,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            1,
+            8
+          ],
+          "to": [
+            2,
+            2,
+            8
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            4
+          ],
+          "to": [
+            1,
+            1,
+            4
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            2,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            2,
+            1,
+            8
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_rooms",
+          "final_state": "minecraft:air"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_corridor_turn",
+      "size": [
+        7,
+        5,
+        7
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            6,
+            4,
+            6
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            5,
+            3,
+            5
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            3,
+            1,
+            0
+          ],
+          "to": [
+            3,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            6,
+            1,
+            4
+          ],
+          "to": [
+            6,
+            2,
+            4
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            5
+          ],
+          "to": [
+            2,
+            2,
+            5
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            3,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            6,
+            1,
+            4
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_rooms",
+          "final_state": "minecraft:air"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_corridor_jog",
+      "size": [
+        7,
+        5,
+        11
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            5,
+            3,
+            9
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            4
+          ],
+          "to": [
+            3,
+            3,
+            6
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            5,
+            1,
+            0
+          ],
+          "to": [
+            5,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            10
+          ],
+          "to": [
+            1,
+            2,
+            10
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            5,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            1,
+            1,
+            10
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_rooms",
+          "final_state": "minecraft:air"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_cabin_bunks",
+      "size": [
+        9,
+        5,
+        9
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            8,
+            4,
+            8
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            7,
+            3,
+            7
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            6
+          ],
+          "to": [
+            3,
+            1,
+            7
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            5,
+            1,
+            6
+          ],
+          "to": [
+            7,
+            1,
+            7
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            4,
+            1,
+            0
+          ],
+          "to": [
+            4,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            4,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            7,
+            1,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            1,
+            1,
+            2
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_cabin_quarters",
+      "size": [
+        11,
+        5,
+        9
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            10,
+            4,
+            8
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            9,
+            3,
+            7
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            7
+          ],
+          "to": [
+            2,
+            1,
+            7
+          ],
+          "block": "minecraft:light_gray_wool"
+        },
+        {
+          "from": [
+            4,
+            1,
+            7
+          ],
+          "to": [
+            5,
+            1,
+            7
+          ],
+          "block": "minecraft:light_gray_wool"
+        },
+        {
+          "from": [
+            7,
+            1,
+            7
+          ],
+          "to": [
+            8,
+            1,
+            7
+          ],
+          "block": "minecraft:light_gray_wool"
+        },
+        {
+          "from": [
+            5,
+            1,
+            0
+          ],
+          "to": [
+            5,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            10,
+            1,
+            4
+          ],
+          "to": [
+            10,
+            2,
+            4
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            5,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            10,
+            1,
+            4
+          ],
+          "orientation": "east_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            1,
+            1,
+            1
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_cabin_medbay",
+      "size": [
+        9,
+        5,
+        11
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            8,
+            4,
+            10
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            7,
+            3,
+            9
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            7,
+            0,
+            9
+          ],
+          "block": "minecraft:white_concrete"
+        },
+        {
+          "from": [
+            1,
+            1,
+            8
+          ],
+          "to": [
+            2,
+            1,
+            9
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            6,
+            1,
+            8
+          ],
+          "to": [
+            7,
+            1,
+            9
+          ],
+          "block": "minecraft:white_wool"
+        },
+        {
+          "from": [
+            4,
+            1,
+            0
+          ],
+          "to": [
+            4,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            4,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            7,
+            1,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        },
+        {
+          "pos": [
+            1,
+            1,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_hold_crates",
+      "size": [
+        13,
+        6,
+        13
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            12,
+            5,
+            12
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            11,
+            4,
+            11
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            1,
+            3
+          ],
+          "to": [
+            3,
+            2,
+            4
+          ],
+          "block": "minecraft:barrel"
+        },
+        {
+          "from": [
+            2,
+            1,
+            8
+          ],
+          "to": [
+            3,
+            2,
+            9
+          ],
+          "block": "minecraft:barrel"
+        },
+        {
+          "from": [
+            9,
+            1,
+            3
+          ],
+          "to": [
+            10,
+            2,
+            4
+          ],
+          "block": "minecraft:barrel"
+        },
+        {
+          "from": [
+            9,
+            1,
+            8
+          ],
+          "to": [
+            10,
+            2,
+            9
+          ],
+          "block": "minecraft:barrel"
+        },
+        {
+          "from": [
+            6,
+            1,
+            0
+          ],
+          "to": [
+            6,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            6,
+            1,
+            12
+          ],
+          "to": [
+            6,
+            2,
+            12
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            6,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        },
+        {
+          "pos": [
+            6,
+            1,
+            12
+          ],
+          "orientation": "south_up",
+          "name": "neroruins:crash_site_exit",
+          "target": "neroruins:crash_site_entry",
+          "pool": "neroruins:crash_site_corridors",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            6,
+            1,
+            6
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_hold_collapsed",
+      "size": [
+        11,
+        6,
+        15
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            10,
+            5,
+            14
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            9,
+            4,
+            13
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            9
+          ],
+          "to": [
+            9,
+            3,
+            13
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            4,
+            1,
+            9
+          ],
+          "to": [
+            6,
+            2,
+            10
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            5,
+            1,
+            0
+          ],
+          "to": [
+            5,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            5,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            5,
+            1,
+            9
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            1,
+            4
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_hold_stacks",
+      "size": [
+        13,
+        6,
+        11
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            12,
+            5,
+            10
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            11,
+            4,
+            9
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            6
+          ],
+          "to": [
+            3,
+            3,
+            9
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            4,
+            1,
+            6
+          ],
+          "to": [
+            6,
+            3,
+            9
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            8,
+            1,
+            6
+          ],
+          "to": [
+            10,
+            3,
+            9
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            6,
+            1,
+            0
+          ],
+          "to": [
+            6,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            6,
+            1,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "minecraft:air"
+        }
+      ],
+      "containers": [
+        {
+          "pos": [
+            11,
+            1,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        },
+        {
+          "pos": [
+            1,
+            1,
+            3
+          ],
+          "loot_table": "neroruins:chests/crash_site_logs"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_cap",
+      "size": [
+        1,
+        2,
+        1
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            1,
+            0
+          ],
+          "to": [
+            0,
+            1,
+            0
+          ],
+          "block": "neroruins:survey_hull"
+        }
+      ],
+      "connectors": [
+        {
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "orientation": "north_up",
+          "name": "neroruins:crash_site_entry",
+          "target": "neroruins:crash_site_exit",
+          "pool": "minecraft:empty",
+          "final_state": "neroruins:survey_hull"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_debris_plates",
+      "size": [
+        7,
+        3,
+        5
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            6,
+            0,
+            4
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            4,
+            1,
+            2
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            5,
+            2,
+            3
+          ],
+          "to": [
+            5,
+            2,
+            3
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        }
+      ],
+      "connectors": []
+    },
+    {
+      "name": "crash_site_debris_container",
+      "size": [
+        5,
+        4,
+        9
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            4,
+            3,
+            8
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            3,
+            2,
+            7
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            1,
+            1,
+            0
+          ],
+          "to": [
+            3,
+            2,
+            0
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [],
+      "containers": [
+        {
+          "pos": [
+            2,
+            1,
+            7
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_debris_pod",
+      "size": [
+        5,
+        5,
+        7
+      ],
+      "fills": [
+        {
+          "from": [
+            0,
+            0,
+            0
+          ],
+          "to": [
+            4,
+            4,
+            6
+          ],
+          "block": "neroruins:survey_hull"
+        },
+        {
+          "from": [
+            1,
+            1,
+            1
+          ],
+          "to": [
+            3,
+            3,
+            5
+          ],
+          "block": "minecraft:air"
+        },
+        {
+          "from": [
+            2,
+            3,
+            0
+          ],
+          "to": [
+            2,
+            3,
+            0
+          ],
+          "block": "minecraft:light_blue_stained_glass"
+        },
+        {
+          "from": [
+            2,
+            1,
+            6
+          ],
+          "to": [
+            2,
+            2,
+            6
+          ],
+          "block": "minecraft:air"
+        }
+      ],
+      "connectors": [],
+      "containers": [
+        {
+          "pos": [
+            2,
+            1,
+            1
+          ],
+          "loot_table": "neroruins:chests/crash_site_cabin"
+        }
+      ]
+    },
+    {
+      "name": "crash_site_debris_engine",
+      "size": [
+        7,
+        6,
+        7
+      ],
+      "fills": [
+        {
+          "from": [
+            1,
+            0,
+            1
+          ],
+          "to": [
+            5,
+            4,
+            5
+          ],
+          "block": "minecraft:polished_basalt"
+        },
+        {
+          "from": [
+            2,
+            1,
+            2
+          ],
+          "to": [
+            4,
+            3,
+            4
+          ],
+          "block": "minecraft:magma_block"
+        },
+        {
+          "from": [
+            0,
+            0,
+            3
+          ],
+          "to": [
+            6,
+            1,
+            3
+          ],
+          "block": "neroruins:rusted_survey_hull"
+        }
+      ],
+      "connectors": [],
+      "containers": [
+        {
+          "pos": [
+            6,
+            0,
+            6
+          ],
+          "loot_table": "neroruins:chests/crash_site_salvage"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:cindara.1"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:cindara.2"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:cindara.3"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:cindara.4"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:cindara.5"
+            },
+            "type": "minecraft:set_components"
+          }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "modifier": {
+            "components": {
+              "neroruins:log_id": "neroruins:cindara.6"
+            },
+            "type": "minecraft:set_components"
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "items": "#neroruins:loot/salvage_metal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:survey_hull"
+        }
+      ]
+    }
+  ]
+}

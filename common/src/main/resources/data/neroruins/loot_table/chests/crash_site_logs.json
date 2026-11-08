@@ -1,0 +1,96 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "neroruins:log_id": "neroruins:cindara.1"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "neroruins:log_id": "neroruins:cindara.2"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "neroruins:log_id": "neroruins:cindara.3"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "neroruins:log_id": "neroruins:cindara.4"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "neroruins:log_id": "neroruins:cindara.5"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:data_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "neroruins:log_id": "neroruins:cindara.6"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "name": "neroruins:loot/salvage_metal",
+          "expand": true
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:survey_hull"
+        }
+      ]
+    }
+  ]
+}

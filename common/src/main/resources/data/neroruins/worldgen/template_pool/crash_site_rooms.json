@@ -1,0 +1,59 @@
+{
+  "fallback": "neroruins:crash_site_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_cabin_bunks",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_cabin_quarters",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_cabin_medbay",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_hold_crates",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_hold_collapsed",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_hold_stacks",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

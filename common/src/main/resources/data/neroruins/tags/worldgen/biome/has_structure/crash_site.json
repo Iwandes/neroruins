@@ -1,0 +1,85 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#neroland:space/planet_biomes",
+      "required": false
+    },
+    {
+      "id": "#neroland:space/moon_biomes",
+      "required": false
+    },
+    {
+      "id": "nerospace:luna_crater_field",
+      "required": false
+    },
+    {
+      "id": "nerospace:luna_highlands",
+      "required": false
+    },
+    {
+      "id": "nerospace:luna_maria",
+      "required": false
+    },
+    {
+      "id": "nerospace:mars_canyons",
+      "required": false
+    },
+    {
+      "id": "nerospace:mars_dunes",
+      "required": false
+    },
+    {
+      "id": "nerospace:mars_polar",
+      "required": false
+    },
+    {
+      "id": "nerospace:cindara",
+      "required": false
+    },
+    {
+      "id": "nerospace:cindara_ember_plains",
+      "required": false
+    },
+    {
+      "id": "nerospace:cindara_sulfur_vents",
+      "required": false
+    },
+    {
+      "id": "nerospace:glacira",
+      "required": false
+    },
+    {
+      "id": "nerospace:glacira_methane_shore",
+      "required": false
+    },
+    {
+      "id": "nerospace:glacira_spires",
+      "required": false
+    },
+    {
+      "id": "nerospace:greenxertz",
+      "required": false
+    },
+    {
+      "id": "nerospace:greenxertz_fungal_depths",
+      "required": false
+    },
+    {
+      "id": "nerospace:greenxertz_spore_marsh",
+      "required": false
+    },
+    {
+      "id": "nerospace:nyxara_dayside",
+      "required": false
+    },
+    {
+      "id": "nerospace:nyxara_nightside",
+      "required": false
+    },
+    {
+      "id": "nerospace:nyxara_twilight_band",
+      "required": false
+    }
+  ]
+}

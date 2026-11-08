@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:crash_site_meridian_debris_0",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:crash_site_meridian",
+    "family": "crash_site",
+    "index": 0,
+    "min_radius": 3,
+    "max_radius": 19,
+    "chance_percent": 100,
+    "type": "neroruins:satellite"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:crash_site_complex",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 36,
+    "separation": 14,
+    "salt": 1857304261
+  }
+}

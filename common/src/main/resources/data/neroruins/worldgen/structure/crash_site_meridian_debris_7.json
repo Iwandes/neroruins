@@ -1,0 +1,29 @@
+{
+  "type": "neroruins:satellite",
+  "biomes": "#neroruins:has_structure/crash_site_meridian",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "placement": {
+    "hub_set": "neroruins:crash_site_meridian",
+    "family": "crash_site",
+    "index": 7,
+    "min_radius": 3,
+    "max_radius": 19,
+    "chance_percent": 100
+  },
+  "layout": {
+    "biomes": "#neroruins:has_structure/crash_site_meridian",
+    "spawn_overrides": {},
+    "step": "surface_structures",
+    "terrain_adaptation": "none",
+    "max_distance_from_center": 16,
+    "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "size": 1,
+    "start_height": {
+      "absolute": -1
+    },
+    "start_pool": "neroruins:crash_site_debris",
+    "use_expansion_hack": false
+  }
+}

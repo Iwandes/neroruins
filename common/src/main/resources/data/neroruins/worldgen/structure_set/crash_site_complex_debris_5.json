@@ -1,0 +1,17 @@
+{
+  "structures": [
+    {
+      "structure": "neroruins:crash_site_complex_debris_5",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "hub_set": "neroruins:crash_site_complex",
+    "family": "crash_site",
+    "index": 5,
+    "min_radius": 2,
+    "max_radius": 10,
+    "chance_percent": 50,
+    "type": "neroruins:satellite"
+  }
+}

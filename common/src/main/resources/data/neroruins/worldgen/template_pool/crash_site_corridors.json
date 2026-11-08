@@ -1,0 +1,32 @@
+{
+  "fallback": "neroruins:crash_site_caps",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_corridor_straight",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_corridor_turn",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "neroruins:crash_site_corridor_jog",
+        "processors": "neroruins:crash_site_weathering",
+        "projection": "rigid"
+      }
+    }
+  ]
+}
