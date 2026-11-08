@@ -10,8 +10,8 @@
       "type": "neroquests:custom_event",
       "channel": "neroruins:vault_claimed",
       "direction": "rising",
-      "min_value": 50,
-      "audience": "world"
+      "audience": "world",
+      "min_value": 50
     }
   ],
   "rewards": [

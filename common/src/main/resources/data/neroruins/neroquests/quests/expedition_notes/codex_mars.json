@@ -1,0 +1,20 @@
+{
+  "title": "quest.neroruins.expedition_notes.codex_mars.title",
+  "description": "quest.neroruins.expedition_notes.codex_mars.desc",
+  "icon": "minecraft:book",
+  "prerequisites": [
+    "neroruins:expedition_notes/first_log"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:gate_open",
+      "gate": "neroruins:codex/mars"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 150
+    }
+  ]
+}

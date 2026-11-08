@@ -1,0 +1,20 @@
+{
+  "title": "quest.neroruins.expedition_notes.lattice_temple_found.title",
+  "description": "quest.neroruins.expedition_notes.lattice_temple_found.desc",
+  "icon": "neroruins:latticework",
+  "prerequisites": [
+    "neroruins:expedition_notes/bunker_found"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:visit_structure",
+      "tag": "neroruins:family/lattice_temple"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 100
+    }
+  ]
+}

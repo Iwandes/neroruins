@@ -1,0 +1,20 @@
+{
+  "title": "quest.neroruins.expedition_notes.colony_field_found.title",
+  "description": "quest.neroruins.expedition_notes.colony_field_found.desc",
+  "icon": "minecraft:dead_bush",
+  "prerequisites": [
+    "neroruins:expedition_notes/bunker_found"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:visit_structure",
+      "tag": "neroruins:family/colony_field"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 100
+    }
+  ]
+}

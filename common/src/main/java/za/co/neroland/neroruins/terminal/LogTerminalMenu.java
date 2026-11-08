@@ -74,8 +74,10 @@ public final class LogTerminalMenu extends AbstractContainerMenu {
         /*serverPlayer.displayClientMessage(feedback, false);
         *///?}
         if (result == ArchiveReading.Result.CHAPTER_COMPLETED) {
+            String chapter = LogCatalog.chapterOf(id).orElseThrow();
+            RuinMilestones.chapterComplete(serverPlayer, chapter);
             Component unlocked = Component.translatable("message.neroruins.codex.unlocked",
-                    Component.translatable("codex.neroruins." + LogCatalog.chapterOf(id).orElseThrow() + ".title"));
+                    Component.translatable("codex.neroruins." + chapter + ".title"));
             //? if >=26.1 {
             serverPlayer.sendSystemMessage(unlocked);
             //?} else {

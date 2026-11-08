@@ -9,6 +9,7 @@ import za.co.neroland.nerolandcore.event.ThresholdEvents.ThresholdCrossing;
 import za.co.neroland.nerolandcore.progression.ProgressionGates;
 
 import za.co.neroland.neroruins.NeroRuinsCommon;
+import za.co.neroland.neroruins.lore.LogCatalog;
 
 /**
  * The progression signals NeroRuins publishes through Neroland Core, in one place, so future structure
@@ -28,6 +29,8 @@ import za.co.neroland.neroruins.NeroRuinsCommon;
  *       <td>a player opens a locked vault</td></tr>
  *   <tr><td>{@code neroruins:puzzle_solver}</td><td>{@link #puzzleSolver}</td>
  *       <td>a puzzle door opens for the player who completed it</td></tr>
+ *   <tr><td>{@code neroruins:codex/<chapter>}</td><td>{@link #chapterComplete}</td>
+ *       <td>a player archives the sixth log of a chapter (one gate per chapter)</td></tr>
  *   <tr><td>{@code neroruins:temple_cleared}</td><td>{@link #templeCleared}</td>
  *       <td>the last guardian of a temple dies — call once per player who damaged it</td></tr>
  * </table>
@@ -82,6 +85,23 @@ public final class RuinMilestones {
     /** Records that {@code player} solved a puzzle door (opens {@link #PUZZLE_SOLVER}). */
     public static void puzzleSolver(ServerPlayer player) {
         open(player, PUZZLE_SOLVER);
+    }
+
+    /**
+     * The record gate for a completed Codex chapter: {@code neroruins:codex/<chapter>}.
+     *
+     * @throws IllegalArgumentException if {@code chapter} is not one of {@link LogCatalog#chapters()}
+     */
+    public static Identifier codexGate(String chapter) {
+        if (!LogCatalog.chapters().contains(chapter)) {
+            throw new IllegalArgumentException("Unknown Codex chapter");
+        }
+        return id("codex/" + chapter);
+    }
+
+    /** Records that {@code player} archived every log of {@code chapter} (opens its {@link #codexGate}). */
+    public static void chapterComplete(ServerPlayer player, String chapter) {
+        open(player, codexGate(chapter));
     }
 
     /** Records that {@code player} helped clear a temple (opens {@link #TEMPLE_CLEARED}). */

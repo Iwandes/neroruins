@@ -1,68 +1,46 @@
-# Expedition Notes (progression & quests)
+# Expedition Notes (progression and quests)
 
-NeroRuins records what explorers do through **Neroland Core** progression signals, and ships a quest
-chapter that reads them. Reading a data shard opens the first-log gate, but shards currently have no
-survival source. The vault, puzzle and temple signals remain in place for the unfinished structures.
-
-## Personal milestones (player-scope record gates)
-
-Each gate is a data file under `data/neroruins/neroland_gates/` with `"scope": "player"` and no
-`requires`. They record that a player did something; they gate nothing and are never checked for
-access (vault locks and puzzle doors keep their own logic).
-
-| Gate | Opens when |
-| --- | --- |
-| `neroruins:first_log` | a player reads a data log for the first time |
-| `neroruins:first_vault` | a player opens a locked vault |
-| `neroruins:puzzle_solver` | a puzzle door opens for the player who completed it |
-| `neroruins:temple_cleared` | the last guardian of a temple dies — for every player who damaged it |
-
-## World milestone (threshold channel)
-
-`neroruins:vault_claimed` fires on Core's threshold bus each time the number of claimed vaults of one
-**structure type** reaches 1, 10 or 50 in a world. The crossing's scope is the structure type id (for
-example `neroruins:lava_temple`) and its value is that type's new count. Counts are kept per world in
-the `neroruins:vault_ledger` saved-data store.
-
-The scope is never a player, a UUID or a position: a ruin's coordinates plus a time could locate a
-player, so the channel says *how much* has been plundered, never *where* or *by whom*.
-
-## Relics
-
-The item tag `neroruins:relics` (`data/neroruins/tags/item/relics.json`) lists the relic items quests
-and other mods can ask for. It is empty until relic items exist.
+NeroRuins reports what explorers do through **Neroland Core** progression signals, and ships a quest
+chapter for **NeroQuests** that reads them. NeroQuests is optional: without it the quest files are inert.
 
 ## The quest chapter
 
-When **NeroQuests** is installed, the chapter `neroruins:expedition_notes` "Expedition Notes" appears in
-the quest book. Without NeroQuests the files are inert; NeroRuins has no dependency on it.
+When NeroQuests is installed, the chapter **Expedition Notes** appears in the quest book. Its quests follow
+an expedition from the first bunker to the Lattice's last room:
 
-| Quest | Scope | Completes when |
-| --- | --- | --- |
-| First Log | player | `neroruins:first_log` is open for you |
-| Vault Cracked | player | `neroruins:first_vault` is open for you (after First Log) |
-| Puzzle Solver | player | `neroruins:puzzle_solver` is open for you |
-| Temple Cleared | player | `neroruins:temple_cleared` is open for you |
-| Relic Hunter | player | you hold three items tagged `neroruins:relics` |
-| First Claim | server | a `neroruins:vault_claimed` crossing with value ≥ 1 |
-| Plundered Worlds | server | a `neroruins:vault_claimed` crossing with value ≥ 50 (after First Claim) |
+- **First steps** — find a Survey Bunker, read your first data log, defeat a Sentinel.
+- **Ruin craft** — open a locked vault, solve a puzzle door yourself, find a keycard, recover a relic and
+  then three.
+- **The families** — enter each kind of ruin: Lattice Temple, Halcyon Ark, Survey Lab, Colony Field and
+  Crash Site.
+- **The story** — complete each chapter of the Codex by archiving all six of its logs.
+- **Server milestones** — shared quests that complete when someone on the server claims the first vault of
+  each family, the first vault anywhere, and fifty vaults of one ruin type.
 
-Rewards are experience, a few plain items, and two **hook** rewards handled by NeroRuins itself:
+Rewards are experience and expedition gear. The book shows each quest's objective and reward.
 
-| Hook gate | Granted by | Effect |
-| --- | --- | --- |
-| `neroruins:hook/unlock_log` | First Log | will unlock one lore entry in your data-log archive |
-| `neroruins:hook/reveal_ruin` | Temple Cleared | will give you a one-use survey map to the nearest unclaimed ruin in your dimension |
+## Personal milestones
 
-Both hook rewards currently send a chat line saying the reward has been reserved, and re-arm. The
-archive exists for data-shard reads, but the hook's archive effect and the survey scanner are not yet implemented.
+Player-scope record gates in `data/neroruins/neroland_gates/`. They record that a player did something;
+they never lock anything (vault locks and puzzle doors keep their own logic).
 
-## Privacy
+| Gate | Opens when |
+| --- | --- |
+| `neroruins:first_log` | you read a data log for the first time |
+| `neroruins:first_vault` | you claim a vault that was sealed behind a puzzle |
+| `neroruins:puzzle_solver` | you solve a puzzle |
+| `neroruins:codex/<chapter>` | you have archived all six logs of that chapter |
 
-Personal milestones live in Neroland Core's player-scope gate store. The vault ledger holds structure
-type IDs and counts only. The shard archive stores each reader's UUID, log ID and first-read time in
-the world save and is covered by Core's erasure hook; see [Data shards and the archive](Data-Shards.md).
+## World milestone
 
-## See also
+`neroruins:vault_claimed` fires on Core's threshold channel each time the number of claimed vaults of one
+**ruin type** reaches 1, 10 or 50 in a world. Its scope is the ruin type (for example
+`neroruins:lattice_temple`) and its value the new count. It never carries a player, a UUID or a position:
+it says how much has been plundered, never where or by whom.
 
-- [Home](Home.md)
+## Tags for other mods
+
+- `neroruins:relics` — the nine relics.
+- `neroruins:keycards` — the three keycards.
+
+[Home](Home.md)

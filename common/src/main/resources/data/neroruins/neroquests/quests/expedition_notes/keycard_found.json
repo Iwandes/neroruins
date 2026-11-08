@@ -1,0 +1,21 @@
+{
+  "title": "quest.neroruins.expedition_notes.keycard_found.title",
+  "description": "quest.neroruins.expedition_notes.keycard_found.desc",
+  "icon": "neroruins:survey_keycard",
+  "prerequisites": [
+    "neroruins:expedition_notes/vault_cracked"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:collect_item",
+      "tag": "neroruins:keycards",
+      "count": 1
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 75
+    }
+  ]
+}

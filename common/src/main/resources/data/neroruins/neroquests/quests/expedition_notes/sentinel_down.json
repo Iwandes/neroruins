@@ -1,0 +1,26 @@
+{
+  "title": "quest.neroruins.expedition_notes.sentinel_down.title",
+  "description": "quest.neroruins.expedition_notes.sentinel_down.desc",
+  "icon": "neroruins:ruin_spawner",
+  "prerequisites": [
+    "neroruins:expedition_notes/bunker_found"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:kill_entity",
+      "tag": "neroruins:sentinels",
+      "count": 1
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 75
+    },
+    {
+      "type": "neroquests:item",
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    }
+  ]
+}

@@ -1,30 +1,33 @@
 # Data shards and the archive
 
-Data shards contain a single log. Use one to read its title, speaker and text
-and add the log to your personal archive. A newly read shard is consumed in
-survival unless `archive.keepShards=true`; creative players retain it. A
-duplicate shard is retained, and a shard without a valid log reports that it is
-unreadable. Prototype bunker chests contain Earth shards, but the bunker can
-only be placed with commands and does not yet generate naturally.
+The story of NeroRuins is told in data logs: nine chapters, six logs each, placed through the ruins in
+story order, with each chapter's final entries in its deepest rooms.
 
-Use `/neroruins codex` to open your archive as a book. It shows chapter progress,
-your saved logs and completed chapter entries. You can also use
-`/neroruins codex <log ID>` to reread a log in chat. After all six logs of a
-chapter have been read, `/neroruins codex chapter <chapter>` shows its entry in
-chat.
-The book screen requires NeroRuins on your client; otherwise the command gives
-an explanation and the server-side export remains available.
+## Data shards
 
-The archive stores the reader's UUID, log ID and first-read time in the world
-save and its recovery backup. It does not store a name or location.
-`/neroruins privacy export` writes your archive, read times and any vault-claim records to the world
-folder; the server operator can access the file. `/neroland data eraseme`
-requests erasure across participating Neroland mods, including the archive and
-its export file. See [Privacy](../PRIVACY.md) for retention details.
+A data shard holds one log. Use it to read the title, speaker and text and add the log to your personal
+archive. In survival a newly read shard is consumed unless the server sets `archive.keepShards=true`;
+creative players keep it. A shard you have already read is kept, and a shard without a valid log reports
+that it is unreadable. Shards turn up in ruin chests.
 
 ## Log terminals
 
-Log terminals project a rotating shard and present a log without consuming an item. Choose **Archive this log** to save it to your own archive; the terminal shows when that log is already archived. A terminal without a valid log shows an unreadable state. The current bunker prototype includes a terminal in its archive-room variant; it is command-placeable and does not yet generate naturally.
+Log terminals stand in ruins and show a rotating shard above them. Use one to read its log without
+consuming anything, and choose **Archive this log** to save it. The terminal shows when you already have
+that log.
+
+## The Codex
+
+- `/neroruins codex` opens your archive as a book: chapter progress, your saved logs and completed chapters.
+- `/neroruins codex <log ID>` rereads a saved log in chat.
+- When all six logs of a chapter are archived, `/neroruins codex chapter <chapter>` shows its entry.
+
+The book needs NeroRuins on your client; otherwise the command explains why, and the export below still
+works.
+
+## Privacy
+
+The archive stores your UUID, the log ID and when you first read it — no name or position. Export it with
+`/neroruins privacy export`; erase it with Core's `/neroland data eraseme`. See [Privacy](Privacy.md).
 
 [Home](Home.md)
-

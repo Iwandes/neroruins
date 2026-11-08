@@ -1,0 +1,26 @@
+{
+  "title": "quest.neroruins.expedition_notes.survey_lab_citadel.title",
+  "description": "quest.neroruins.expedition_notes.survey_lab_citadel.desc",
+  "icon": "neroruins:vault_cache",
+  "prerequisites": [
+    "neroruins:expedition_notes/first_vault_world"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:custom_event",
+      "channel": "neroruins:vault_claimed",
+      "direction": "rising",
+      "audience": "world",
+      "event_scope": "neroruins:survey_lab",
+      "min_value": 1,
+      "max_value": 1
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 200
+    }
+  ],
+  "scope": "server"
+}

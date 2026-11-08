@@ -1,7 +1,7 @@
 {
   "title": "quest.neroruins.expedition_notes.vault_cracked.title",
   "description": "quest.neroruins.expedition_notes.vault_cracked.desc",
-  "icon": "minecraft:vault",
+  "icon": "neroruins:vault_cache",
   "prerequisites": [
     "neroruins:expedition_notes/first_log"
   ],
@@ -18,8 +18,8 @@
     },
     {
       "type": "neroquests:item",
-      "item": "minecraft:lantern",
-      "count": 4
+      "item": "neroruins:survey_scanner",
+      "count": 1
     }
   ]
 }

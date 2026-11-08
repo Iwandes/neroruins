@@ -1,0 +1,20 @@
+{
+  "title": "quest.neroruins.expedition_notes.halcyon_ark_found.title",
+  "description": "quest.neroruins.expedition_notes.halcyon_ark_found.desc",
+  "icon": "neroruins:rusted_survey_hull",
+  "prerequisites": [
+    "neroruins:expedition_notes/bunker_found"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:visit_structure",
+      "tag": "neroruins:family/halcyon_ark"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 100
+    }
+  ]
+}

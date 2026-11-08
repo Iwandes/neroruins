@@ -2,8 +2,24 @@
 
 > Part of the Neroland sci-fi Minecraft mod ecosystem, built on **Neroland Core**.
 
-**Status:** in development — version `0.4.1-alpha.1`. Data shards and a personal archive can be
-tested in creative; survival acquisition, finished ruin families and most gameplay are still in progress.
+**Status:** beta — version `0.5.0-beta.1`. Six ruin families with puzzles, guardians, per-player vaults,
+relics, data logs and expedition tools. Requires **Neroland Core 1.17.4**; most ruins generate on
+**Nerospace**'s worlds. Player documentation lives in the [wiki](wiki/Home.md).
+
+## Features
+
+- Six ruin families — Survey Bunker, Lattice Temple, Halcyon Ark, Survey Lab, Colony Field and Crash Site —
+  in outpost, complex and citadel sizes, each a jigsaw hub with seeded satellite structures
+  (`worldgen.structure.ComplexHub`, `worldgen.placement.SatellitePlacement`). Structure pieces are authored
+  as JSON specs in `tools/templates/` and built into NBT by `tools/build_templates.py`.
+- Six puzzle types seeded per instance by the `neroruins:puzzle_seed` processor (`puzzle/`), Sealed Doors,
+  and reinforced unbreakable shells around gated rooms.
+- Guardians: the Sentinel entity, the Ruin Spawner with data-driven `spawn_tables/`, and the Arc Grate
+  (`guardian/`).
+- Vault caches with per-player rolls and held rewards (`vault/`, `data/ClaimLedger`), tiered loot with
+  optional sibling-mod entries (`neroruins:mod_loaded`) and nine relics (`neroruins:relic_chance`).
+- The data-log archive and Codex, the Expedition Record, Expedition Map and Survey Scanner.
+- Operator commands `/neroruins gallery [family]` and `/neroruins bench <structure> [samples]`.
 
 ## Build targets
 
@@ -35,18 +51,12 @@ The 1.21.x cells build the same way, e.g. `./gradlew :neoforge:1.21.1:build`.
 
 ## Progression & quests
 
-NeroRuins reports explorer progress through **Neroland Core**: four player-scope record gates
-(`neroruins:first_log`, `first_vault`, `puzzle_solver`, `temple_cleared`), the world threshold channel
-`neroruins:vault_claimed` (scope = structure type, rungs 1 / 10 / 50 — never a position) and the item
-tag `neroruins:relics`. Reading a test shard opens the first-log gate; the remaining signals await
-their gameplay systems. See [data shards and the archive](wiki/Data-Shards.md).
-
-It also ships a **NeroQuests** quest pack — chapter `neroruins:expedition_notes` "Expedition Notes",
-7 quests — that appears in the quest book when NeroQuests is installed and is inert otherwise
-(NeroQuests is optional; NeroRuins has no dependency on it). The quests become completable once ruins
-exist. Two `mod_hook` rewards (`hook/reveal_ruin`, `hook/unlock_log`) are handled by
-`progression.QuestHooks`, currently with a placeholder chat line until survey maps and the data-log
-archive land. Details: [wiki/Expedition-Notes.md](wiki/Expedition-Notes.md).
+NeroRuins reports explorer progress through **Neroland Core**: player-scope record gates
+(`neroruins:first_log`, `first_vault`, `puzzle_solver`, `codex/<chapter>`), the world threshold channel
+`neroruins:vault_claimed` (scope = ruin type, rungs 1 / 10 / 50 — never a player or position) and the item
+tags `neroruins:relics` and `neroruins:keycards`. It also ships a **NeroQuests** chapter,
+`neroruins:expedition_notes` "Expedition Notes", that appears when NeroQuests is installed and is inert
+otherwise (NeroQuests is optional). Details: [wiki/Expedition-Notes.md](wiki/Expedition-Notes.md).
 
 ## Privacy & telemetry
 

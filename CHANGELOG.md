@@ -7,30 +7,73 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0-beta.1] - 2026-11-08
+
+The ruins arrive: six structure families, puzzles, guardians, vaults, relics and expedition tools. Requires
+**Neroland Core 1.17.4**. This is a beta: everything below is built and covered by automated tests, but
+most structures have not yet been played through in a survival world. Please report anything that breaks.
+
 ### Added
 
-- Data shards, an erasure-aware personal archive, and a book-style Codex.
-  Prototype bunker chests can contain Earth shards, but the bunker does not
-  generate naturally.
-- A prototype log terminal with a paginated screen and per-player archive action.
-  The command-placeable bunker archive room can contain a terminal; natural bunker
-  generation remains in development. A rotating shard marks the terminal.
-- A command-placeable vault-cache prototype and personal claim ledger. Puzzle locking,
-  survival placement, multiplayer and crash-recovery verification remain unfinished.
-- A distinct Survey-style data shard texture.
-- Survey Hull and Rusted Survey Hull blocks, with procedural weathering in the
-  bunker prototype.
-- A self-service archive export, including first-read times; Core erasure also
-  removes the player's export file.
-- Seed-bound hub and satellite placement with temporary test templates. The
-  finished ruin families and their gameplay are not yet implemented.
+- **Six ruin families**, each a hub with seeded satellite structures, so layouts, room choices and
+  outlying pieces differ between worlds but stay the same for a given seed. Apart from the Earth bunker,
+  they generate in Nerospace's worlds, so install Nerospace to find them (the Halcyon Ark also appears in
+  vanilla void worlds):
+  - **Survey Bunker** — a hatch-and-ladder shelter on every world, and rarely on Earth's dry land
+    (roughly one every 1–1.5 km).
+  - **Lattice Temple** — the Architects' precincts. The Lattice Citadel on Nyxara descends two spiral
+    wells to a sanctum about 86 blocks below its plaza; complexes on Nyxara and Cindara, wayshrines everywhere.
+  - **Halcyon Ark** — the Survey's broken generation ship drifting in the station's void, with a severed
+    hull section on Luna.
+  - **Survey Lab** — a research complex that goes down: twelve floors under Mars, smaller labs on
+    Greenxertz and Glacira, and outposts everywhere.
+  - **Colony Field** — a lost colony's sprawl, with its citadel on Glacira and a complex on Greenxertz.
+  - **Crash Site** — the half-buried freighter *Meridian* on Cindara with a debris field, and wrecks on
+    every moon and planet.
+- **Puzzles**, all solvable from clues in the room and randomised per ruin: Ballast Plates (weight),
+  glyph sequences with a keypad screen, conduit routing, resonance tuning, three keycard tiers with card
+  readers, and relic sockets that hand the relic back. Sealed Doors open when a nearby puzzle is solved.
+- **Guardians**: the Sentinel in three marks, with melee and a charged arc shot that never damages
+  blocks; the Ruin Spawner, which wakes for nearby players and has a limited budget; and the Arc Grate
+  floor trap. Spawn lists are data-driven and include NeroCreatures mobs when that mod is installed.
+- **Vault caches** that roll their loot per player. A roll that does not fit in your inventory is held for
+  you and delivered exactly when you return. Vaults behind a puzzle stay sealed until it is solved; with
+  `first_come` vault mode the solver's roll is reserved.
+- **Protected gated rooms**: every room behind a puzzle gate is enclosed in reinforced, unbreakable and
+  blast-proof hull or lattice, so gates cannot be bypassed by mining. Shells outside gates stay mineable.
+- **Loot tiers 0–4** with nine named relics (one per chapter). Each relic grants a small passive while held;
+  the Surveyor's Compass points to your nearest unexplored ruin. Sibling-mod items join the loot only
+  when those mods are installed.
+- **Expedition Record**, **Expedition Map** and **Survey Scanner**. The map lists the ruins you have
+  entered; the scanner gives the direction and rough distance of the nearest ruin, never coordinates.
+- **Data logs** placed through the structures in story order, readable from terminals and shards, collected
+  in the Codex.
+- Blocks: Lattice palette (Latticework, Lattice Floor, Resonance Crystal Block, sixteen Glyph Stones),
+  puzzle fixtures, reinforced variants, and a facing Log Terminal.
+- Commands for operators: `/neroruins gallery [family]` builds a showcase of the mod's blocks, items,
+  Sentinels and structure pieces, and `/neroruins bench <structure> [samples]` measures generation cost.
+- `/neroruins privacy export` now also lists held vault rewards and your Expedition Record.
 
 ### Changed
 
-- The Codex checks client support before sending its screen payload and gives
-  an explanation when the client cannot receive it.
-- The archive stores reader UUIDs, log IDs and first-read times in the world
-  save and recovery backup. Core's erasure hook removes a player's entries.
+- Now requires Neroland Core 1.17.4 or later, which reports incomplete player-data erasure.
+- Survey Bunker hubs sit deeper, so rooms on slopes stay buried and the hatch still reaches the surface.
+- The Codex checks client support before sending its screen payload and explains when the client cannot
+  receive it.
+
+### Privacy
+
+- New personal data (held vault rewards, the Expedition Record) is included in export and in Core's
+  erasure. Expedition positions are dropped after `privacy.expeditionRetentionDays`.
+
+### Not yet included
+
+- Most structures have not been walked end to end in survival; generation cost is measured and within budget.
+- Per-world decay for most families, NeroAgriculture planters in colony farms, named cemetery markers,
+  an Ark cryopod block, uses for the Reach Thermal Core and Rootglass Vessel, an admin placement command,
+  the NeroLink link module and companion-app pages, and push notifications.
+- The `guardians.enabled`, `traps.enabled`, `privacy.archiveRetention` and `pushNotifications.enabled`
+  settings are reserved and have no effect yet.
 
 ## [0.4.1-alpha.1] - 2026-10-31
 

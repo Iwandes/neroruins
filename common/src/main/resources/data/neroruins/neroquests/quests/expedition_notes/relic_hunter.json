@@ -1,7 +1,10 @@
 {
   "title": "quest.neroruins.expedition_notes.relic_hunter.title",
   "description": "quest.neroruins.expedition_notes.relic_hunter.desc",
-  "icon": "minecraft:amethyst_shard",
+  "icon": "neroruins:twilight_prism",
+  "prerequisites": [
+    "neroruins:expedition_notes/first_relic"
+  ],
   "objectives": [
     {
       "type": "neroquests:collect_item",

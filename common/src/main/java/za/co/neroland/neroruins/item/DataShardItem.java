@@ -45,8 +45,10 @@ public final class DataShardItem extends Item {
                     showLog(serverPlayer, prefix.get());
                     message(serverPlayer, Component.translatable("message.neroruins.shard.saved"));
                     if (result == ArchiveReading.Result.CHAPTER_COMPLETED) {
+                        String chapter = LogCatalog.chapterOf(id).orElseThrow();
                         message(serverPlayer, Component.translatable("message.neroruins.codex.unlocked",
-                                Component.translatable("codex.neroruins." + LogCatalog.chapterOf(id).orElseThrow() + ".title")));
+                                Component.translatable("codex.neroruins." + chapter + ".title")));
+                        RuinMilestones.chapterComplete(serverPlayer, chapter);
                     }
                     RuinMilestones.firstLog(serverPlayer);
                     if (!NeroRuinsConfig.KEEP_SHARDS.get() && !serverPlayer.getAbilities().instabuild) stack.shrink(1);

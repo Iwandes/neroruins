@@ -1,0 +1,21 @@
+{
+  "title": "quest.neroruins.expedition_notes.first_relic.title",
+  "description": "quest.neroruins.expedition_notes.first_relic.desc",
+  "icon": "neroruins:surveyors_compass",
+  "prerequisites": [
+    "neroruins:expedition_notes/vault_cracked"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:collect_item",
+      "tag": "neroruins:relics",
+      "count": 1
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 100
+    }
+  ]
+}

@@ -1,7 +1,10 @@
 {
   "title": "quest.neroruins.expedition_notes.puzzle_solver.title",
   "description": "quest.neroruins.expedition_notes.puzzle_solver.desc",
-  "icon": "minecraft:comparator",
+  "icon": "neroruins:glyph_lock",
+  "prerequisites": [
+    "neroruins:expedition_notes/vault_cracked"
+  ],
   "objectives": [
     {
       "type": "neroquests:gate_open",

@@ -1,0 +1,20 @@
+{
+  "title": "quest.neroruins.expedition_notes.codex_cindara.title",
+  "description": "quest.neroruins.expedition_notes.codex_cindara.desc",
+  "icon": "minecraft:book",
+  "prerequisites": [
+    "neroruins:expedition_notes/first_log"
+  ],
+  "objectives": [
+    {
+      "type": "neroquests:gate_open",
+      "gate": "neroruins:codex/cindara"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 150
+    }
+  ]
+}

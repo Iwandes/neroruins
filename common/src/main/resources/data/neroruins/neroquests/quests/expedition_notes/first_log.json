@@ -2,6 +2,9 @@
   "title": "quest.neroruins.expedition_notes.first_log.title",
   "description": "quest.neroruins.expedition_notes.first_log.desc",
   "icon": "minecraft:writable_book",
+  "prerequisites": [
+    "neroruins:expedition_notes/bunker_found"
+  ],
   "objectives": [
     {
       "type": "neroquests:gate_open",
@@ -12,10 +15,6 @@
     {
       "type": "neroquests:xp",
       "amount": 50
-    },
-    {
-      "type": "neroquests:mod_hook",
-      "gate": "neroruins:hook/unlock_log"
     }
   ]
 }

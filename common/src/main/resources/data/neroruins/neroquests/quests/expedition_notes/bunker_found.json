@@ -1,0 +1,22 @@
+{
+  "title": "quest.neroruins.expedition_notes.bunker_found.title",
+  "description": "quest.neroruins.expedition_notes.bunker_found.desc",
+  "icon": "neroruins:survey_hull",
+  "objectives": [
+    {
+      "type": "neroquests:visit_structure",
+      "tag": "neroruins:family/bunker"
+    }
+  ],
+  "rewards": [
+    {
+      "type": "neroquests:xp",
+      "amount": 50
+    },
+    {
+      "type": "neroquests:item",
+      "item": "neroruins:expedition_map",
+      "count": 1
+    }
+  ]
+}
