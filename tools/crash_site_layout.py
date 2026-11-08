@@ -157,6 +157,19 @@ def hump(piece, width, length, roof_y, profile):
             piece.fill((2, roof_y + 1, z0), (width - 3, roof_y + height, z1), HULL)
 
 
+def hull_body(p, width, length, floor, walk, roof):
+    """Side walls and keel ring from the template base to the roof, a deck at the floor and a roof. Below the
+    deck the keel ring is left open, so the ground inside it stays: the hull is sunk into the terrain, not
+    sitting over a carved pit."""
+    p.fill((0, 0, 0), (width - 1, roof, 0), HULL)
+    p.fill((0, 0, length - 1), (width - 1, roof, length - 1), HULL)
+    p.fill((0, 0, 1), (0, roof, length - 2), HULL)
+    p.fill((width - 1, 0, 1), (width - 1, roof, length - 2), HULL)
+    p.fill((1, floor, 1), (width - 2, floor, length - 2), HULL)
+    p.fill((1, roof, 1), (width - 2, roof, length - 2), HULL)
+    p.fill((1, walk, 1), (width - 2, roof - 1, length - 2), AIR)
+
+
 def partition(piece, width, z, y0, y1, gap_x):
     piece.fill((1, y0, z), (width - 2, y1, z), HULL)
     piece.fill((gap_x - 1, y0, z), (gap_x + 1, y0 + 2, z), AIR)
@@ -172,9 +185,7 @@ def meridian(name, breach, profile, crates):
     roof = 12
     p = Piece(name, (W, roof + max(profile) + 1, L))
     # keel ring and walls, floor, roof
-    p.fill((0, 0, 0), (W - 1, roof, L - 1), HULL)
-    p.fill((1, 0, 1), (W - 2, F - 1, L - 2), AIR)          # buried keel is hollow, carved from the ground
-    p.fill((1, Y, 1), (W - 2, roof - 1, L - 2), AIR)
+    hull_body(p, W, L, F, Y, roof)
     hump(p, W, L, roof, profile)
     c = W // 2                                             # 13
     # cockpit z 1-4, inner bay z 6-10, gate wall z 11, guardian z 12-21, crew z 23-29, hold z 31-48, breach 50-62
@@ -245,9 +256,7 @@ def hauler(name, breach, profile):
     W, L, F, Y = 19, 40, 4, 5
     roof = 10
     p = Piece(name, (W, roof + max(profile) + 1, L))
-    p.fill((0, 0, 0), (W - 1, roof, L - 1), HULL)
-    p.fill((1, 0, 1), (W - 2, F - 1, L - 2), AIR)
-    p.fill((1, Y, 1), (W - 2, roof - 1, L - 2), AIR)
+    hull_body(p, W, L, F, Y, roof)
     hump(p, W, L, roof, profile)
     c = W // 2                                             # 9
     # cockpit z 1-7, gate wall z 8, guardian + conduit z 9-17, hold z 19-28, breach z 30-38
@@ -282,9 +291,7 @@ def pod(name, breach, profile):
     W, L, F, Y = 13, 21, 2, 3
     roof = 7
     p = Piece(name, (W, roof + max(profile) + 1, L))
-    p.fill((0, 0, 0), (W - 1, roof, L - 1), HULL)
-    p.fill((1, 0, 1), (W - 2, F - 1, L - 2), AIR)
-    p.fill((1, Y, 1), (W - 2, roof - 1, L - 2), AIR)
+    hull_body(p, W, L, F, Y, roof)
     hump(p, W, L, roof, profile)
     c = W // 2                                             # 6
     p.fill((1, Y, 10), (W - 2, roof - 1, 10), HULL)
