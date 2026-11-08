@@ -11,6 +11,7 @@ import random
 import unittest
 from collections import deque
 
+import gated_enclosure
 import halcyon_ark_spec as ark
 from build_templates import build_template, ROOT, SPEC_DIRECTORY
 
@@ -413,6 +414,32 @@ class SpineTest(unittest.TestCase):
                     self.assertIn(tuple(c["pos"]), cells)
                 for chest in spec.get("containers", []):
                     self.assertTrue(visible(cells, tuple(chest["pos"])))
+
+
+class EnclosureTest(unittest.TestCase):
+    """Decision 039: every room behind a gate is sealed in unbreakable plating; mining cannot reach it."""
+
+    def breaches(self, blocks):
+        found = []
+        for x, z in doors(blocks):
+            hit = gated_enclosure.breach(blocks, (x, 1, z + 1), forbidden={(x, 1, z - 1)})
+            if hit is not None:
+                found.append(((x, z), hit))
+        return found
+
+    def test_gated_rooms_cannot_be_mined_into(self):
+        for prefix, chain, mix in chains():
+            blocks, _ = assemble(chain_names(prefix, chain, mix))
+            with self.subTest(chain=prefix, mix=mix):
+                self.assertTrue(doors(blocks))
+                self.assertEqual([], self.breaches(blocks))
+
+    def test_one_mineable_panel_in_a_gated_wall_is_caught(self):
+        blocks, _ = assemble(chain_names("halcyon_ark", ark.CITADEL_CHAIN, [0] * 8))
+        _, gate_z = doors(blocks)[0]
+        weakened = dict(blocks)
+        weakened[(0, 3, gate_z + 2)] = ark.HULL
+        self.assertTrue(self.breaches(weakened))
 
 
 class DataTest(unittest.TestCase):

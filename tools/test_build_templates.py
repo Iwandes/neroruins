@@ -621,6 +621,40 @@ class TemplateBuilderTest(unittest.TestCase):
             (broken / "ghost.json").write_text('{"variants":{"":{"model":"neroruins:block/ghost"}}}')
             self.assertEqual(2, len(problems(broken)), "an unnamed block with a missing model is caught")
 
+    def test_reinforced_shells_are_unbreakable_and_never_drop(self):
+        resources = ROOT / "common/src/main/resources"
+        blocks_source = (ROOT / "common/src/main/java/za/co/neroland/neroruins/registry/ModBlocks.java").read_text(
+            encoding="utf-8")
+        names = ("reinforced_survey_hull", "reinforced_rusted_survey_hull", "reinforced_latticework",
+                 "reinforced_lattice_floor")
+
+        def problems(tag_directory, source):
+            found = []
+            helper = source[source.index("reinforced(String name"):]
+            helper = helper[:helper.index("}")]
+            for needle in ("strength(-1.0F, 3600000.0F)", "noLootTable()"):
+                if needle not in helper:
+                    found.append("helper lacks " + needle)
+            for name in names:
+                if 'reinforced("' + name + '"' not in source:
+                    found.append(name + ": not registered through the reinforced helper")
+                for tag in sorted(tag_directory.rglob("*.json")):
+                    if "neroruins:" + name in json.loads(tag.read_text(encoding="utf-8")).get("values", []):
+                        found.append(name + ": in " + tag.name)
+                for loot_root in (resources, ROOT / "common/src/main/resources-26.3"):
+                    if (loot_root / "data/neroruins/loot_table/blocks" / (name + ".json")).is_file():
+                        found.append(name + ": has a drop")
+            return found
+
+        mineable = resources / "data/minecraft/tags/block/mineable"
+        self.assertEqual([], problems(mineable, blocks_source))
+        with tempfile.TemporaryDirectory() as scratch:
+            tags = pathlib.Path(scratch)
+            (tags / "pickaxe.json").write_text('{"values":["neroruins:reinforced_latticework"]}')
+            self.assertEqual(["reinforced_latticework: in pickaxe.json"], problems(tags, blocks_source))
+            weakened = blocks_source.replace("strength(-1.0F, 3600000.0F).sound(sound)", "strength(5.0F).sound(sound)")
+            self.assertIn("helper lacks strength(-1.0F, 3600000.0F)", problems(mineable, weakened))
+
 
 
 LOCKS = ("neroruins:glyph_lock", "neroruins:conduit_lock", "neroruins:card_reader", "neroruins:relic_socket",

@@ -34,6 +34,7 @@ public final class ModCreativeTab {
                                 ModItems.RESONANCE_CLUE, ModItems.CARD_READER, ModItems.RELIC_SOCKET)) {
                             output.accept(fixture.get());
                         }
+                        for (var shell : ModItems.REINFORCED) output.accept(shell.get());
                         for (var card : ModItems.KEYCARDS) output.accept(card.get());
                         output.accept(ModItems.RUIN_SPAWNER.get());
                         output.accept(ModItems.ARC_GRATE.get());

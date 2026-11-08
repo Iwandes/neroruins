@@ -80,7 +80,23 @@ public final class ModBlocks {
             BLOCKS.register("relic_socket", key -> new za.co.neroland.neroruins.puzzle.RelicSocketBlock(fixture(key)
                     .lightLevel(state -> state.getValue(za.co.neroland.neroruins.puzzle.RelicSocketBlock.LIT) ? 12 : 3)));
 
+    // Reinforced shells (decision 039): enclose every room behind a puzzle gate so it cannot be mined into.
+    public static final RegistrationProvider.RegistryEntry<Block> REINFORCED_SURVEY_HULL =
+            reinforced("reinforced_survey_hull", MapColor.METAL, SoundType.METAL);
+    public static final RegistrationProvider.RegistryEntry<Block> REINFORCED_RUSTED_SURVEY_HULL =
+            reinforced("reinforced_rusted_survey_hull", MapColor.METAL, SoundType.METAL);
+    public static final RegistrationProvider.RegistryEntry<Block> REINFORCED_LATTICEWORK =
+            reinforced("reinforced_latticework", MapColor.COLOR_BLACK, SoundType.DEEPSLATE_BRICKS);
+    public static final RegistrationProvider.RegistryEntry<Block> REINFORCED_LATTICE_FLOOR =
+            reinforced("reinforced_lattice_floor", MapColor.COLOR_BLACK, SoundType.DEEPSLATE_BRICKS);
+
     private ModBlocks() { }
+
+    // Hardness -1 also keeps pistons from moving the block, as for bedrock.
+    private static RegistrationProvider.RegistryEntry<Block> reinforced(String name, MapColor color, SoundType sound) {
+        return BLOCKS.register(name, key -> new Block(PropertiesCompat.block(key).mapColor(color)
+                .strength(-1.0F, 3600000.0F).sound(sound).noLootTable()));
+    }
 
     private static Block.Properties fixture(net.minecraft.resources.ResourceKey<Block> key) {
         return PropertiesCompat.block(key).mapColor(MapColor.METAL).strength(-1.0F, 3600000.0F).sound(SoundType.METAL);

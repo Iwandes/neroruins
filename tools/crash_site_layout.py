@@ -7,6 +7,8 @@ tools/build_templates.py, whenever the family changes. Everything it writes is d
 import json
 from pathlib import Path
 
+import gated_enclosure
+
 ROOT = Path(__file__).resolve().parent.parent
 SPECS = ROOT / "tools" / "templates" / "crash_site.json"
 DATA = ROOT / "common" / "src" / "main" / "resources" / "data"
@@ -14,6 +16,7 @@ DATA_263 = ROOT / "common" / "src" / "main" / "resources-26.3" / "data"
 PUZZLES = ROOT / "tools" / "templates" / "puzzles.json"
 
 HULL = "neroruins:survey_hull"
+REINFORCED = "neroruins:reinforced_survey_hull"
 RUST = "neroruins:rusted_survey_hull"
 AIR = "minecraft:air"
 NS = "neroruins:"
@@ -147,6 +150,33 @@ def conduit_loop(piece, ox, y, oz):
     return lock
 
 
+def block_at(piece, pos):
+    for f in reversed(piece.fills):
+        if all(f["from"][i] <= pos[i] <= f["to"][i] for i in range(3)):
+            return f["block"]
+    return None
+
+
+def armour(piece, a, b):
+    """Plate the six faces of the box a..b in unbreakable hull (decision 039), keeping the puzzle fixtures that
+    sit in them (doors, sockets, readers): a gated room cannot be mined into from any side."""
+    faces = [((a[0], a[1], a[2]), (a[0], b[1], b[2])), ((b[0], a[1], a[2]), (b[0], b[1], b[2])),
+             ((a[0], a[1], a[2]), (b[0], a[1], b[2])), ((a[0], b[1], a[2]), (b[0], b[1], b[2])),
+             ((a[0], a[1], a[2]), (b[0], b[1], a[2])), ((a[0], a[1], b[2]), (b[0], b[1], b[2]))]
+    keep = {}
+    for lo, hi in faces:
+        for x in range(lo[0], hi[0] + 1):
+            for y in range(lo[1], hi[1] + 1):
+                for z in range(lo[2], hi[2] + 1):
+                    block = block_at(piece, (x, y, z))
+                    if isinstance(block, dict) and block["id"] in gated_enclosure.UNBREAKABLE:
+                        keep[(x, y, z)] = block
+    for lo, hi in faces:
+        piece.fill(lo, hi, REINFORCED)
+    for pos, block in keep.items():
+        piece.set(pos, block)
+
+
 def hump(piece, width, length, roof_y, profile):
     """The broken spine above the roof: one stepped height per section of the hull, so the hull reads as tilted."""
     sections = len(profile)
@@ -194,8 +224,9 @@ def meridian(name, breach, profile, crates):
     door(p, c, Y, 11, "south")
     p.set((c + 2, Y + 1, 11), {"id": "neroruins:relic_socket",
                                "properties": {"facing": "south", "chapter": "5", "lit": "false"}})
-    p.set((c + 2, Y + 2, 11), {"id": "neroruins:glyph_stone", "properties": {"glyph": "4"}})
-    p.set((c - 2, Y + 1, 11), {"id": "neroruins:glyph_stone", "properties": {"glyph": "11"}})
+    # Glyph plaques stand in front of the gate wall, which is unbreakable plating.
+    p.set((c + 2, Y + 2, 12), {"id": "neroruins:glyph_stone", "properties": {"glyph": "4"}})
+    p.set((c - 2, Y + 1, 12), {"id": "neroruins:glyph_stone", "properties": {"glyph": "11"}})
     partition(p, W, 22, Y, roof - 1, c)
     partition(p, W, 30, Y, roof - 1, c)
     partition(p, W, 49, Y, roof - 1, c)
@@ -243,6 +274,8 @@ def meridian(name, breach, profile, crates):
         p.terminal((c - 3, Y, L - 2), 1, "north")
         p.exit((0, Y, 56), "west_up", CORRIDORS)
     p.chest((W - 2, Y, 61), "crash_site_salvage")
+    armour(p, (0, F, 0), (W - 1, roof, 11))           # cockpit and inner bay, behind the cargo-bay gate
+    armour(p, (20, F, 39), (W - 1, roof, 47))         # the keystone locker
     p.exit((W - 1, Y, 26), "east_up", CORRIDORS)
     p.exit((W - 1, Y, 34), "east_up", CORRIDORS)
     p.exit((W - 1, Y, 56), "east_up", CORRIDORS)
@@ -279,6 +312,7 @@ def hauler(name, breach, profile):
         p.fill((c - 1, Y, L - 1), (c + 1, Y + 2, L - 1), AIR)
         p.exit((0, Y, 34), "west_up", CORRIDORS)
     p.chest((W - 2, Y, 37), "crash_site_salvage")
+    armour(p, (0, F, 0), (W - 1, roof, 8))            # cockpit behind the gate
     p.exit((W - 1, Y, 23), "east_up", CORRIDORS)
     p.exit((W - 1, Y, 34), "east_up", CORRIDORS)
     return p
@@ -309,6 +343,7 @@ def pod(name, breach, profile):
     else:
         p.fill((c - 1, Y, L - 1), (c + 1, Y + 2, L - 1), AIR)
         p.exit((0, Y, 15), "west_up", CORRIDORS)
+    armour(p, (0, F, 0), (W - 1, roof, 10))           # vault room behind the reader gate
     return p
 
 

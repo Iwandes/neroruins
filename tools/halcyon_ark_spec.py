@@ -18,6 +18,7 @@ DATA = ROOT / "common" / "src" / "main" / "resources" / "data" / "neroruins"
 OVERLAY = ROOT / "common" / "src" / "main" / "resources-26.3" / "data" / "neroruins"
 
 HULL = "neroruins:survey_hull"
+REINFORCED = "neroruins:reinforced_survey_hull"
 RUST = "neroruins:rusted_survey_hull"
 AIR = "minecraft:air"
 LAMP = "minecraft:sea_lantern"
@@ -40,7 +41,11 @@ CITADEL_CHAIN = ["hub", "cryo", "hydro", "guard", "engineering", "medbay", "capt
 LUNA_CHAIN = ["hub", "cryo", "guard", "engineering", "medbay", "captain"]
 CITADEL_LOGS = {"hub": 1, "cryo": 2, "hydro": 3, "engineering": 4, "medbay": 5, "bridge": 6}
 LUNA_LOGS = {"hub": 1, "cryo": 2, "engineering": 4, "medbay": 5}
-SIDE_DOORS = {"cryo": 8, "hydro": 8, "medbay": 6}
+# Behind the conduit gate nothing may branch off: side rooms would be mineable ways in (decision 039).
+SIDE_DOORS = {"cryo": 8, "hydro": 8}
+# Rooms wholly behind a gate, and where the gated part of engineering starts (its bulkhead).
+GATED_ROLES = ("medbay", "captain", "bridge")
+ENGINEERING_BULKHEAD = 13
 
 
 class Piece:
@@ -265,9 +270,9 @@ def engineering(p, v):
     length = LENGTHS["engineering"]
     shell(p, length)
     # Bulkhead with the gate door; the junction lamps above the door show the powered branch.
-    p.fill((1, 1, 13), (W - 2, H - 2, 13), HULL)
-    sealed_door(p, CX, 13)
-    p.put((CX, 4, 13), "minecraft:redstone_lamp")
+    p.fill((1, 1, ENGINEERING_BULKHEAD), (W - 2, H - 2, ENGINEERING_BULKHEAD), REINFORCED)
+    sealed_door(p, CX, ENGINEERING_BULKHEAD)
+    p.put((CX, 4, ENGINEERING_BULKHEAD - 1), "minecraft:redstone_lamp")
     # Machinery banks along both walls, different per variant.
     machine = {0: "minecraft:blast_furnace", 1: "minecraft:iron_block", 2: "minecraft:smooth_stone"}[v]
     for z in range(2, 12, 2):
@@ -309,7 +314,7 @@ def captain(p, v, luna):
     length = LENGTHS["captain"]
     shell(p, length)
     p.add("spawners", {"pos": [CX, 0, 4], "table": SPAWN_TABLE, "tier": 3})
-    p.fill((1, 1, 7), (W - 2, H - 2, 7), HULL)
+    p.fill((1, 1, 7), (W - 2, H - 2, 7), REINFORCED)
     sealed_door(p, CX, 7)
     p.put((13, 2, 7), {"id": "neroruins:card_reader", "properties": {"facing": "north", "tier": "3", "accepted": "false"}})
     if v == 0:  # the captain's desk
@@ -330,14 +335,11 @@ def bridge(p, v):
     length = LENGTHS["bridge"]
     shell(p, length)
     # The seal alcove at the bow: a relic socket opens it.
-    p.fill((7, 1, 12), (15, H - 2, 15), HULL)
+    p.fill((7, 1, 12), (15, H - 2, 15), REINFORCED)
     p.fill((8, 1, 13), (14, 4, 15), AIR)
     sealed_door(p, CX, 12)
     p.put((13, 2, 12), {"id": "neroruins:relic_socket", "properties": {"facing": "north", "chapter": "3", "lit": "false"}})
     vault(p, (CX, 1, 15), "halcyon_ark_bridge", "neroruins:halcyon_ark")
-    # Bow windows either side of the alcove.
-    p.fill((1, 3, length - 1), (6, 7, length - 1), WINDOW)
-    p.fill((16, 3, length - 1), (21, 7, length - 1), WINDOW)
     consoles = {0: [(3, 4), (19, 4), (3, 8), (19, 8)], 1: [(6, 3), (16, 3), (CX, 6)], 2: [(2, 6), (20, 6), (8, 9), (14, 9)]}[v]
     for x, z in consoles:
         p.put((x, 1, z), "minecraft:lectern" if v == 1 else "minecraft:smooth_stone_slab")
@@ -345,6 +347,30 @@ def bridge(p, v):
 
 
 ROLE_BUILDERS = {"cryo": cryo, "hydro": hydro, "engineering": engineering, "medbay": medbay}
+
+
+def block_at(p, pos):
+    for fill in reversed(p.spec["fills"]):
+        if all(fill["from"][i] <= pos[i] <= fill["to"][i] for i in range(3)):
+            return fill["block"]
+    return AIR
+
+
+def armour(p, length, z0):
+    """Wrap the part of a room from z0 on in reinforced plating (decision 039): walls, floor, ceiling, far end.
+
+    Ceiling lamps the plating covers move one block down so the room stays lit. Doorways are cut afterwards by
+    spine_connectors, so they stay open."""
+    lamps = [(x, z) for z in range(3, length - 2, 4) for x in (5, 11, 17) if z >= z0]
+    for a, b in (((0, 0, z0), (0, H - 1, length - 1)), ((W - 1, 0, z0), (W - 1, H - 1, length - 1)),
+                 ((0, 0, z0), (W - 1, 0, length - 1)), ((0, H - 1, z0), (W - 1, H - 1, length - 1)),
+                 ((0, 0, length - 1), (W - 1, H - 1, length - 1)), ((0, 0, z0), (W - 1, H - 1, z0))):
+        if a[2] == b[2] == z0 and z0 > 0:
+            continue  # a part-gated room's bulkhead is built (with its door) by the room itself
+        p.fill(a, b, REINFORCED)
+    for x, z in lamps:
+        if block_at(p, (x, H - 2, z)) == AIR:
+            p.put((x, H - 2, z), LAMP)
 
 
 def spine_piece(prefix, chain, role, v, luna):
@@ -362,6 +388,10 @@ def spine_piece(prefix, chain, role, v, luna):
         bridge(p, v)
     else:
         ROLE_BUILDERS[role](p, v)
+    if role in GATED_ROLES:
+        armour(p, length, 0)
+    elif role == "engineering":
+        armour(p, length, ENGINEERING_BULKHEAD)
     spine_connectors(p, length, next_pool, entrance=role != "hub")
     if role in SIDE_DOORS:
         side_doors(p, SIDE_DOORS[role], "neroruins:halcyon_ark_side_corridors")

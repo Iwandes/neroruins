@@ -293,12 +293,12 @@
           "from": [
             15,
             9,
-            11
+            12
           ],
           "to": [
             15,
             9,
-            11
+            12
           ],
           "block": {
             "id": "neroruins:glyph_stone",
@@ -311,12 +311,12 @@
           "from": [
             11,
             8,
-            11
+            12
           ],
           "to": [
             11,
             8,
-            11
+            12
           ],
           "block": {
             "id": "neroruins:glyph_stone",
@@ -990,6 +990,262 @@
         },
         {
           "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            0,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            26,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            6,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            12,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            11
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            11
+          ],
+          "to": [
+            13,
+            7,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            8,
+            11
+          ],
+          "to": [
+            13,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            8,
+            11
+          ],
+          "to": [
+            15,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:relic_socket",
+            "properties": {
+              "facing": "south",
+              "chapter": "5",
+              "lit": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            6,
+            39
+          ],
+          "to": [
+            20,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            26,
+            6,
+            39
+          ],
+          "to": [
+            26,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            6,
+            39
+          ],
+          "to": [
+            26,
+            6,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            12,
+            39
+          ],
+          "to": [
+            26,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            6,
+            39
+          ],
+          "to": [
+            26,
+            12,
+            39
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            6,
+            47
+          ],
+          "to": [
+            26,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            43
+          ],
+          "to": [
+            20,
+            7,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            8,
+            43
+          ],
+          "to": [
+            20,
+            8,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
             26,
             7,
             26
@@ -1521,12 +1777,12 @@
           "from": [
             11,
             9,
-            11
+            12
           ],
           "to": [
             11,
             9,
-            11
+            12
           ],
           "block": {
             "id": "neroruins:glyph_stone",
@@ -1539,12 +1795,12 @@
           "from": [
             15,
             8,
-            11
+            12
           ],
           "to": [
             15,
             8,
-            11
+            12
           ],
           "block": {
             "id": "neroruins:glyph_stone",
@@ -2218,6 +2474,262 @@
         },
         {
           "from": [
+            26,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            0,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            6,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            12,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            11
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            11
+          ],
+          "to": [
+            13,
+            7,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            8,
+            11
+          ],
+          "to": [
+            13,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            11,
+            8,
+            11
+          ],
+          "to": [
+            11,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:relic_socket",
+            "properties": {
+              "facing": "south",
+              "chapter": "5",
+              "lit": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            6,
+            39
+          ],
+          "to": [
+            6,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            39
+          ],
+          "to": [
+            0,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            39
+          ],
+          "to": [
+            6,
+            6,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            12,
+            39
+          ],
+          "to": [
+            6,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            39
+          ],
+          "to": [
+            6,
+            12,
+            39
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            47
+          ],
+          "to": [
+            6,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            6,
+            7,
+            43
+          ],
+          "to": [
+            6,
+            7,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "east",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            8,
+            43
+          ],
+          "to": [
+            6,
+            8,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "east",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
             0,
             7,
             26
@@ -2762,12 +3274,12 @@
           "from": [
             15,
             9,
-            11
+            12
           ],
           "to": [
             15,
             9,
-            11
+            12
           ],
           "block": {
             "id": "neroruins:glyph_stone",
@@ -2780,12 +3292,12 @@
           "from": [
             11,
             8,
-            11
+            12
           ],
           "to": [
             11,
             8,
-            11
+            12
           ],
           "block": {
             "id": "neroruins:glyph_stone",
@@ -3443,6 +3955,262 @@
             56
           ],
           "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            0,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            26,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            6,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            12,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            0
+          ],
+          "to": [
+            26,
+            12,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            6,
+            11
+          ],
+          "to": [
+            26,
+            12,
+            11
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            13,
+            7,
+            11
+          ],
+          "to": [
+            13,
+            7,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            13,
+            8,
+            11
+          ],
+          "to": [
+            13,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            15,
+            8,
+            11
+          ],
+          "to": [
+            15,
+            8,
+            11
+          ],
+          "block": {
+            "id": "neroruins:relic_socket",
+            "properties": {
+              "facing": "south",
+              "chapter": "5",
+              "lit": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            6,
+            39
+          ],
+          "to": [
+            20,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            26,
+            6,
+            39
+          ],
+          "to": [
+            26,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            6,
+            39
+          ],
+          "to": [
+            26,
+            6,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            12,
+            39
+          ],
+          "to": [
+            26,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            6,
+            39
+          ],
+          "to": [
+            26,
+            12,
+            39
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            6,
+            47
+          ],
+          "to": [
+            26,
+            12,
+            47
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            20,
+            7,
+            43
+          ],
+          "to": [
+            20,
+            7,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            20,
+            8,
+            43
+          ],
+          "to": [
+            20,
+            8,
+            43
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "west",
+              "half": "upper",
+              "open": "false"
+            }
+          }
         },
         {
           "from": [
@@ -4383,6 +5151,124 @@
         },
         {
           "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            0,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            18,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            4,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            10,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            8
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            9,
+            5,
+            8
+          ],
+          "to": [
+            9,
+            5,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            6,
+            8
+          ],
+          "to": [
+            9,
+            6,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
             18,
             5,
             23
@@ -5186,6 +6072,124 @@
             39
           ],
           "block": "minecraft:air"
+        },
+        {
+          "from": [
+            18,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            0,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            4,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            10,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            8
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            9,
+            5,
+            8
+          ],
+          "to": [
+            9,
+            5,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            6,
+            8
+          ],
+          "to": [
+            9,
+            6,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
         },
         {
           "from": [
@@ -6008,6 +7012,124 @@
         },
         {
           "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            0,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            18,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            4,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            10,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            0
+          ],
+          "to": [
+            18,
+            10,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            4,
+            8
+          ],
+          "to": [
+            18,
+            10,
+            8
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            9,
+            5,
+            8
+          ],
+          "to": [
+            9,
+            5,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            9,
+            6,
+            8
+          ],
+          "to": [
+            9,
+            6,
+            8
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
             18,
             5,
             23
@@ -6351,6 +7473,144 @@
             15
           ],
           "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            0,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            12,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            2,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            7,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            10
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            6,
+            3,
+            10
+          ],
+          "to": [
+            6,
+            3,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            4,
+            10
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            4,
+            10
+          ],
+          "to": [
+            8,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:card_reader",
+            "properties": {
+              "facing": "south",
+              "tier": "1",
+              "accepted": "false"
+            }
+          }
         }
       ],
       "connectors": [
@@ -6639,6 +7899,144 @@
             15
           ],
           "block": "minecraft:air"
+        },
+        {
+          "from": [
+            12,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            0,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            2,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            7,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            10
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            6,
+            3,
+            10
+          ],
+          "to": [
+            6,
+            3,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            4,
+            10
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            4,
+            4,
+            10
+          ],
+          "to": [
+            4,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:card_reader",
+            "properties": {
+              "facing": "south",
+              "tier": "1",
+              "accepted": "false"
+            }
+          }
         }
       ],
       "connectors": [
@@ -6940,6 +8338,144 @@
             15
           ],
           "block": "minecraft:air"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            0,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            12,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            2,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            7,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            0
+          ],
+          "to": [
+            12,
+            7,
+            0
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            0,
+            2,
+            10
+          ],
+          "to": [
+            12,
+            7,
+            10
+          ],
+          "block": "neroruins:reinforced_survey_hull"
+        },
+        {
+          "from": [
+            6,
+            3,
+            10
+          ],
+          "to": [
+            6,
+            3,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "lower",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            6,
+            4,
+            10
+          ],
+          "to": [
+            6,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:sealed_door",
+            "properties": {
+              "facing": "south",
+              "half": "upper",
+              "open": "false"
+            }
+          }
+        },
+        {
+          "from": [
+            8,
+            4,
+            10
+          ],
+          "to": [
+            8,
+            4,
+            10
+          ],
+          "block": {
+            "id": "neroruins:card_reader",
+            "properties": {
+              "facing": "south",
+              "tier": "1",
+              "accepted": "false"
+            }
+          }
         }
       ],
       "connectors": [

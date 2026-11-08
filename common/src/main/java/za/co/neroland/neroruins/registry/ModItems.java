@@ -93,6 +93,12 @@ public final class ModItems {
     public static final List<RegistrationProvider.RegistryEntry<Item>> KEYCARDS = List.of(
             keycard("survey_keycard", 1), keycard("security_keycard", 2), keycard("command_keycard", 3));
 
+    public static final List<RegistrationProvider.RegistryEntry<BlockItem>> REINFORCED = List.of(
+            blockItem("reinforced_survey_hull", ModBlocks.REINFORCED_SURVEY_HULL),
+            blockItem("reinforced_rusted_survey_hull", ModBlocks.REINFORCED_RUSTED_SURVEY_HULL),
+            blockItem("reinforced_latticework", ModBlocks.REINFORCED_LATTICEWORK),
+            blockItem("reinforced_lattice_floor", ModBlocks.REINFORCED_LATTICE_FLOOR));
+
     private ModItems() { }
 
     private static RegistrationProvider.RegistryEntry<BlockItem> blockItem(String name,
