@@ -16,6 +16,8 @@ public final class ModMenuTypes {
             TYPES.register("log_terminal", key -> new MenuType<>(LogTerminalMenu::new, FeatureFlags.VANILLA_SET));
     public static final RegistrationProvider.RegistryEntry<MenuType<VaultCacheMenu>> VAULT_CACHE =
             TYPES.register("vault_cache", key -> new MenuType<>(VaultCacheMenu::new, FeatureFlags.VANILLA_SET));
+    public static final RegistrationProvider.RegistryEntry<MenuType<za.co.neroland.neroruins.puzzle.GlyphLockMenu>> GLYPH_LOCK =
+            TYPES.register("glyph_lock", key -> new MenuType<>(za.co.neroland.neroruins.puzzle.GlyphLockMenu::new, FeatureFlags.VANILLA_SET));
     private ModMenuTypes() { }
     public static void init() { }
 }

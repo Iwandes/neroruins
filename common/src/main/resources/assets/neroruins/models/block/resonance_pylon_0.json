@@ -1,0 +1,41 @@
+{
+  "textures": {
+    "side": "neroruins:block/resonance_pylon_0",
+    "end": "neroruins:block/resonance_pylon_top",
+    "particle": "neroruins:block/resonance_pylon_0"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        12,
+        16,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#side"
+        },
+        "south": {
+          "texture": "#side"
+        },
+        "east": {
+          "texture": "#side"
+        },
+        "west": {
+          "texture": "#side"
+        },
+        "up": {
+          "texture": "#end"
+        },
+        "down": {
+          "texture": "#end"
+        }
+      }
+    }
+  ]
+}

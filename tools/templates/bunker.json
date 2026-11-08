@@ -232,6 +232,17 @@
           "loot_table": "neroruins:chests/bunker_vault",
           "structure": "neroruins:bunker"
         }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            6,
+            0,
+            2
+          ],
+          "table": "neroruins:bunker",
+          "tier": 1
+        }
       ]
     },
     {
@@ -465,6 +476,17 @@
           ],
           "loot_table": "neroruins:chests/bunker_vault",
           "structure": "neroruins:bunker"
+        }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            6,
+            0,
+            2
+          ],
+          "table": "neroruins:bunker",
+          "tier": 1
         }
       ]
     },
@@ -713,6 +735,17 @@
           "loot_table": "neroruins:chests/bunker_vault",
           "structure": "neroruins:bunker"
         }
+      ],
+      "spawners": [
+        {
+          "pos": [
+            6,
+            0,
+            2
+          ],
+          "table": "neroruins:bunker",
+          "tier": 1
+        }
       ]
     },
     {
@@ -914,6 +947,19 @@
             2
           ],
           "block": "minecraft:sea_lantern"
+        },
+        {
+          "from": [
+            4,
+            0,
+            2
+          ],
+          "to": [
+            4,
+            0,
+            2
+          ],
+          "block": "neroruins:arc_grate"
         }
       ],
       "connectors": [
@@ -1683,6 +1729,19 @@
             5
           ],
           "block": "minecraft:air"
+        },
+        {
+          "from": [
+            5,
+            0,
+            5
+          ],
+          "to": [
+            5,
+            0,
+            5
+          ],
+          "block": "neroruins:arc_grate"
         }
       ],
       "connectors": [

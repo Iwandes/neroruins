@@ -103,6 +103,11 @@
               "max": 3
             }
           }
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:survey_scanner",
+          "weight": 1
         }
       ]
     },

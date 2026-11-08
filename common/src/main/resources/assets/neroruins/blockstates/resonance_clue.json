@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "tone=0": {
+      "model": "neroruins:block/resonance_clue_0"
+    },
+    "tone=1": {
+      "model": "neroruins:block/resonance_clue_1"
+    },
+    "tone=2": {
+      "model": "neroruins:block/resonance_clue_2"
+    },
+    "tone=3": {
+      "model": "neroruins:block/resonance_clue_3"
+    },
+    "tone=4": {
+      "model": "neroruins:block/resonance_clue_4"
+    },
+    "tone=5": {
+      "model": "neroruins:block/resonance_clue_5"
+    },
+    "tone=6": {
+      "model": "neroruins:block/resonance_clue_6"
+    },
+    "tone=7": {
+      "model": "neroruins:block/resonance_clue_7"
+    }
+  }
+}

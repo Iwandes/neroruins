@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "neroruins:block/conduit_lock"
+    },
+    "powered=true": {
+      "model": "neroruins:block/conduit_lock_on"
+    }
+  }
+}

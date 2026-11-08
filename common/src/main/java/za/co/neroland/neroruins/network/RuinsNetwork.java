@@ -43,6 +43,9 @@ public final class RuinsNetwork {
     public static void init() {
         if (DECLARED.compareAndSet(false, true)) {
             clientbound(CodexSnapshot.TYPE, CodexSnapshot.CODEC, CodexDisplay::open);
+            clientbound(za.co.neroland.neroruins.expedition.ExpeditionSnapshot.TYPE,
+                    za.co.neroland.neroruins.expedition.ExpeditionSnapshot.CODEC,
+                    za.co.neroland.neroruins.expedition.ExpeditionMapDisplay::open);
         }
     }
 }

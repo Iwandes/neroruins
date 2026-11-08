@@ -26,11 +26,19 @@ public final class ForgeClientSetup {
         event.enqueueWork(() -> {
             MenuScreens.register(ModMenuTypes.LOG_TERMINAL.get(), LogTerminalScreen::new);
             MenuScreens.register(ModMenuTypes.VAULT_CACHE.get(), za.co.neroland.neroruins.client.VaultCacheScreen::new);
+            MenuScreens.register(ModMenuTypes.GLYPH_LOCK.get(), za.co.neroland.neroruins.client.GlyphLockScreen::new);
         });
     }
 
     private static void registerRenderers(net.minecraftforge.client.event.EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(za.co.neroland.neroruins.registry.ModBlockEntities.LOG_TERMINAL.get(),
                 context -> new za.co.neroland.neroruins.client.LogTerminalRenderer());
+        za.co.neroland.neroruins.client.GuardianRenderers.registerAll(new za.co.neroland.neroruins.client.GuardianRenderers.Sink() {
+            @Override
+            public <E extends net.minecraft.world.entity.Entity> void register(net.minecraft.world.entity.EntityType<? extends E> type,
+                    net.minecraft.client.renderer.entity.EntityRendererProvider<E> provider) {
+                event.registerEntityRenderer(type, provider);
+            }
+        });
     }
 }

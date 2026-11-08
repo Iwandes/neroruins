@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "neroruins:block/sealed_door_bottom",
+    "north": "neroruins:block/sealed_door_bottom",
+    "south": "neroruins:block/sealed_door_bottom",
+    "east": "neroruins:block/survey_hull",
+    "west": "neroruins:block/survey_hull",
+    "up": "neroruins:block/survey_hull",
+    "down": "neroruins:block/survey_hull"
+  }
+}

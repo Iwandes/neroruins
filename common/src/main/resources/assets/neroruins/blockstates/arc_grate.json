@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "charged=true": {
+      "model": "neroruins:block/arc_grate"
+    },
+    "charged=false": {
+      "model": "neroruins:block/arc_grate_spent"
+    }
+  }
+}

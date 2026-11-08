@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "dormant=false": {
+      "model": "neroruins:block/ruin_spawner"
+    },
+    "dormant=true": {
+      "model": "neroruins:block/ruin_spawner_dormant"
+    }
+  }
+}

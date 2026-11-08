@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "neroruins:block/ruin_spawner_side_dormant",
+    "top": "neroruins:block/ruin_spawner_top_dormant",
+    "bottom": "neroruins:block/survey_hull"
+  }
+}

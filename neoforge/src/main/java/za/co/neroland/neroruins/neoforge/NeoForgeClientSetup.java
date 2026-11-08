@@ -12,8 +12,18 @@ public final class NeoForgeClientSetup {
         bus.addListener((RegisterMenuScreensEvent event) -> event.register(ModMenuTypes.LOG_TERMINAL.get(), LogTerminalScreen::new));
         bus.addListener((RegisterMenuScreensEvent event) -> event.register(ModMenuTypes.VAULT_CACHE.get(),
                 za.co.neroland.neroruins.client.VaultCacheScreen::new));
+        bus.addListener((RegisterMenuScreensEvent event) -> event.register(ModMenuTypes.GLYPH_LOCK.get(),
+                za.co.neroland.neroruins.client.GlyphLockScreen::new));
         bus.addListener((EntityRenderersEvent.RegisterRenderers event) -> event.registerBlockEntityRenderer(
                 za.co.neroland.neroruins.registry.ModBlockEntities.LOG_TERMINAL.get(),
                 context -> new za.co.neroland.neroruins.client.LogTerminalRenderer()));
+        bus.addListener((EntityRenderersEvent.RegisterRenderers event) -> za.co.neroland.neroruins.client.GuardianRenderers.registerAll(
+                new za.co.neroland.neroruins.client.GuardianRenderers.Sink() {
+                    @Override
+                    public <E extends net.minecraft.world.entity.Entity> void register(net.minecraft.world.entity.EntityType<? extends E> type,
+                            net.minecraft.client.renderer.entity.EntityRendererProvider<E> provider) {
+                        event.registerEntityRenderer(type, provider);
+                    }
+                }));
     }
 }

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "neroruins:survey_keycard",
+    "neroruins:security_keycard",
+    "neroruins:command_keycard"
+  ]
+}

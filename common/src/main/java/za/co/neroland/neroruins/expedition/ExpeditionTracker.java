@@ -21,7 +21,7 @@ import za.co.neroland.neroruins.worldgen.structure.ComplexHub;
 /**
  * Notices when a player first stands inside a ruin complex's hub and records it in that player's own
  * {@link ExpeditionRecord}. Credit is by the player's own position, never anyone else's. Also runs the hourly
- * retention sweeps. Driven by each loader's server-tick hook.
+ * retention sweeps and the held-relic passives. Driven by each loader's server-tick hook.
  */
 public final class ExpeditionTracker {
     private static final int CHECK_INTERVAL = 40;
@@ -33,6 +33,7 @@ public final class ExpeditionTracker {
     public static void tick(MinecraftServer server) {
         ticks++;
         if (ticks % RETENTION_INTERVAL == 0) applyRetention(server);
+        if (ticks % RelicPassives.INTERVAL == 0) RelicPassives.tick(server, ticks);
         if (ticks % CHECK_INTERVAL != 0) return;
         for (ServerPlayer player : server.getPlayerList().getPlayers()) {
             if (!player.isSpectator()) check(player);

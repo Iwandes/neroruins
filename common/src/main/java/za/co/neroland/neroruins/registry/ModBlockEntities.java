@@ -16,6 +16,10 @@ public final class ModBlockEntities {
             TYPES.register("log_terminal", key -> BlockEntityTypeCompat.create(LogTerminalBlockEntity::new, ModBlocks.LOG_TERMINAL.get()));
     public static final RegistrationProvider.RegistryEntry<BlockEntityType<VaultCacheBlockEntity>> VAULT_CACHE =
             TYPES.register("vault_cache", key -> BlockEntityTypeCompat.create(VaultCacheBlockEntity::new, ModBlocks.VAULT_CACHE.get()));
+    public static final RegistrationProvider.RegistryEntry<BlockEntityType<za.co.neroland.neroruins.guardian.RuinSpawnerBlockEntity>> RUIN_SPAWNER =
+            TYPES.register("ruin_spawner", key -> BlockEntityTypeCompat.create(za.co.neroland.neroruins.guardian.RuinSpawnerBlockEntity::new, ModBlocks.RUIN_SPAWNER.get()));
+    public static final RegistrationProvider.RegistryEntry<BlockEntityType<za.co.neroland.neroruins.puzzle.GlyphLockBlockEntity>> GLYPH_LOCK =
+            TYPES.register("glyph_lock", key -> BlockEntityTypeCompat.create(za.co.neroland.neroruins.puzzle.GlyphLockBlockEntity::new, ModBlocks.GLYPH_LOCK.get()));
     private ModBlockEntities() { }
     public static void init() { }
 }

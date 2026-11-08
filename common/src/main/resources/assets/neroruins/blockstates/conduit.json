@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "corner=false,facing=north,powered=false": {
+      "model": "neroruins:block/conduit_straight"
+    },
+    "corner=false,facing=north,powered=true": {
+      "model": "neroruins:block/conduit_straight_on"
+    },
+    "corner=true,facing=north,powered=false": {
+      "model": "neroruins:block/conduit_corner"
+    },
+    "corner=true,facing=north,powered=true": {
+      "model": "neroruins:block/conduit_corner_on"
+    },
+    "corner=false,facing=east,powered=false": {
+      "model": "neroruins:block/conduit_straight",
+      "y": 90
+    },
+    "corner=false,facing=east,powered=true": {
+      "model": "neroruins:block/conduit_straight_on",
+      "y": 90
+    },
+    "corner=true,facing=east,powered=false": {
+      "model": "neroruins:block/conduit_corner",
+      "y": 90
+    },
+    "corner=true,facing=east,powered=true": {
+      "model": "neroruins:block/conduit_corner_on",
+      "y": 90
+    },
+    "corner=false,facing=south,powered=false": {
+      "model": "neroruins:block/conduit_straight",
+      "y": 180
+    },
+    "corner=false,facing=south,powered=true": {
+      "model": "neroruins:block/conduit_straight_on",
+      "y": 180
+    },
+    "corner=true,facing=south,powered=false": {
+      "model": "neroruins:block/conduit_corner",
+      "y": 180
+    },
+    "corner=true,facing=south,powered=true": {
+      "model": "neroruins:block/conduit_corner_on",
+      "y": 180
+    },
+    "corner=false,facing=west,powered=false": {
+      "model": "neroruins:block/conduit_straight",
+      "y": 270
+    },
+    "corner=false,facing=west,powered=true": {
+      "model": "neroruins:block/conduit_straight_on",
+      "y": 270
+    },
+    "corner=true,facing=west,powered=false": {
+      "model": "neroruins:block/conduit_corner",
+      "y": 270
+    },
+    "corner=true,facing=west,powered=true": {
+      "model": "neroruins:block/conduit_corner_on",
+      "y": 270
+    }
+  }
+}

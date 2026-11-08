@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "neroruins:block/conduit_source"
+    },
+    "facing=east": {
+      "model": "neroruins:block/conduit_source",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "neroruins:block/conduit_source",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "neroruins:block/conduit_source",
+      "y": 270
+    }
+  }
+}

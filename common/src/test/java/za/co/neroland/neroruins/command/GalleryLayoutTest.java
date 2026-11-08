@@ -56,6 +56,11 @@ class GalleryLayoutTest {
         var empty = GalleryLayout.plan(0, 0, 0, 0, List.of());
         assertTrue(empty.templates().isEmpty());
         assertTrue(empty.bounds().maxZ() >= GalleryLayout.ITEM_WALL_Z + 1);
+        int lastSentinel = GalleryLayout.SENTINEL_START_X + (GalleryLayout.SENTINELS - 1) * GalleryLayout.PLATE_SPACING;
+        assertTrue(empty.bounds().contains(lastSentinel, 1, GalleryLayout.PLATE_ROW_Z),
+                "clearing the gallery must reach the Sentinels");
+        assertTrue(GalleryLayout.SENTINEL_START_X > GalleryLayout.START_X + 7 * GalleryLayout.PLATE_SPACING,
+                "Sentinels must not stand on a plate");
     }
 
     @Test

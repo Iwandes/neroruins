@@ -31,7 +31,7 @@ public final class VaultCacheScreen extends AbstractContainerScreen<VaultCacheMe
     @Override
     protected void containerTick() {
         super.containerTick();
-        claimButton.active = menu.status() != 1 && menu.status() != 2;
+        claimButton.active = menu.status() != 1 && menu.status() != 2 && menu.status() != 7;
     }
 
     private void panel(GuiGraphicsExtractor g) {

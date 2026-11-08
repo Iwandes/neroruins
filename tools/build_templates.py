@@ -118,6 +118,18 @@ def build_template(spec):
         blocks[pos] = (state({"id": "neroruins:vault_cache", "properties": {"sealed": "true"}}), compound(
             tag(8, "id", nbt_string("neroruins:vault_cache")), tag(8, "loot_table", nbt_string(loot_table)),
             tag(1, "puzzle", b"\x01"), tag(8, "structure", nbt_string(structure))))
+    for spawner in spec.get("spawners", []):
+        pos = point(spawner["pos"], size)
+        if pos in occupied_containers:
+            raise ValueError("Multiple block entities occupy the same position")
+        occupied_containers.add(pos)
+        table = resource(spawner["table"])
+        tier = spawner.get("tier", 1)
+        if type(tier) is not int or not 1 <= tier <= 3:
+            raise ValueError("Invalid spawner tier")
+        blocks[pos] = (state("neroruins:ruin_spawner"), compound(
+            tag(8, "id", nbt_string("neroruins:ruin_spawner")), tag(8, "table", nbt_string(table)),
+            tag(3, "tier", integer(tier))))
     occupied_connectors = set()
     for terminal in spec.get("terminals", []):
         pos = point(terminal["pos"], size)

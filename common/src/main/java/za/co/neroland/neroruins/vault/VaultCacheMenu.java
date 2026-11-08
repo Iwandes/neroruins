@@ -29,6 +29,7 @@ public final class VaultCacheMenu extends AbstractContainerMenu {
                     case AVAILABLE -> status == 4 ? status : 0;
                     case RESERVED -> status == 3 ? 3 : 5;
                     case SEALED -> 6;
+                    case TAKEN -> 7;
                     case ALREADY_CLAIMED -> status == 1 ? 1 : 2;
                     default -> 4;
                 };
@@ -52,6 +53,7 @@ public final class VaultCacheMenu extends AbstractContainerMenu {
             case AVAILABLE -> 0;
             case RESERVED -> 5;
             case SEALED -> 6;
+            case TAKEN -> 7;
             case CLAIMED -> 1;
             case ALREADY_CLAIMED -> 2;
             case FULL -> 3;

@@ -39,7 +39,52 @@ public final class ModBlocks {
                     .mapColor(MapColor.COLOR_BLACK).strength(5.0F, 9.0F).requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE_BRICKS).lightLevel(state -> 5)));
 
+    // Guardians: the spawner is an unbreakable fixture; the arc grate is a mineable floor trap.
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.guardian.RuinSpawnerBlock> RUIN_SPAWNER =
+            BLOCKS.register("ruin_spawner", key -> new za.co.neroland.neroruins.guardian.RuinSpawnerBlock(PropertiesCompat.block(key)
+                    .mapColor(MapColor.METAL).strength(-1.0F, 3600000.0F).sound(SoundType.METAL).noOcclusion()
+                    .lightLevel(state -> state.getValue(za.co.neroland.neroruins.guardian.RuinSpawnerBlock.DORMANT) ? 0 : 6)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.guardian.ArcGrateBlock> ARC_GRATE =
+            BLOCKS.register("arc_grate", key -> new za.co.neroland.neroruins.guardian.ArcGrateBlock(PropertiesCompat.block(key)
+                    .mapColor(MapColor.METAL).strength(3.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
+                    .lightLevel(state -> state.getValue(za.co.neroland.neroruins.guardian.ArcGrateBlock.CHARGED) ? 4 : 0)));
+
+    // Puzzle fixtures (decision 032): unbreakable so a puzzle cannot be skipped by mining.
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.SealedDoorBlock> SEALED_DOOR =
+            BLOCKS.register("sealed_door", key -> new za.co.neroland.neroruins.puzzle.SealedDoorBlock(fixture(key)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.GlyphClueBlock> GLYPH_CLUE =
+            BLOCKS.register("glyph_clue", key -> new za.co.neroland.neroruins.puzzle.GlyphClueBlock(fixture(key)
+                    .lightLevel(state -> 5)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.GlyphLockBlock> GLYPH_LOCK =
+            BLOCKS.register("glyph_lock", key -> new za.co.neroland.neroruins.puzzle.GlyphLockBlock(fixture(key)
+                    .lightLevel(state -> 4)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.ConduitBlock> CONDUIT =
+            BLOCKS.register("conduit", key -> new za.co.neroland.neroruins.puzzle.ConduitBlock(fixture(key).noOcclusion()
+                    .lightLevel(state -> state.getValue(za.co.neroland.neroruins.puzzle.ConduitBlock.POWERED) ? 6 : 0)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.ConduitSourceBlock> CONDUIT_SOURCE =
+            BLOCKS.register("conduit_source", key -> new za.co.neroland.neroruins.puzzle.ConduitSourceBlock(fixture(key)
+                    .noOcclusion().lightLevel(state -> 8)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.ConduitLockBlock> CONDUIT_LOCK =
+            BLOCKS.register("conduit_lock", key -> new za.co.neroland.neroruins.puzzle.ConduitLockBlock(fixture(key)
+                    .noOcclusion().lightLevel(state -> state.getValue(za.co.neroland.neroruins.puzzle.ConduitLockBlock.POWERED) ? 10 : 2)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.ResonancePylonBlock> RESONANCE_PYLON =
+            BLOCKS.register("resonance_pylon", key -> new za.co.neroland.neroruins.puzzle.ResonancePylonBlock(fixture(key)
+                    .noOcclusion().lightLevel(state -> 6)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.ResonanceClueBlock> RESONANCE_CLUE =
+            BLOCKS.register("resonance_clue", key -> new za.co.neroland.neroruins.puzzle.ResonanceClueBlock(fixture(key)
+                    .lightLevel(state -> 9)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.CardReaderBlock> CARD_READER =
+            BLOCKS.register("card_reader", key -> new za.co.neroland.neroruins.puzzle.CardReaderBlock(fixture(key)
+                    .lightLevel(state -> 3)));
+    public static final RegistrationProvider.RegistryEntry<za.co.neroland.neroruins.puzzle.RelicSocketBlock> RELIC_SOCKET =
+            BLOCKS.register("relic_socket", key -> new za.co.neroland.neroruins.puzzle.RelicSocketBlock(fixture(key)
+                    .lightLevel(state -> state.getValue(za.co.neroland.neroruins.puzzle.RelicSocketBlock.LIT) ? 12 : 3)));
+
     private ModBlocks() { }
+
+    private static Block.Properties fixture(net.minecraft.resources.ResourceKey<Block> key) {
+        return PropertiesCompat.block(key).mapColor(MapColor.METAL).strength(-1.0F, 3600000.0F).sound(SoundType.METAL);
+    }
 
     private static RegistrationProvider.RegistryEntry<Block> lattice(String name, int light) {
         return BLOCKS.register(name, key -> new Block(PropertiesCompat.block(key).mapColor(MapColor.COLOR_BLACK)

@@ -21,6 +21,16 @@ public final class NeroRuinsFabricClient implements ClientModInitializer {
         net.minecraft.client.gui.screens.MenuScreens.register(
                 za.co.neroland.neroruins.registry.ModMenuTypes.VAULT_CACHE.get(),
                 za.co.neroland.neroruins.client.VaultCacheScreen::new);
+        net.minecraft.client.gui.screens.MenuScreens.register(
+                za.co.neroland.neroruins.registry.ModMenuTypes.GLYPH_LOCK.get(),
+                za.co.neroland.neroruins.client.GlyphLockScreen::new);
+        za.co.neroland.neroruins.client.GuardianRenderers.registerAll(new za.co.neroland.neroruins.client.GuardianRenderers.Sink() {
+            @Override
+            public <E extends net.minecraft.world.entity.Entity> void register(net.minecraft.world.entity.EntityType<? extends E> type,
+                    net.minecraft.client.renderer.entity.EntityRendererProvider<E> provider) {
+                net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(type, provider);
+            }
+        });
         FabricRuinsNetwork.registerClient();
     }
 }

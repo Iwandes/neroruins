@@ -29,6 +29,19 @@ public final class ModCreativeTab {
                         output.accept(ModItems.LATTICE_FLOOR.get());
                         output.accept(ModItems.RESONANCE_CRYSTAL_BLOCK.get());
                         output.accept(ModItems.GLYPH_STONE.get());
+                        for (var fixture : java.util.List.of(ModItems.SEALED_DOOR, ModItems.GLYPH_CLUE, ModItems.GLYPH_LOCK,
+                                ModItems.CONDUIT, ModItems.CONDUIT_SOURCE, ModItems.CONDUIT_LOCK, ModItems.RESONANCE_PYLON,
+                                ModItems.RESONANCE_CLUE, ModItems.CARD_READER, ModItems.RELIC_SOCKET)) {
+                            output.accept(fixture.get());
+                        }
+                        for (var card : ModItems.KEYCARDS) output.accept(card.get());
+                        output.accept(ModItems.RUIN_SPAWNER.get());
+                        output.accept(ModItems.ARC_GRATE.get());
+                        for (var egg : ModItems.SENTINEL_EGGS) {
+                            output.accept(egg.get());
+                        }
+                        output.accept(ModItems.EXPEDITION_MAP.get());
+                        output.accept(ModItems.SURVEY_SCANNER.get());
                         for (var relic : ModItems.RELICS) {
                             output.accept(relic.get());
                         }

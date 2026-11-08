@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "glyph=0": {
+      "model": "neroruins:block/glyph_stone_0"
+    },
+    "glyph=1": {
+      "model": "neroruins:block/glyph_stone_1"
+    },
+    "glyph=2": {
+      "model": "neroruins:block/glyph_stone_2"
+    },
+    "glyph=3": {
+      "model": "neroruins:block/glyph_stone_3"
+    },
+    "glyph=4": {
+      "model": "neroruins:block/glyph_stone_4"
+    },
+    "glyph=5": {
+      "model": "neroruins:block/glyph_stone_5"
+    },
+    "glyph=6": {
+      "model": "neroruins:block/glyph_stone_6"
+    },
+    "glyph=7": {
+      "model": "neroruins:block/glyph_stone_7"
+    },
+    "glyph=8": {
+      "model": "neroruins:block/glyph_stone_8"
+    },
+    "glyph=9": {
+      "model": "neroruins:block/glyph_stone_9"
+    },
+    "glyph=10": {
+      "model": "neroruins:block/glyph_stone_10"
+    },
+    "glyph=11": {
+      "model": "neroruins:block/glyph_stone_11"
+    },
+    "glyph=12": {
+      "model": "neroruins:block/glyph_stone_12"
+    },
+    "glyph=13": {
+      "model": "neroruins:block/glyph_stone_13"
+    },
+    "glyph=14": {
+      "model": "neroruins:block/glyph_stone_14"
+    },
+    "glyph=15": {
+      "model": "neroruins:block/glyph_stone_15"
+    }
+  }
+}

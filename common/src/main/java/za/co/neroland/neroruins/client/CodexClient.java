@@ -16,7 +16,10 @@ import za.co.neroland.neroruins.network.CodexSnapshot;
 public final class CodexClient {
     private CodexClient() { }
 
-    public static void init() { CodexDisplay.install(CodexClient::open); }
+    public static void init() {
+        CodexDisplay.install(CodexClient::open);
+        ExpeditionMapClient.init();
+    }
 
     private static void open(CodexSnapshot snapshot) {
         List<Component> pages = new ArrayList<>();

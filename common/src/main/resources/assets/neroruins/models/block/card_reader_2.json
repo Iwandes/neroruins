@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "neroruins:block/card_reader_2",
+    "side": "neroruins:block/survey_hull",
+    "top": "neroruins:block/survey_hull"
+  }
+}

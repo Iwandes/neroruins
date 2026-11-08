@@ -19,6 +19,9 @@ public final class GalleryLayout {
     public static final int BLOCK_SPACING = 3;
     public static final int PLATE_SPACING = 4;
     public static final int FRAME_ROWS = 3;
+    /** The Sentinel marks stand on the plate row, after the eighth plate. */
+    public static final int SENTINEL_START_X = START_X + 8 * PLATE_SPACING + 2;
+    public static final int SENTINELS = 3;
     public static final int ROW_WIDTH = 96;
     public static final int GAP = 4;
     public static final int MAX_TEMPLATE_SIZE = 64;
@@ -54,6 +57,7 @@ public final class GalleryLayout {
         int maxX = Math.max(START_X + Math.max(0, blocks - 1) * BLOCK_SPACING,
                 Math.max(START_X + Math.max(0, plates - 1) * PLATE_SPACING,
                         Math.max(START_X + Math.max(0, glyphs - 1) * GLYPH_SPACING, START_X + frameColumns - 1)));
+        maxX = Math.max(maxX, SENTINEL_START_X + (SENTINELS - 1) * PLATE_SPACING);
         int maxY = 5;
         List<Placement> placements = new ArrayList<>();
         int x = START_X;

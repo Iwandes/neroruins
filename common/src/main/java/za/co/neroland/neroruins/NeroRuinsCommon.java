@@ -48,12 +48,15 @@ public final class NeroRuinsCommon {
 
         ModBlocks.init();
         ModBlockEntities.init();
+        za.co.neroland.neroruins.registry.ModEntities.init();
         ModMenuTypes.init();
         ModItems.init();
         ModCreativeTab.init();
         ModLootConditions.init();
         ModWorldgen.init();
         RuinsNetwork.init();
+        // Entity attributes go through Core's seam after the types exist (Fabric applies them at once).
+        za.co.neroland.neroruins.registry.ModEntities.registerEntitySupport();
 
         RuinPlayerData.init();
 

@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "accepted=false,facing=north,tier=1": {
+      "model": "neroruins:block/card_reader_1"
+    },
+    "accepted=false,facing=east,tier=1": {
+      "model": "neroruins:block/card_reader_1",
+      "y": 90
+    },
+    "accepted=false,facing=south,tier=1": {
+      "model": "neroruins:block/card_reader_1",
+      "y": 180
+    },
+    "accepted=false,facing=west,tier=1": {
+      "model": "neroruins:block/card_reader_1",
+      "y": 270
+    },
+    "accepted=true,facing=north,tier=1": {
+      "model": "neroruins:block/card_reader_1_on"
+    },
+    "accepted=true,facing=east,tier=1": {
+      "model": "neroruins:block/card_reader_1_on",
+      "y": 90
+    },
+    "accepted=true,facing=south,tier=1": {
+      "model": "neroruins:block/card_reader_1_on",
+      "y": 180
+    },
+    "accepted=true,facing=west,tier=1": {
+      "model": "neroruins:block/card_reader_1_on",
+      "y": 270
+    },
+    "accepted=false,facing=north,tier=2": {
+      "model": "neroruins:block/card_reader_2"
+    },
+    "accepted=false,facing=east,tier=2": {
+      "model": "neroruins:block/card_reader_2",
+      "y": 90
+    },
+    "accepted=false,facing=south,tier=2": {
+      "model": "neroruins:block/card_reader_2",
+      "y": 180
+    },
+    "accepted=false,facing=west,tier=2": {
+      "model": "neroruins:block/card_reader_2",
+      "y": 270
+    },
+    "accepted=true,facing=north,tier=2": {
+      "model": "neroruins:block/card_reader_2_on"
+    },
+    "accepted=true,facing=east,tier=2": {
+      "model": "neroruins:block/card_reader_2_on",
+      "y": 90
+    },
+    "accepted=true,facing=south,tier=2": {
+      "model": "neroruins:block/card_reader_2_on",
+      "y": 180
+    },
+    "accepted=true,facing=west,tier=2": {
+      "model": "neroruins:block/card_reader_2_on",
+      "y": 270
+    },
+    "accepted=false,facing=north,tier=3": {
+      "model": "neroruins:block/card_reader_3"
+    },
+    "accepted=false,facing=east,tier=3": {
+      "model": "neroruins:block/card_reader_3",
+      "y": 90
+    },
+    "accepted=false,facing=south,tier=3": {
+      "model": "neroruins:block/card_reader_3",
+      "y": 180
+    },
+    "accepted=false,facing=west,tier=3": {
+      "model": "neroruins:block/card_reader_3",
+      "y": 270
+    },
+    "accepted=true,facing=north,tier=3": {
+      "model": "neroruins:block/card_reader_3_on"
+    },
+    "accepted=true,facing=east,tier=3": {
+      "model": "neroruins:block/card_reader_3_on",
+      "y": 90
+    },
+    "accepted=true,facing=south,tier=3": {
+      "model": "neroruins:block/card_reader_3_on",
+      "y": 180
+    },
+    "accepted=true,facing=west,tier=3": {
+      "model": "neroruins:block/card_reader_3_on",
+      "y": 270
+    }
+  }
+}

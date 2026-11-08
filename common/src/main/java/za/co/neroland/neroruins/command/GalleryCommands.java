@@ -18,6 +18,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntitySpawnReason;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.player.Player;
@@ -26,6 +28,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.structure.templatesystem.JigsawReplacementProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
@@ -36,7 +39,9 @@ import za.co.neroland.neroruins.lore.LogCatalog;
 import za.co.neroland.neroruins.puzzle.BallastPlateBlock;
 import za.co.neroland.neroruins.puzzle.BallastPuzzle;
 import za.co.neroland.neroruins.puzzle.PuzzleSeedProcessor;
+import za.co.neroland.neroruins.puzzle.SealedDoorBlock;
 import za.co.neroland.neroruins.registry.ModBlocks;
+import za.co.neroland.neroruins.registry.ModEntities;
 import za.co.neroland.neroruins.registry.ModItems;
 import za.co.neroland.neroruins.vault.VaultCacheBlockEntity;
 
@@ -154,8 +159,13 @@ public final class GalleryCommands {
 
         // Every block, floating so all faces are visible.
         for (int i = 0; i < showcase.blocks().size(); i++) {
-            level.setBlock(origin.offset(GalleryLayout.START_X + i * GalleryLayout.BLOCK_SPACING, FLOAT_ABOVE,
-                    GalleryLayout.BLOCK_ROW_Z), showcase.blocks().get(i).defaultBlockState(), Block.UPDATE_CLIENTS);
+            BlockPos at = origin.offset(GalleryLayout.START_X + i * GalleryLayout.BLOCK_SPACING, FLOAT_ABOVE,
+                    GalleryLayout.BLOCK_ROW_Z);
+            BlockState state = showcase.blocks().get(i).defaultBlockState();
+            level.setBlock(at, state, Block.UPDATE_CLIENTS);
+            if (state.getBlock() instanceof SealedDoorBlock) {
+                level.setBlock(at.above(), state.setValue(SealedDoorBlock.HALF, DoubleBlockHalf.UPPER), Block.UPDATE_CLIENTS);
+            }
         }
         label(level, origin.offset(GalleryLayout.START_X, FLOAT_ABOVE + 1, GalleryLayout.BLOCK_ROW_Z),
                 Component.translatable("command.neroruins.gallery.label.blocks"));
@@ -170,6 +180,20 @@ public final class GalleryCommands {
         }
         label(level, origin.offset(GalleryLayout.START_X - 1, 3, GalleryLayout.PLATE_ROW_Z),
                 Component.translatable("command.neroruins.gallery.label.plates"));
+
+        // One of each Sentinel mark, inert, beside the plates.
+        for (int i = 0; i < ModEntities.SENTINELS.size(); i++) {
+            Entity entity = ModEntities.SENTINELS.get(i).get().create(level, EntitySpawnReason.COMMAND);
+            if (!(entity instanceof Mob sentinel)) continue;
+            BlockPos at = origin.offset(GalleryLayout.SENTINEL_START_X + i * GalleryLayout.PLATE_SPACING, 1,
+                    GalleryLayout.PLATE_ROW_Z);
+            sentinel.snapTo(at.getX() + 0.5, at.getY(), at.getZ() + 0.5, 180.0F, 0.0F);
+            sentinel.setNoAi(true);
+            sentinel.setPersistenceRequired();
+            level.addFreshEntity(sentinel);
+        }
+        label(level, origin.offset(GalleryLayout.SENTINEL_START_X, 4, GalleryLayout.PLATE_ROW_Z),
+                Component.translatable("command.neroruins.gallery.label.sentinels"));
 
         // All sixteen Architect glyphs, the alphabet later puzzles draw their wall clues from.
         for (int glyph = 0; glyph < GlyphStoneBlock.GLYPHS; glyph++) {

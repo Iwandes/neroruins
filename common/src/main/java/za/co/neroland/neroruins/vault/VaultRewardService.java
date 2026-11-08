@@ -36,7 +36,7 @@ import za.co.neroland.neroruins.puzzle.BallastPuzzle;
  * conditions, player state or data packs cannot change what the player receives.
  */
 public final class VaultRewardService {
-    public enum Result { AVAILABLE, RESERVED, CLAIMED, ALREADY_CLAIMED, FULL, UNAVAILABLE, SEALED }
+    public enum Result { AVAILABLE, RESERVED, CLAIMED, ALREADY_CLAIMED, FULL, UNAVAILABLE, SEALED, TAKEN }
     /** How far from a cache its room's ballast plates may sit. */
     private static final int PUZZLE_RADIUS = 6;
     private VaultRewardService() { }
@@ -60,8 +60,31 @@ public final class VaultRewardService {
         var key = ResourceKey.create(Registries.LOOT_TABLE, table);
         var registry = server.reloadableRegistries().lookup().lookupOrThrow(Registries.LOOT_TABLE);
         if (registry.get(key).isEmpty()) return Result.UNAVAILABLE;
-        return ledger.mayClaim(location, player.getUUID(), policy.get(), System.currentTimeMillis())
-                ? Result.AVAILABLE : Result.ALREADY_CLAIMED;
+        if (ledger.mayClaim(location, player.getUUID(), policy.get(), System.currentTimeMillis())) return Result.AVAILABLE;
+        return refusal(policy.get(), ledger.lastClaim(location, player.getUUID()) != null);
+    }
+
+    /**
+     * Why a player may not claim: under {@code first_come} a player who never claimed here was beaten to it by
+     * someone else, which is a different message from having claimed already.
+     */
+    static Result refusal(VaultClaimPolicy policy, boolean claimedHere) {
+        return policy.mode() == VaultClaimPolicy.Mode.FIRST_COME && !claimedHere ? Result.TAKEN : Result.ALREADY_CLAIMED;
+    }
+
+    /**
+     * Under {@code first_come}, reserves the solver's roll the moment a puzzle unseals the cache, so the cache is
+     * theirs to collect when they reach it. Other policies need nothing: every player gets their own claim.
+     */
+    public static void holdForSolver(ServerPlayer solver, ServerLevel level, VaultCacheBlockEntity cache) {
+        var policy = VaultClaimPolicy.parse(NeroRuinsConfig.VAULT_MODE.get());
+        if (policy.isEmpty() || policy.get().mode() != VaultClaimPolicy.Mode.FIRST_COME) return;
+        if (availability(solver, level, cache) != Result.AVAILABLE) return;
+        ClaimLedger ledger = ClaimLedger.get(level.getServer());
+        var location = location(level, cache.getBlockPos());
+        long now = System.currentTimeMillis();
+        roll(solver, level, cache.getBlockPos(), cache.lootTable(), ledger, location, now)
+                .ifPresent(rolled -> ledger.reserve(location, solver.getUUID(), policy.get(), now, rolled));
     }
 
     public static Result claim(ServerPlayer player, ServerLevel level, VaultCacheBlockEntity cache) {

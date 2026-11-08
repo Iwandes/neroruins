@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "pitch=0": {
+      "model": "neroruins:block/resonance_pylon_0"
+    },
+    "pitch=1": {
+      "model": "neroruins:block/resonance_pylon_1"
+    },
+    "pitch=2": {
+      "model": "neroruins:block/resonance_pylon_2"
+    },
+    "pitch=3": {
+      "model": "neroruins:block/resonance_pylon_3"
+    },
+    "pitch=4": {
+      "model": "neroruins:block/resonance_pylon_4"
+    },
+    "pitch=5": {
+      "model": "neroruins:block/resonance_pylon_5"
+    },
+    "pitch=6": {
+      "model": "neroruins:block/resonance_pylon_6"
+    },
+    "pitch=7": {
+      "model": "neroruins:block/resonance_pylon_7"
+    }
+  }
+}

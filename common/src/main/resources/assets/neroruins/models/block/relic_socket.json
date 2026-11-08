@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "neroruins:block/relic_socket_front",
+    "side": "neroruins:block/glyph_stone_side",
+    "top": "neroruins:block/lattice_floor"
+  }
+}

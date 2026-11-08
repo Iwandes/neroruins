@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "side": "neroruins:block/survey_hull",
+    "top": "neroruins:block/arc_grate_top",
+    "bottom": "neroruins:block/survey_hull"
+  }
+}

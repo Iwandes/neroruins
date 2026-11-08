@@ -13,6 +13,12 @@
         {
           "type": "minecraft:tag",
           "expand": true,
+          "weight": 2,
+          "items": "#neroruins:keycards"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
           "weight": 3,
           "items": "#neroruins:loot/currency"
         },

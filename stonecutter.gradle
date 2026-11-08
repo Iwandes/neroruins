@@ -59,6 +59,19 @@ ext.legacyRenames = [
     [below: '26.1', from: /PayloadTypeRegistry\.clientboundPlay\(\)/, to: 'PayloadTypeRegistry.playS2C()'],
     [below: '26.1', from: /PayloadTypeRegistry\.serverboundPlay\(\)/, to: 'PayloadTypeRegistry.playC2S()'],
     [below: '26.1', from: /\bModList\.(getMods|isLoaded|getModContainerById)\(/, to: 'ModList.get().$1('],
+    // --- Entity renames (as NeroCreatures) ---
+    // 1.21.2 moved the level into these entity calls (EntityType.create, hurt -> hurtServer,
+    // doHurtTarget, spawnAtLocation) and EntityType.Builder.build takes the id as a string before it.
+    [below: '1.21.2', from: /\.create\((\w+), EntitySpawnReason\.\w+\)/, to: '.create($1)'],
+    [below: '1.21.2', from: /\.spawnAtLocation\(\w+, /, to: '.spawnAtLocation('],
+    [below: '1.21.2', from: /\.doHurtTarget\(\w+, /, to: '.doHurtTarget('],
+    [below: '1.21.2', from: /\.hurtServer\(\w+, /, to: '.hurt('],
+    [below: '1.21.2', from: /\.build\(key\)\)/, to: '.build(key.location().toString()))'],
+    // 1.21.5 renamed Entity.moveTo(x, y, z, yRot, xRot) -> snapTo(..).
+    [below: '1.21.5', from: /\.snapTo\(/, to: '.moveTo('],
+    // 1.21.2 renamed MobSpawnType -> EntitySpawnReason (SPAWN_EGG became SPAWN_ITEM_USE).
+    [below: '1.21.2', from: /\bEntitySpawnReason\.SPAWN_ITEM_USE\b/, to: 'MobSpawnType.SPAWN_EGG'],
+    [below: '1.21.2', from: /\bEntitySpawnReason\b/, to: 'MobSpawnType'],
 ]
 
 // Shared common source — pulled into every loader node (single copy -> no drift).

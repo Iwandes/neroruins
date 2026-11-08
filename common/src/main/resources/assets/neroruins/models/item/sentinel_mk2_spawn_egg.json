@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "neroruins:item/sentinel_mk2_spawn_egg"
+  }
+}

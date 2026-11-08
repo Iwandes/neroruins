@@ -96,6 +96,11 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "neroruins:expedition_map",
+          "weight": 1
         }
       ]
     }
