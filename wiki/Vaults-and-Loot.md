@@ -56,4 +56,22 @@ chance: `0.5` halves it, `2.0` doubles it (capped at 100%). The loot condition b
 `neroruins:relic_chance`, which other data packs can use too. Guaranteed relics in specific vaults are not
 affected.
 
+## Getting the items
+
+NeroRuins has no crafting recipes yet. Everything it adds is found, not made:
+
+| Item | Where it comes from |
+| --- | --- |
+| Survey Hull, Rusted Survey Hull, Latticework, Lattice Floor, Resonance Crystal Block, Glyph Stone, Arc Grate | Ruin walls and rooms. They are hard but mineable and drop themselves |
+| Log Terminal | Found in ruins only. A mined terminal drops Survey Hull, so read it first |
+| Data Shards | Log rooms in bunkers and crash sites |
+| Expedition Map | Supply loot, or a quest reward |
+| Survey Scanner | Component loot, or a quest reward |
+| Keycards | Keycard rooms and better loot |
+| Relics | Vaults: some always hold a specific relic, and any tier-4 roll may add one |
+| Vault Caches, puzzle blocks, Ruin Spawners, reinforced walls | Part of the ruin. They cannot be broken in survival and never drop |
+| Sentinel spawn eggs | Creative only |
+
+Relics, data shards and keycards can never be crafted, and NeroEconomy will not trade them.
+
 [Home](Home.md)

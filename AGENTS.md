@@ -51,6 +51,7 @@
   :fabric:26.1.2:build :fabric:26.2:build :fabric:26.3:build`.
 - Static analysis: `./gradlew :fabric:26.3:ecjCheck` (the VS Code Problems panel, via `tools/ecj.prefs`).
   The task only FAILS on errors.
+- Recipe-book unlocks: after adding or changing a recipe, run `python tools/gen_recipe_unlocks.py`; `--check` fails on a missing, stale or orphaned unlock.
 - A Cowork agent sandbox cannot decompile Minecraft — run builds natively (or via the local gradle MCP)
   on the developer's machine.
 - **Verify the cells build before marking a task done.** Never sign off on an uncompiled change.

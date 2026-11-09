@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.1-beta.1] - 2026-11-09
+
+Log Terminals no longer drop as empty terminals, plus a guard that keeps loot-only items uncraftable. Requires
+**Neroland Core 1.17.4**.
+
+### Added
+
+- The wiki's *Vaults and Loot* page lists where every NeroRuins item comes from.
+- A data check keeps relics, keycards, data shards, vault and puzzle blocks, reinforced walls and spawn eggs
+  uncraftable, and keeps the unbreakable fixtures from dropping themselves.
+- `tools/gen_recipe_unlocks.py` is ready for the first recipes (it generates their recipe-book unlocks;
+  `--check` verifies). NeroRuins still adds no recipes.
+
+### Changed
+
+- **A mined Log Terminal drops Survey Hull** instead of an empty terminal, which kept no log.
+
 ## [0.5.0-beta.1] - 2026-11-08
 
 The ruins arrive: six structure families, puzzles, guardians, vaults, relics and expedition tools. Requires

@@ -4,7 +4,7 @@
 generation ship, crashed freighters and the temples of the vanished Architects. Each ruin has rooms to
 explore, guardians, a puzzle gate, a vault and data logs that tell one story across nine chapters.
 
-> **Status: 0.5.0-beta.1.** Everything on these pages is in the mod and covered by automated tests, but
+> **Status: 0.5.1-beta.1.** Everything on these pages is in the mod and covered by automated tests, but
 > most structures have not yet been played through end to end in survival. Please report anything that
 > breaks.
 
