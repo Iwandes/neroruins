@@ -431,5 +431,7 @@
   "gui.neroruins.card_reader.denied": "Access denied. This reader needs a tier %s keycard or higher.",
   "gui.neroruins.relic_socket.wants": "The socket is shaped for the %s.",
   "gui.neroruins.relic_socket.returned": "The socket reads the relic and releases it back to you.",
-  "gui.neroruins.vault.status.7": "Another explorer opened this vault first. It has been claimed."
+  "gui.neroruins.vault.status.7": "Another explorer opened this vault first. It has been claimed.",
+  "map.layer.neroruins.ruins": "Ruins",
+  "map.neroruins.ruin.claimed": "Vault claimed"
 }

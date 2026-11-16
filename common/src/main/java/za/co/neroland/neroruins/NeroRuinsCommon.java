@@ -65,5 +65,8 @@ public final class NeroRuinsCommon {
         //    entry point also forwards server start/stop (lifecycle.ServerState) and player join
         //    (QuestHooks.onJoin) so a hook that opened while a player was offline is delivered.
         QuestHooks.init();
+
+        // 8. Map layers for a Neroland map consumer (Core map API): the viewer's own discovered ruins only.
+        za.co.neroland.neroruins.map.RuinsMapLayers.register();
     }
 }

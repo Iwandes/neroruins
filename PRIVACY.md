@@ -70,7 +70,7 @@ The **Expedition Record** stores, for each player who enters a ruin hub, their U
 structure type, family, size class, world, the time of first entry and the hub position. Positions are
 dropped after `privacy.expeditionRetentionDays` (default 365) or never stored when
 `privacy.recordDiscoveryPositions=false`; entries otherwise remain until erasure. Positions are shown only
-to that player (Expedition Map). The Surveyor's Compass and Survey Scanner read world generation and the
+to that player (Expedition Map and, through Neroland Core's map API, that player's own map layer). The Surveyor's Compass and Survey Scanner read world generation and the
 holder's own record in memory and store nothing.
 
 `/neroruins privacy export` writes the requesting player's log IDs, first-read times, vault claims, held

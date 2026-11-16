@@ -18,6 +18,8 @@ Compass works from your own record in memory and stores nothing. Progression mil
 Core's progression store, covered by Core's own privacy page. A world-level vault ledger counts claims per
 ruin type only — never who or where.
 
+With a Neroland map mod installed, your discovered ruins (and which you claimed a vault at) also appear on your own map only.
+
 ## Your rights
 
 - **See your data:** `/neroruins privacy export` writes your archive, read times, vault claims, held rewards

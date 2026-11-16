@@ -7,9 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.2-beta.1] - 2026-11-16
+
+Your discovered ruins on a Neroland map. Requires **Neroland Core 1.19.0**.
+
+### Added
+
+- A `neroruins:ruins` map layer through Neroland Core's map API: the hubs of ruins you have entered, from your
+  own Expedition Record, drawn in a claimed state where you claimed a vault. Only you see them; a ruin whose
+  position was not kept or has expired is not shown. NeroRuins stores nothing new for it.
+
 ### Dependencies
 
-- Updated Neroland Core from 1.17.4 to 1.17.6.
+- Updated Neroland Core from 1.17.4 to 1.19.0 (map API).
 - Updated Fabric Loader from 0.19.5 to 0.20.1.
 - Updated Fabric API (Minecraft 1.21.1) from 0.116.17+1.21.1 to 0.116.18+1.21.1.
 - Updated Fabric API (Minecraft 26.3) from 0.162.0+26.3 to 0.166.2+26.3.
